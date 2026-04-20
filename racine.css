@@ -44,7 +44,7 @@
 
     /* ── Typographie ─────────────────────────────────────────────────── */
     --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-    --font-serif: 'IBM Plex', serif;
+    --font-serif: 'Cormorant Garamond', serif;
     --font-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 
     --font-size-xs: 0.75rem;
@@ -628,6 +628,11 @@ hr {
     margin-block: var(--space-3xl);
     border: none;
     border-top: var(--border-width-heavy) solid var(--color-border-strong);
+}
+
+/* ── Font utilities ──────────────────────────────────────────────────── */
+.font-serif {
+    font-family: var(--font-serif);
 }
 
 /* ==========================================================================

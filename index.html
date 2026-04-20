@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Racine.css</title>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
     <link rel="stylesheet" href="racine.css">
 </head>
 
@@ -85,6 +90,10 @@
                 <abbr title="Cascading Style Sheets">CSS</abbr> sont marquées avec un soulignement pointillé.
                 Le code inline ressemble à <code>display: block</code> et les raccourcis clavier à
                 <kbd>Ctrl</kbd> + <kbd>K</kbd>.
+            </p>
+
+            <p class="font-serif" style="font-size: 2.5rem;">
+                Un titre avec <strong>Cormorant Garamond</strong> en <i>italique</i>.
             </p>
 
             <blockquote>
@@ -243,7 +252,7 @@
 
                 <label for="pays">Pays</label>
                 <select id="pays" name="pays">
-                    <option value="">— Sélectionner un pays —</option>
+                    <option value="" disabled selected>- Sélectionner un pays -</option>
                     <option value="fr">France</option>
                     <option value="be">Belgique</option>
                     <option value="ch">Suisse</option>

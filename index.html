@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racine.css</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="racine.css">
+</head>
+
+<body>
+
+    <!-- ================================================================
+       HEADER — Navigation principale
+  ================================================================== -->
+    <header>
+        <h1>Racine.css</h1>
+        <nav>
+            <ul>
+                <li><a href="#typo">Typographie</a></li>
+                <li><a href="#listes">Listes</a></li>
+                <li><a href="#tableaux">Tableaux</a></li>
+                <li><a href="#formulaires">Formulaires</a></li>
+                <li><a href="#composants">Composants</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle theme" class="flat">Light 🌙</button>
+
+    </header>
+
+    <!-- ================================================================
+       NAVIGATION secondaire (breadcrumb / subnav)
+  ================================================================== -->
+    <nav>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">v0.0.1</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================================================================
+       MAIN
+  ================================================================== -->
+    <main>
+
+        <!-- ── HERO ──────────────────────────────────────────────────── -->
+        <section id="hero">
+            <h1>Un système de conception minimaliste</h1>
+            <p>
+                <strong>Racine.css</strong> stylise n'importe quelle page HTML5.
+            </p>
+        </section>
+
+        <!-- ── TYPOGRAPHIE ───────────────────────────────────────────── -->
+        <section id="typo">
+            <h2>Typographie</h2>
+
+            <h1>Titre h1 — Niveau 1</h1>
+            <h2>Titre h2 — Niveau 2</h2>
+            <h3>Titre h3 — Niveau 3</h3>
+            <h4>Titre h4 — Niveau 4</h4>
+            <h5>Titre h5 — Niveau 5</h5>
+            <h6>Titre h6 — Niveau 6</h6>
+
+            <p>
+                Le corps de texte utilise <strong>IBM Plex Sans</strong> en 16px avec une hauteur de ligne
+                de 1.75 pour une lisibilité optimale. Les paragraphes sont naturellement contraints à
+                <code>65ch</code> de largeur maximale — le sweet spot pour la lecture sur écran.
+            </p>
+
+            <p>
+                Les liens sont <a href="#">clairement identifiables</a> grâce à leur couleur primaire.
+                Le texte peut être <strong>en gras</strong>, <em>en italique</em>,
+                <mark>surligné</mark>, <del>barré</del>, ou rendu en <small>petite taille</small>.
+            </p>
+
+            <p>
+                Les abréviations comme <abbr title="HyperText Markup Language">HTML</abbr> et
+                <abbr title="Cascading Style Sheets">CSS</abbr> sont marquées avec un soulignement pointillé.
+                Le code inline ressemble à <code>display: block</code> et les raccourcis clavier à
+                <kbd>Ctrl</kbd> + <kbd>K</kbd>.
+            </p>
+
+            <blockquote>
+                <p>
+                    Le design n'est pas juste ce à quoi ça ressemble et ce que ça fait ressentir.
+                    Le design, c'est comment ça fonctionne.
+                </p>
+                <cite>Steve Jobs</cite>
+            </blockquote>
+
+            <h3>Bloc de code</h3>
+            <pre><code>/* Variables CSS — Personnalisation en un endroit */
+:root {
+  --color-primary: #0f62fe;
+  --font-sans:     'IBM Plex Sans', sans-serif;
+  --space-5:       1rem;
+}
+
+/* Résultat : HTML sémantique, beau sans classes */
+&lt;article&gt;
+  &lt;h1&gt;Titre&lt;/h1&gt;
+  &lt;p&gt;Contenu…&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+
+            <hr>
+
+        </section>
+
+        <!-- ── LISTES ─────────────────────────────────────────────────── -->
+        <section id="listes">
+            <h2>Listes</h2>
+
+            <h3>Liste non ordonnée</h3>
+            <ul>
+                <li>Variables CSS pour chaque token de design</li>
+                <li>Échelle typographique modulaire avec <code>clamp()</code></li>
+                <li>Formulaires complets et accessibles (WCAG AA)</li>
+                <li>Aucune classe HTML requise
+                    <ul>
+                        <li>Sous-élément imbriqué niveau 2</li>
+                        <li>Encore un sous-élément</li>
+                    </ul>
+                </li>
+                <li>Responsive natif via unités relatives</li>
+            </ul>
+
+            <h3>Liste ordonnée</h3>
+            <ol>
+                <li>Télécharger <code>racine.css</code></li>
+                <li>L'inclure dans le <code>&lt;head&gt;</code> de votre HTML</li>
+                <li>Écrire du HTML5 sémantique sans classes</li>
+                <li>Personnaliser les variables CSS si besoin</li>
+                <li>Déployer</li>
+            </ol>
+
+            <h3>Liste de définitions</h3>
+            <dl>
+                <dt>Design Token</dt>
+                <dd>Variable stockant une décision de design (couleur, espacement) pour en garantir la cohérence.</dd>
+
+                <dt>Classless CSS</dt>
+                <dd>Approche où le CSS sélectionne uniquement des éléments HTML natifs, sans classes utilitaires.</dd>
+
+                <dt>WCAG</dt>
+                <dd>Web Content Accessibility Guidelines — normes d'accessibilité publiées par le W3C.</dd>
+            </dl>
+
+        </section>
+
+        <!-- ── TABLEAUX ───────────────────────────────────────────────── -->
+        <section id="tableaux">
+            <h2>Tableaux</h2>
+
+            <table>
+                <caption>Comparatif de frameworks CSS classless populaires</caption>
+                <thead>
+                    <tr>
+                        <th>Framework</th>
+                        <th>Taille (minifié)</th>
+                        <th>Variables CSS</th>
+                        <th>Thème sombre</th>
+                        <th>Formulaires</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Classless</strong></td>
+                        <td><code>~14 Ko</code></td>
+                        <td>✓ Oui</td>
+                        <td>Prêt</td>
+                        <td>Complets</td>
+                    </tr>
+                    <tr>
+                        <td>Water.css</td>
+                        <td><code>~2 Ko</code></td>
+                        <td>Partiel</td>
+                        <td>Auto</td>
+                        <td>Basiques</td>
+                    </tr>
+                    <tr>
+                        <td>Pico.css</td>
+                        <td><code>~10 Ko</code></td>
+                        <td>✓ Oui</td>
+                        <td>Auto</td>
+                        <td>Étendus</td>
+                    </tr>
+                    <tr>
+                        <td>MVP.css</td>
+                        <td><code>~7 Ko</code></td>
+                        <td>Partiel</td>
+                        <td>Non</td>
+                        <td>Basiques</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">Données indicatives — Tailles compressées en production.</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </section>
+
+        <!-- ── FORMULAIRES ────────────────────────────────────────────── -->
+        <section id="formulaires">
+            <h2>Formulaires</h2>
+
+            <fieldset>
+                <legend>Informations personnelles</legend>
+
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Jean Dupont" autocomplete="name">
+
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" placeholder="jean@exemple.fr" autocomplete="email">
+
+                <label for="url">Site web</label>
+                <input type="url" id="url" name="url" placeholder="https://exemple.fr">
+
+                <label for="tel">Téléphone</label>
+                <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00">
+
+                <label for="date">Date de naissance</label>
+                <input type="date" id="date" name="date">
+
+                <label for="pwd">Mot de passe</label>
+                <input type="password" id="pwd" name="pwd" placeholder="••••••••">
+
+                <label for="disabled">Champ désactivé</label>
+                <input type="text" id="disabled" name="disabled" value="Non modifiable" disabled>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Préférences</legend>
+
+                <label for="pays">Pays</label>
+                <select id="pays" name="pays">
+                    <option value="">— Sélectionner un pays —</option>
+                    <option value="fr">France</option>
+                    <option value="be">Belgique</option>
+                    <option value="ch">Suisse</option>
+                    <option value="ca">Canada</option>
+                </select>
+
+                <label for="langues">Langues (sélection multiple)</label>
+                <select id="langues" name="langues" multiple>
+                    <option value="fr">Français</option>
+                    <option value="en">Anglais</option>
+                    <option value="de">Allemand</option>
+                    <option value="es">Espagnol</option>
+                    <option value="it">Italien</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message ici…"></textarea>
+
+                <label for="volume">Volume (range)</label>
+                <input type="range" id="volume" name="volume" min="0" max="100" value="65">
+
+                <label for="couleur">Couleur préférée</label>
+                <input type="color" id="couleur" name="couleur" value="#0f62fe">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Consentements</legend>
+
+                <label>
+                    <input type="checkbox" name="cgu" id="cgu">
+                    J'accepte les conditions générales d'utilisation
+                </label>
+
+                <label>
+                    <input type="checkbox" name="newsletter" id="newsletter" checked>
+                    M'abonner à la newsletter (déjà coché)
+                </label>
+
+                <label>
+                    <input type="checkbox" name="desactive" id="desactive" disabled>
+                    Option indisponible (désactivée)
+                </label>
+
+                <br>
+
+                <label>
+                    <input type="radio" name="abonnement" value="gratuit">
+                    Offre gratuite
+                </label>
+                <label>
+                    <input type="radio" name="abonnement" value="pro" checked>
+                    Offre Pro (sélectionnée)
+                </label>
+                <label>
+                    <input type="radio" name="abonnement" value="enterprise">
+                    Offre Enterprise
+                </label>
+
+            </fieldset>
+
+            <p>
+                <button type="submit">Envoyer le formulaire</button>
+                <input type="reset" value="Réinitialiser">
+                <button type="button" disabled>Action désactivée</button>
+            </p>
+
+            <h3>Barre de progression</h3>
+            <label>Progression : 65%</label>
+            <progress value="65" max="100"></progress>
+
+            <label>Niveau de batterie</label>
+            <meter value="0.7" min="0" max="1" low="0.25" high="0.75" optimum="1"></meter>
+
+        </section>
+
+        <!-- ── COMPOSANTS DIVERS ──────────────────────────────────────── -->
+        <section id="composants">
+            <h2>Composants divers</h2>
+
+            <h3>Encart (aside)</h3>
+            <aside>
+                <strong>Note :</strong> Ce framework est conçu comme une fondation.
+                Les variables CSS permettent de surcharger l'ensemble du design en quelques lignes.
+                Commencez par modifier <code>--color-primary</code> et <code>--font-sans</code>.
+            </aside>
+
+            <h3>Accordéons (details/summary)</h3>
+
+            <details>
+                <summary>Comment personnaliser les couleurs ?</summary>
+                <p>
+                    Surchargez simplement les variables CSS dans votre propre feuille de style.
+                    Par exemple : <code>:root { --color-primary: #your-color; }</code>
+                    Toutes les couleurs se mettront à jour automatiquement.
+                </p>
+            </details>
+
+            <details open>
+                <summary>Comment ajouter un thème sombre ?</summary>
+                <p>
+                    Ajoutez un bloc <code>@media (prefers-color-scheme: dark)</code> et
+                    redéfinissez les variables de couleur. Les tokens sont déjà prêts à être surchargés :
+                </p>
+                <pre><code>@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:   #161616;
+    --color-text: #f4f4f4;
+    /* … autres tokens … */
+  }
+}</code></pre>
+            </details>
+
+            <details>
+                <summary>Y a-t-il des dépendances JavaScript ?</summary>
+                <p>
+                    Aucune. Ce framework est 100% CSS. Aucun JS n'est nécessaire pour le style de base.
+                    Les interactions natives du navigateur (<code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>)
+                    fonctionnent sans script.
+                </p>
+            </details>
+
+            <h3>Figure & image</h3>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80"
+                    alt="Code source affiché sur un écran d'ordinateur" loading="lazy" width="900" height="500">
+                <figcaption>
+                    Illustration : L'esthétique technique de Classless privilégie la lisibilité du contenu.
+                    Photo via Unsplash.
+                </figcaption>
+            </figure>
+
+            <h3>Adresse</h3>
+            <address>
+                <strong>Anthropic</strong><br>
+                548 Market St, PMB 90375<br>
+                San Francisco, CA 94104<br>
+                <a href="mailto:hello@anthropic.com">hello@anthropic.com</a>
+            </address>
+
+            <h3>Horodatage</h3>
+            <p>
+                Dernière mise à jour :
+                <time datetime="2026-01-01">1er Janvier 2026</time>.
+            </p>
+
+        </section>
+
+
+        <!-- ================================================================
+         BUTTONS
+         ================================================================== -->
+        <section>
+
+            <h1>Boutons</h1>
+
+            <!-- ── SOLID ──────────────────────────────────────────────────── -->
+            <div id="solid">
+                <h3>Solid (défaut)</h3>
+                <p>Aucune classe de style requise. C'est la variante par défaut.</p>
+
+                <h5>Couleurs</h5>
+                <div>
+                    <button>Primary</button>
+                    <button class="success">Success</button>
+                    <button class="warning">Warning</button>
+                    <button class="danger">Danger</button>
+                    <button class="info">Info</button>
+                </div>
+
+                <h5>Sur balise <code>&lt;a&gt;</code></h5>
+                <div>
+                    <a class="btn" href="#">Primary</a>
+                    <a class="btn success" href="#">Success</a>
+                    <a class="btn warning" href="#">Warning</a>
+                    <a class="btn danger" href="#">Danger</a>
+                    <a class="btn info" href="#">Info</a>
+                </div>
+
+                <h5>Désactivés</h5>
+                <div>
+                    <button disabled>Primary</button>
+                    <button class="success" disabled>Success</button>
+                    <button class="warning" disabled>Warning</button>
+                    <button class="danger" disabled>Danger</button>
+                    <button class="info" disabled>Info</button>
+                </div>
+            </div>
+
+            <!-- ── OUTLINE ────────────────────────────────────────────────── -->
+            <section id="outline">
+                <h3>Outline</h3>
+                <p>Fond transparent, bordure et texte colorés. Le hover remplit le fond.</p>
+
+                <h5>Couleurs</h5>
+                <div>
+                    <button class="outline">Primary</button>
+                    <button class="outline success">Success</button>
+                    <button class="outline warning">Warning</button>
+                    <button class="outline danger">Danger</button>
+                    <button class="outline info">Info</button>
+                </div>
+
+                <h5>Désactivés</h5>
+                <div>
+                    <button class="outline" disabled>Primary</button>
+                    <button class="outline success" disabled>Success</button>
+                    <button class="outline warning" disabled>Warning</button>
+                    <button class="outline danger" disabled>Danger</button>
+                    <button class="outline info" disabled>Info</button>
+                </div>
+            </section>
+
+            <!-- ── DISCREET ───────────────────────────────────────────────── -->
+            <section id="discreet">
+                <h3>Discreet</h3>
+                <p>Fond coloré très léger (14% opacité), texte coloré, sans bordure. Parfait pour les badges d'action ou
+                    les
+                    zones de notification.
+                </p>
+
+                <h5>Couleurs</h5>
+                <div>
+                    <button class="discreet">Primary</button>
+                    <button class="discreet success">Success</button>
+                    <button class="discreet warning">Warning</button>
+                    <button class="discreet danger">Danger</button>
+                    <button class="discreet info">Info</button>
+                </div>
+
+                <h5>Désactivés</h5>
+                <div>
+                    <button class="discreet" disabled>Primary</button>
+                    <button class="discreet success" disabled>Success</button>
+                    <button class="discreet warning" disabled>Warning</button>
+                    <button class="discreet danger" disabled>Danger</button>
+                    <button class="discreet info" disabled>Info</button>
+                </div>
+            </section>
+
+            <!-- ── FLAT ───────────────────────────────────────────────────── -->
+            <section id="flat">
+                <h3>Flat</h3>
+                <p>Pas de fond ni de bordure au repos. Le hover révèle un fond léger. Idéal pour les actions
+                    tertiaires.</p>
+
+                <h5>Couleurs</h5>
+                <div>
+                    <button class="flat">Primary</button>
+                    <button class="flat success">Success</button>
+                    <button class="flat warning">Warning</button>
+                    <button class="flat danger">Danger</button>
+                    <button class="flat info">Info</button>
+                </div>
+
+                <h5>Désactivés</h5>
+                <div>
+                    <button class="flat" disabled>Primary</button>
+                    <button class="flat success" disabled>Success</button>
+                    <button class="flat warning" disabled>Warning</button>
+                    <button class="flat danger" disabled>Danger</button>
+                    <button class="flat info" disabled>Info</button>
+                </div>
+            </section>
+
+            <!-- ── TAILLES ────────────────────────────────────────────────── -->
+            <section id="tailles">
+                <h3>Tailles</h3>
+                <p>Quatre tailles disponibles. Sans classe de taille, <code>md</code> s'applique par défaut.</p>
+
+                <h5>Solid</h5>
+                <div>
+                    <button class="sm">SM</button>
+                    <button>MD</button>
+                    <button class="lg">LG</button>
+                    <button class="xl">XL</button>
+                </div>
+
+                <h5>Outline</h5>
+                <div>
+                    <button class="sm outline">SM</button>
+                    <button class="outline">MD</button>
+                    <button class="lg outline">LG</button>
+                    <button class="xl outline">XL</button>
+                </div>
+
+                <h5>Discreet</h5>
+                <div>
+                    <button class="sm discreet">SM</button>
+                    <button class="discreet">MD</button>
+                    <button class="lg discreet">LG</button>
+                    <button class="xl discreet">XL</button>
+                </div>
+
+                <h5>Flat</h5>
+                <div>
+                    <button class="sm flat">SM</button>
+                    <button class="flat">MD</button>
+                    <button class="lg flat">LG</button>
+                    <button class="xl flat">XL</button>
+                </div>
+            </section>
+
+            <!-- ── COMBINAISONS LIBRES ────────────────────────────────────── -->
+            <section id="combos">
+                <h3>Combinaisons libres</h3>
+                <p>Exemples d'usage réel combinant style + taille + couleur.</p>
+
+                <h5>Actions critiques</h5>
+                <p>
+                    <button class="danger">Supprimer le compte</button>
+                    <button class="outline danger">Annuler</button>
+                </p>
+
+                <h5>Validation de formulaire</h5>
+                <p>
+                    <button class="lg">Enregistrer</button>
+                    <button class="lg discreet">Annuler</button>
+                </p>
+
+                <h5>Barre d'outils</h5>
+                <p>
+                    <button class="sm flat info">Filtrer</button>
+                    <button class="sm flat info">Trier</button>
+                    <button class="sm flat info">Exporter</button>
+                    <button class="sm outline danger">Supprimer</button>
+                </p>
+
+                <h5>Call-to-action</h5>
+                <p>
+                    <button class="xl">Commencer gratuitement</button>
+                    <button class="xl outline">Voir la démo</button>
+                </p>
+
+                <h5>Notifications inline</h5>
+                <p>
+                    <button class="sm discreet success">Confirmé</button>
+                    <button class="sm discreet warning">En attente</button>
+                    <button class="sm discreet danger">Erreur</button>
+                    <button class="sm discreet info">En cours</button>
+                </p>
+
+                <h5>Navigation par liens</h5>
+                <p>
+                    <a class="btn lg" href="#">Documentation</a>
+                    <a class="btn lg outline info" href="#">GitHub</a>
+                    <a class="btn lg discreet" href="#">Changelog</a>
+                </p>
+            </section>
+        </section>
+
+    </main>
+
+    <!-- ================================================================
+       FOOTER
+  ================================================================== -->
+    <footer>
+        <p>
+            <strong>Racine.css v0.0.1</strong>
+        </p>
+        <p>
+            Licence MIT · Construit avec
+            <abbr title="Cascading Style Sheets">CSS</abbr> Custom Properties ·
+            <time datetime="2025">2026</time>
+        </p>
+    </footer>
+
+</body>
+
+</html>

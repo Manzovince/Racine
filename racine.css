@@ -850,7 +850,7 @@ select {
     color: var(--color-text);
     background-color: var(--color-bg-subtle);
     border: none;
-    border-bottom: var(--border-width) solid var(--color-border);
+    /* border-bottom: var(--border-width) solid var(--color-border); */
     appearance: none;
     -webkit-appearance: none;
     transition:

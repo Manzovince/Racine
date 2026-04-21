@@ -68,6 +68,7 @@
 
     --font-weight-light: 300;
     --font-weight-regular: 400;
+    --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
 
@@ -819,9 +820,9 @@ legend {
 label {
     display: block;
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-medium);
     letter-spacing: var(--letter-spacing-normal);
-    color: var(--color-text);
+    color: var(--color-text-secondary);
     margin-bottom: var(--space-2xs);
     cursor: pointer;
 }

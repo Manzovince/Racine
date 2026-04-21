@@ -129,38 +129,38 @@
 }
 
 [data-theme="dark"] {
-        /* Arrière-plans */
-        --color-bg: oklch(20.019% 0.00002 271.152);
-        --color-bg-subtle: oklch(26.862% 0.00003 271.152);
-        --color-bg-ui: oklch(34.458% 0.00004 271.152);
-        --color-bg-hover: oklch(39.793% 0.00005 271.152);
-        --color-bg-active: oklch(43.861% 0.00005 271.152);
+    /* Arrière-plans */
+    --color-bg: oklch(20.019% 0.00002 271.152);
+    --color-bg-subtle: oklch(26.862% 0.00003 271.152);
+    --color-bg-ui: oklch(34.458% 0.00004 271.152);
+    --color-bg-hover: oklch(39.793% 0.00005 271.152);
+    --color-bg-active: oklch(43.861% 0.00005 271.152);
 
-        /* Bordures */
-        --color-border: oklch(54.171% 0.00006 271.152);
-        --color-border-subtle: oklch(34.458% 0.00004 271.152);
-        --color-border-strong: oklch(96.715% 0.00011 271.152);
+    /* Bordures */
+    --color-border: oklch(54.171% 0.00006 271.152);
+    --color-border-subtle: oklch(34.458% 0.00004 271.152);
+    --color-border-strong: oklch(96.715% 0.00011 271.152);
 
-        /* Texte */
-        --color-text: oklch(96.715% 0.00011 271.152);
-        --color-text-secondary: oklch(82.656% 0.00009 271.152);
-        --color-text-placeholder: oklch(54.171% 0.00006 271.152);
-        --color-text-disabled: oklch(43.861% 0.00005 271.152);
-        --color-text-inverse: oklch(20.019% 0.00002 271.152);
+    /* Texte */
+    --color-text: oklch(96.715% 0.00011 271.152);
+    --color-text-secondary: oklch(82.656% 0.00009 271.152);
+    --color-text-placeholder: oklch(54.171% 0.00006 271.152);
+    --color-text-disabled: oklch(43.861% 0.00005 271.152);
+    --color-text-inverse: oklch(20.019% 0.00002 271.152);
 
-        /* Couleurs d'action */
-        --color-primary: #4589ff;
-        --color-primary-hover: #74aaff;
-        --color-primary-active: #a6c8ff;
-        --color-accent: #ff6b35;
-        --color-accent-hover: #ff8c60;
+    /* Couleurs d'action */
+    --color-primary: #4589ff;
+    --color-primary-hover: #74aaff;
+    --color-primary-active: #a6c8ff;
+    --color-accent: #ff6b35;
+    --color-accent-hover: #ff8c60;
 
-        /* Sémantiques */
-        --color-success: #42be65;
-        --color-warning: #f1c21b;
-        --color-danger: #ff8389;
-        --color-info: #78a9ff;
-        --color-focus: #4589ff;
+    /* Sémantiques */
+    --color-success: #42be65;
+    --color-warning: #f1c21b;
+    --color-danger: #ff8389;
+    --color-info: #78a9ff;
+    --color-focus: #4589ff;
 }
 
 /* ==========================================================================
@@ -1158,8 +1158,12 @@ picture {
 
 /* ── Dialog ──────────────────────────────────────────────────────────── */
 dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: var(--space-xl);
-    border: 2px solid var(--color-border-strong);
+    border: solid var(--border-width) var(--color-border);
     background-color: var(--color-bg);
     color: var(--color-text);
     max-width: min(90vw, 40rem);
@@ -1168,6 +1172,15 @@ dialog {
 
 dialog::backdrop {
     background-color: rgb(22 22 22 / 0.7);
+    backdrop-filter: blur(4px);
+}
+
+/* ── Popover ─────────────────────────────────────────────────────────── */
+[popover]:popover-open {
+    width: 300px;
+    padding: 20px;
+    border: solid var(--border-width) var(--color-border);
+    background-color: white;
 }
 
 /* ── Address ─────────────────────────────────────────────────────────── */
@@ -1490,23 +1503,46 @@ a.btn[aria-disabled="true"] {
 /* ── Icône seule (bouton carré) ──────────────────────────────────────── */
 button.icon,
 a.btn.icon {
-  padding: 0;
-  aspect-ratio: 1 / 1;
-  justify-content: center;
-  --_icon-size: 1.125rem;
+    padding: 0;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    --_icon-size: 1.125rem;
 }
 
-button.icon.sm,  a.btn.icon.sm  { width: 2rem;   height: 2rem;   --_icon-size: 1rem; }
-button.icon,     a.btn.icon     { width: 2.5rem;  height: 2.5rem; --_icon-size: 1.125rem; }
-button.icon.lg,  a.btn.icon.lg  { width: 3rem;   height: 3rem;   --_icon-size: 1.25rem; }
-button.icon.xl,  a.btn.icon.xl  { width: 3.5rem;  height: 3.5rem; --_icon-size: 1.5rem; }
+button.icon.sm,
+a.btn.icon.sm {
+    width: 2rem;
+    height: 2rem;
+    --_icon-size: 1rem;
+}
+
+button.icon,
+a.btn.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    --_icon-size: 1.125rem;
+}
+
+button.icon.lg,
+a.btn.icon.lg {
+    width: 3rem;
+    height: 3rem;
+    --_icon-size: 1.25rem;
+}
+
+button.icon.xl,
+a.btn.icon.xl {
+    width: 3.5rem;
+    height: 3.5rem;
+    --_icon-size: 1.5rem;
+}
 
 button.icon svg,
 a.btn.icon svg {
-  width: var(--_icon-size);
-  height: var(--_icon-size);
-  flex-shrink: 0;
-  pointer-events: none;
+    width: var(--_icon-size);
+    height: var(--_icon-size);
+    flex-shrink: 0;
+    pointer-events: none;
 }
 
 /* ── Icône + label ───────────────────────────────────────────────────── */
@@ -1514,24 +1550,41 @@ button.icon-start,
 button.icon-end,
 a.btn.icon-start,
 a.btn.icon-end {
-  gap: 0.8em;
+    gap: 0.8em;
 }
 
-button.icon-start.sm, a.btn.icon-start.sm,
-button.icon-end.sm,   a.btn.icon-end.sm  { gap: 0.3em; --_icon-size: 1rem; }
+button.icon-start.sm,
+a.btn.icon-start.sm,
+button.icon-end.sm,
+a.btn.icon-end.sm {
+    gap: 0.3em;
+    --_icon-size: 1rem;
+}
 
-button.icon-start.lg, a.btn.icon-start.lg,
-button.icon-end.lg,   a.btn.icon-end.lg  { gap: 0.4em; --_icon-size: 1.25rem; }
+button.icon-start.lg,
+a.btn.icon-start.lg,
+button.icon-end.lg,
+a.btn.icon-end.lg {
+    gap: 0.4em;
+    --_icon-size: 1.25rem;
+}
 
-button.icon-start.xl, a.btn.icon-start.xl,
-button.icon-end.xl,   a.btn.icon-end.xl  { gap: 0.45em; --_icon-size: 1.5rem; }
+button.icon-start.xl,
+a.btn.icon-start.xl,
+button.icon-end.xl,
+a.btn.icon-end.xl {
+    gap: 0.45em;
+    --_icon-size: 1.5rem;
+}
 
-button.icon-start svg, a.btn.icon-start svg,
-button.icon-end svg,   a.btn.icon-end svg {
-  width: 1em;
-  height: 1em;
-  flex-shrink: 0;
-  pointer-events: none;
+button.icon-start svg,
+a.btn.icon-start svg,
+button.icon-end svg,
+a.btn.icon-end svg {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    pointer-events: none;
 }
 
 /* ==========================================================================
@@ -1539,7 +1592,7 @@ button.icon-end svg,   a.btn.icon-end svg {
 ========================================================================== */
 
 iconify-icon {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 /* ==========================================================================

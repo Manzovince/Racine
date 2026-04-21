@@ -24,7 +24,7 @@
 
     <!-- ================================================================
        HEADER — Navigation principale
-  ================================================================== -->
+     ================================================================== -->
     <header>
         <h1 class="font-serif" style="font-size: var(--font-size-3xl);">Racine.css</h1>
         <nav>
@@ -35,6 +35,9 @@
                 <li><a href="#tableaux">Tableaux</a></li>
                 <li><a href="#formulaires">Formulaires</a></li>
                 <li><a href="#composants">Composants</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#buttons">Boutons</a></li>
+                <li><a href="#icons">Icons</a></li>
             </ul>
         </nav>
         <button id="theme-toggle" class="flat icon"><iconify-icon icon="lucide:moon"></iconify-icon></button>
@@ -43,7 +46,7 @@
 
     <!-- ================================================================
        NAVIGATION secondaire (breadcrumb / subnav)
-  ================================================================== -->
+     ================================================================== -->
     <nav>
         <ul>
             <li><a href="#">Accueil</a></li>
@@ -61,11 +64,13 @@
         <section id="hero">
             <h1>Un système de conception minimaliste</h1>
             <p>
-                <strong>Racine.css</strong> stylise n'importe quelle page HTML5.
+                <strong>Racine.css</strong> stylise n'importe quelle page HTML5. Sans classes, mais avec classe.
             </p>
         </section>
 
-        <!-- ── COLORS ───────────────────────────────────────────── -->
+        <!-- ================================================================
+            COLORS
+         ================================================================== -->
         <section id="colors">
             <h2>Palette de couleur</h2>
 
@@ -113,7 +118,9 @@
             <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
         </section>
 
-        <!-- ── TYPOGRAPHIE ───────────────────────────────────────────── -->
+        <!-- ================================================================
+            TYPOGRAPHIE
+         ================================================================== -->
         <section id="typo">
             <h2>Typographie</h2>
 
@@ -183,7 +190,9 @@
 
         </section>
 
-        <!-- ── LISTES ─────────────────────────────────────────────────── -->
+        <!-- ================================================================
+            LISTES
+         ================================================================== -->
         <section id="listes">
             <h2>Listes</h2>
 
@@ -224,7 +233,9 @@
 
         </section>
 
-        <!-- ── TABLEAUX ───────────────────────────────────────────────── -->
+        <!-- ================================================================
+            TABLEAUX
+         ================================================================== -->
         <section id="tableaux">
             <h2>Tableaux</h2>
 
@@ -278,7 +289,10 @@
 
         </section>
 
-        <!-- ── FORMULAIRES ────────────────────────────────────────────── -->
+        <!-- ================================================================
+            FORMULAIRES
+         ================================================================== -->
+
         <section id="formulaires">
             <h2>Formulaires</h2>
 
@@ -390,9 +404,11 @@
 
         </section>
 
-        <!-- ── COMPOSANTS DIVERS ──────────────────────────────────────── -->
+        <!-- ================================================================
+            COMPOSANTS INTERACTIF
+         ================================================================== -->
         <section id="composants">
-            <h2>Composants divers</h2>
+            <h2>Composants interactifs</h2>
 
             <h3>Encart (aside)</h3>
             <aside>
@@ -436,31 +452,24 @@
                 </p>
             </details>
 
-            <h3>Dialog</h3>
-            <dialog open style="position:fixed; top:50%; left: 50%; transform: translate(-50%, -50%);">
+            <h3>Modale <i>(dialog)</i></h3>
+            <button onclick="document.getElementById('dialog1').showModal();">Ouvrir la modale</button>
+            <dialog id="dialog1">
                 <h3>Titre du dialog</h3>
+                <form method="dialog">
+                    <button type="submit" class="flat icon"><iconify-icon icon="mdi:close"></iconify-icon></button>
+                </form>
                 <p>Voici un élément natif de "dialog".</p>
-                <button>Action</button>
                 <form method="dialog">
                     <button type="submit" class="flat">Fermer</button>
                 </form>
             </dialog>
 
             <h3>Popover</h3>
-            <button popovertarget="pop1">Afficher la popover</button>
-            <div popover id="pop1">
-                <p>Native popover content.</p>
+            <button popovertarget="pop1" style="anchor-name: --pop1;">Afficher la popover</button>
+            <div popover id="pop1" style="position-anchor: --pop1; top: anchor(bottom);left: anchor(50%);">
+                <p>Bonjour le monde !</p>
             </div>
-
-            <h3>Figure & image</h3>
-            <figure>
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80"
-                    alt="Code source affiché sur un écran d'ordinateur" loading="lazy" width="900" height="500">
-                <figcaption>
-                    Illustration : L'esthétique technique de Classless privilégie la lisibilité du contenu.
-                    Photo via Unsplash.
-                </figcaption>
-            </figure>
 
             <h3>Adresse</h3>
             <address>
@@ -478,11 +487,75 @@
 
         </section>
 
+        <!-- ================================================================
+            MEDIA
+         ================================================================== -->
+        <section id="media">
+            <h1>Media</h1>
+            <h3>Figure & image</h3>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80"
+                    alt="Code source affiché sur un écran d'ordinateur" loading="lazy" width="900" height="500">
+                <figcaption>
+                    Illustration : L'esthétique technique de Classless privilégie la lisibilité du contenu.
+                    Photo via Unsplash.
+                </figcaption>
+            </figure>
+
+            <h3>Image Map</h3>
+            <img src="map.png" alt="Image map" usemap="#map-example" width="200" height="100">
+            <map name="map-example">
+                <area shape="rect" coords="0,0,100,100" href="#" alt="Left half">
+                <area shape="circle" coords="150,50,40" href="#" alt="Right circle">
+            </map>
+
+            <h3>Audio</h3>
+            <audio controls preload="metadata">
+                <source src="audio.ogg" type="audio/ogg">
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+                <track kind="captions" src="captions.vtt" srclang="en" label="English">
+            </audio>
+
+            <h3>Video</h3>
+            <video controls width="320" height="240" poster="poster.png" preload="metadata">
+                <source src="video.webm" type="video/webm">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video element.
+                <track kind="subtitles" src="subtitles.vtt" srclang="fr" label="Français">
+                <track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters">
+            </video>
+
+            <h3>Canvas</h3>
+            <canvas id="canvas-el" width="200" height="100">
+                Canvas not supported.
+            </canvas>
+
+            <h3>SVG (inline)</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" role="img"
+                aria-label="A circle">
+                <title>Circle</title>
+                <desc>A simple filled circle</desc>
+                <circle cx="50" cy="50" r="40" fill="black"></circle>
+            </svg>
+
+            <h3>Iframe</h3>
+            <iframe src="https://example.com" width="600" height="300" title="Example iframe" loading="lazy"
+                sandbox="allow-scripts"></iframe>
+
+            <h3>Object &amp; Embed</h3>
+            <object data="file.pdf" type="application/pdf" width="300" height="150">
+                <p>PDF not supported. <a href="file.pdf">Download</a>.</p>
+            </object>
+
+            <embed src="file.swf" type="application/x-shockwave-flash" width="200" height="100">
+        </section>
+
 
         <!-- ================================================================
-         BUTTONS
+            BUTTONS
          ================================================================== -->
-        <section>
+        <section id="buttons">
 
             <h1>Boutons</h1>
             <h3>Styles</h3>

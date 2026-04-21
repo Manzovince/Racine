@@ -1171,6 +1171,13 @@ dialog {
     width: 100%;
 }
 
+dialog form:first-of-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--space-xl);
+}
+
 dialog::backdrop {
     background-color: rgb(22 22 22 / 0.7);
     backdrop-filter: blur(4px);
@@ -1178,10 +1185,10 @@ dialog::backdrop {
 
 /* ── Popover ─────────────────────────────────────────────────────────── */
 [popover]:popover-open {
-    width: 300px;
-    padding: 20px;
+    max-width: 65ch;
+    padding: var(--space-sm);
     border: solid var(--border-width) var(--color-border);
-    background-color: white;
+    background-color: var(--color-bg);
 }
 
 /* ── Address ─────────────────────────────────────────────────────────── */

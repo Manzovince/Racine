@@ -29,7 +29,7 @@
         <h1 class="font-serif" style="font-size: var(--font-size-3xl);">Racine.css</h1>
         <nav>
             <ul>
-                <li><a href="#color">Couleurs</a></li>
+                <li><a href="#colors">Couleurs</a></li>
                 <li><a href="#typo">Typographie</a></li>
                 <li><a href="#listes">Listes</a></li>
                 <li><a href="#tableaux">Tableaux</a></li>
@@ -412,15 +412,14 @@
         <section id="composants">
             <h2>Composants interactifs</h2>
 
-            <h3>Encart (aside)</h3>
+            <h4>Encart <i>(aside)</i></h4>
             <aside>
                 <strong>Note :</strong> Ce framework est conçu comme une fondation.
                 Les variables CSS permettent de surcharger l'ensemble du design en quelques lignes.
                 Commencez par modifier <code>--color-primary</code> et <code>--font-sans</code>.
             </aside>
 
-            <h3>Accordéons (details/summary)</h3>
-
+            <h4>Accordéons <i>(details/summary)</i></h4>
             <details>
                 <summary>Comment personnaliser les couleurs ?</summary>
                 <p>
@@ -429,7 +428,6 @@
                     Toutes les couleurs se mettront à jour automatiquement.
                 </p>
             </details>
-
             <details open>
                 <summary>Comment ajouter un thème sombre ?</summary>
                 <p>
@@ -444,7 +442,6 @@
                 }
                 }</code></pre>
             </details>
-
             <details>
                 <summary>Y a-t-il des dépendances JavaScript ?</summary>
                 <p>
@@ -454,7 +451,7 @@
                 </p>
             </details>
 
-            <h3>Modale <i>(dialog)</i></h3>
+            <h4>Modale <i>(dialog)</i></h4>
             <button onclick="document.getElementById('dialog1').showModal();">Ouvrir la modale</button>
             <dialog id="dialog1">
                 <h3>Titre du dialog</h3>
@@ -467,13 +464,13 @@
                 </form>
             </dialog>
 
-            <h3>Popover</h3>
+            <h4>Popover</h4>
             <button popovertarget="pop1" style="anchor-name: --pop1;">Afficher la popover</button>
-            <div popover id="pop1" style="position-anchor: --pop1; top: anchor(bottom);left: anchor(50%);">
+            <div popover id="pop1" style="position-anchor: --pop1; top: anchor(--pop1 center);left: anchor(right);">
                 <p>Bonjour le monde !</p>
             </div>
 
-            <h3>Adresse</h3>
+            <h4>Adresse</h4>
             <address>
                 <strong>Anthropic</strong><br>
                 548 Market St, PMB 90375<br>
@@ -481,7 +478,7 @@
                 <a href="mailto:hello@anthropic.com">hello@anthropic.com</a>
             </address>
 
-            <h3>Horodatage</h3>
+            <h4>Horodatage</h4>
             <p>
                 Dernière mise à jour :
                 <time datetime="2026-01-01">1er Janvier 2026</time>.
@@ -494,7 +491,7 @@
          ================================================================== -->
         <section id="media">
             <h1>Media</h1>
-            <h3>Figure & image</h3>
+            <h4>Figure & image</h4>
             <figure>
                 <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80"
                     alt="Code source affiché sur un écran d'ordinateur" loading="lazy" width="900" height="500">
@@ -504,14 +501,14 @@
                 </figcaption>
             </figure>
 
-            <h3>Image Map</h3>
+            <h4>Image Map</h4>
             <img src="map.png" alt="Image map" usemap="#map-example" width="200" height="100">
             <map name="map-example">
                 <area shape="rect" coords="0,0,100,100" href="#" alt="Left half">
                 <area shape="circle" coords="150,50,40" href="#" alt="Right circle">
             </map>
 
-            <h3>Audio</h3>
+            <h4>Audio</h4>
             <audio controls preload="metadata">
                 <source src="audio.ogg" type="audio/ogg">
                 <source src="audio.mp3" type="audio/mpeg">
@@ -519,7 +516,7 @@
                 <track kind="captions" src="captions.vtt" srclang="en" label="English">
             </audio>
 
-            <h3>Video</h3>
+            <h4>Video</h4>
             <video controls width="320" height="240" poster="poster.png" preload="metadata">
                 <source src="video.webm" type="video/webm">
                 <source src="video.mp4" type="video/mp4">
@@ -528,12 +525,12 @@
                 <track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters">
             </video>
 
-            <h3>Canvas</h3>
+            <h4>Canvas</h4>
             <canvas id="canvas-el" width="200" height="100">
                 Canvas not supported.
             </canvas>
 
-            <h3>SVG (inline)</h3>
+            <h4>SVG (inline)</h4>
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" role="img"
                 aria-label="A circle">
                 <title>Circle</title>
@@ -541,11 +538,11 @@
                 <circle cx="50" cy="50" r="40" fill="black"></circle>
             </svg>
 
-            <h3>Iframe</h3>
+            <h4>Iframe</h4>
             <iframe src="https://example.com" width="600" height="300" title="Example iframe" loading="lazy"
                 sandbox="allow-scripts"></iframe>
 
-            <h3>Object &amp; Embed</h3>
+            <h4>Object &amp; Embed</h4>
             <object data="file.pdf" type="application/pdf" width="300" height="150">
                 <p>PDF not supported. <a href="file.pdf">Download</a>.</p>
             </object>

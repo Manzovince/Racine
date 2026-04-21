@@ -14,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet">
-    <!-- Icons -->
+    <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="racine.css">
@@ -37,7 +37,7 @@
                 <li><a href="#composants">Composants</a></li>
             </ul>
         </nav>
-        <button id="theme-toggle" class="flat"><iconify-icon icon="lucide:moon"></iconify-icon></button>
+        <button id="theme-toggle" class="flat icon"><iconify-icon icon="lucide:moon"></iconify-icon></button>
 
     </header>
 
@@ -226,6 +226,10 @@
             <h5>Titre h5 — Niveau 5</h5>
             <h6>Titre h6 — Niveau 6</h6>
 
+            <p class="font-serif" style="font-size: 2.5rem;">
+                Un texte avec <strong>Cormorant Garamond</strong>, qui fonctionne aussi en <i>italique</i>.
+            </p>
+
             <p>
                 Le corps de texte utilise <strong>IBM Plex Sans</strong> en 16px avec une hauteur de ligne
                 de 1.75 pour une lisibilité optimale. Les paragraphes sont naturellement contraints à
@@ -243,10 +247,6 @@
                 <abbr title="Cascading Style Sheets">CSS</abbr> sont marquées avec un soulignement pointillé.
                 Le code inline ressemble à <code>display: block</code> et les raccourcis clavier à
                 <kbd>Ctrl</kbd> + <kbd>K</kbd>.
-            </p>
-
-            <p class="font-serif" style="font-size: 2.5rem;">
-                Un titre avec <strong>Cormorant Garamond</strong> en <i>italique</i>.
             </p>
 
             <blockquote>
@@ -562,9 +562,10 @@
 
             <h1>Boutons</h1>
             <h3>Styles</h3>
+            <p>Quatre styles disponibles. Sans classe de style, <code>solid</code> s'applique par défaut.</p>
 
             <!-- ── SOLID ──────────────────────────────────────────────────── -->
-            <h5>Solid (défaut)</h5>
+            <h5>Solid</h5>
             <div>
                 <button>Primary</button>
                 <button class="success">Success</button>
@@ -649,34 +650,86 @@
                 <button class="lg flat">LG</button>
                 <button class="xl flat">XL</button>
             </div>
+
+            <!-- ── WITH ICONS ────────────────────────────────────────────── -->
+            <h3>Avec icons</h3>
+            <p>Fonctionne avec <code>icon</code>, <code>icon-start</code> ou <code>icon-end</code>.</p>
+
+            <div>
+                <button class="flat icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
+                <button class="outline icon-start"><iconify-icon icon="mdi:home"></iconify-icon>Home</button>
+                <button class="danger icon-end sm"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
+                <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
+            </div>
         </section>
 
+
+        <!-- ================================================================
+            ICONS
+        ================================================================== -->
         <section id="icons">
             <h1>Icons</h1>
 
             <!-- ── MATERIAL ───────────────────────────────────────────────── -->
-             <h5>Material icons</h5>
+            <h5>Material icons</h5>
             <iconify-icon icon="mdi:home"></iconify-icon>
+            <iconify-icon icon="mdi:heart"></iconify-icon>
+            <iconify-icon icon="mdi:star"></iconify-icon>
+            <iconify-icon icon="mdi:bell"></iconify-icon>
+            <iconify-icon icon="mdi:delete"></iconify-icon>
+            <iconify-icon icon="mdi:cloud-upload"></iconify-icon>
 
             <!-- ── LUCIDE ─────────────────────────────────────────────────── -->
-             <h5>Lucide icons</h5>
-            <iconify-icon icon="lucide:home" style="stroke-width: 1px; stroke: red;"></iconify-icon>
+            <h5>Lucide icons</h5>
+            <iconify-icon icon="lucide:home"></iconify-icon>
             <iconify-icon icon="lucide:settings"></iconify-icon>
             <iconify-icon icon="lucide:user"></iconify-icon>
             <iconify-icon icon="lucide:search"></iconify-icon>
+            <iconify-icon icon="lucide:shopping-cart"></iconify-icon>
+            <iconify-icon icon="lucide:mail"></iconify-icon>
+            <iconify-icon icon="lucide:calendar"></iconify-icon>
+            <iconify-icon icon="lucide:chart-bar"></iconify-icon>
 
             <!-- ── SOCIAL MEDIA ───────────────────────────────────────────── -->
-             <h5>Social media</h5>
+            <h5>Social media</h5>
             <iconify-icon icon="line-md:github-loop"></iconify-icon>
             <iconify-icon icon="logos:discord-icon"></iconify-icon>
             <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
             <iconify-icon icon="skill-icons:instagram"></iconify-icon>
+            <iconify-icon icon="logos:youtube-icon"></iconify-icon>
+            <iconify-icon icon="logos:linkedin-icon"></iconify-icon>
+            <iconify-icon icon="logos:twitch"></iconify-icon>
+            <iconify-icon icon="logos:reddit-icon"></iconify-icon>
+
+            <!-- ── TECH / DEV ─────────────────────────────────────────────── -->
+            <h5>Tech & Dev</h5>
+            <iconify-icon icon="logos:javascript"></iconify-icon>
+            <iconify-icon icon="logos:typescript-icon"></iconify-icon>
+            <iconify-icon icon="logos:react"></iconify-icon>
+            <iconify-icon icon="logos:vue"></iconify-icon>
+            <iconify-icon icon="logos:python"></iconify-icon>
+            <iconify-icon icon="logos:git-icon"></iconify-icon>
+            <iconify-icon icon="logos:figma"></iconify-icon>
+            <iconify-icon icon="logos:docker-icon"></iconify-icon>
+
+            <!-- ── FLAGS ──────────────────────────────────────────────────── -->
+            <h5>Flags</h5>
+            <iconify-icon icon="flag:fr-4x3"></iconify-icon>
+            <iconify-icon icon="flag:gb-4x3"></iconify-icon>
+            <iconify-icon icon="flag:us-4x3"></iconify-icon>
+            <iconify-icon icon="flag:de-4x3"></iconify-icon>
+            <iconify-icon icon="flag:jp-4x3"></iconify-icon>
 
             <!-- ── ANIMATED ───────────────────────────────────────────────── -->
-             <h5>Animated</h5>
+            <h5>Animated</h5>
             <iconify-icon icon="line-md:confirm-circle"></iconify-icon>
             <iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon>
             <iconify-icon icon="line-md:sun-rising-loop"></iconify-icon>
+            <iconify-icon icon="line-md:alert-circle-loop"></iconify-icon>
+            <iconify-icon icon="line-md:heart-filled"></iconify-icon>
+            <iconify-icon icon="line-md:downloading-loop"></iconify-icon>
+            <iconify-icon icon="svg-spinners:ring-resize"></iconify-icon>
+            <iconify-icon icon="svg-spinners:pulse-rings-3"></iconify-icon>
         </section>
 
     </main>

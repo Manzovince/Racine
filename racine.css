@@ -10,37 +10,37 @@
 
 :root {
     /* ── Couleurs ────────────────────────────────────────────────────── */
-    --color-bg: #ffffff;
-    --color-bg-subtle: #f4f4f4;
-    --color-bg-ui: #e0e0e0;
-    --color-bg-hover: #d1d1d1;
-    --color-bg-active: #c6c6c6;
+    --color-bg: oklch(100% 0.00011 271.152);
+    --color-bg-subtle: oklch(96.715% 0.00011 271.152);
+    --color-bg-ui: oklch(90.67% 0.0001 271.152);
+    --color-bg-hover: oklch(86.07% 0.0001 271.152);
+    --color-bg-active: oklch(82.656% 0.00009 271.152);
 
-    --color-border: #8d8d8d;
-    --color-border-subtle: #e0e0e0;
-    --color-border-strong: #161616;
+    --color-border: oklch(64.341% 0.00007 271.152);
+    --color-border-subtle: oklch(90.67% 0.0001 271.152);
+    --color-border-strong: oklch(20.019% 0.00002 271.152);
 
-    --color-text: #161616;
-    --color-text-secondary: #525252;
-    --color-text-placeholder: #a8a8a8;
-    --color-text-disabled: #c6c6c6;
-    --color-text-inverse: #ffffff;
+    --color-text: oklch(20.019% 0.00002 271.152);
+    --color-text-secondary: oklch(43.861% 0.00005 271.152);
+    --color-text-placeholder: oklch(73.16% 0.00008 271.152);
+    --color-text-disabled: oklch(82.656% 0.00009 271.152);
+    --color-text-inverse: oklch(100% 0.00011 271.152);
 
-    --color-primary: #0f62fe;
-    --color-primary-hover: #0050e6;
-    --color-primary-active: #002d9c;
+    --color-primary: oklch(55.655% 0.24308 261.969);
+    --color-primary-hover: oklch(50.049% 0.23561 262.243);
+    --color-primary-active: oklch(36.297% 0.18401 263.073);
     --color-primary-discreet: oklch(55.838% 0.24195 261.841 / 0.2);
 
     --color-accent: color-mix(in srgb, var(--color-primary) 80%, white);
     --color-accent-hover: color-mix(in srgb, var(--color-primary) 90%, white);
 
-    --color-success: #198038;
-    --color-warning: #f1c21b;
-    --color-danger: #da1e28;
-    --color-info: #0043ce;
+    --color-success: oklch(52.722% 0.14074 148.316);
+    --color-warning: oklch(83.212% 0.16547 90.445);
+    --color-danger: oklch(56.921% 0.21741 25.916);
+    --color-info: oklch(45.403% 0.22109 262.649);
 
-    --color-focus: #0f62fe;
-    --color-focus-inset: #ffffff;
+    --color-focus: oklch(55.655% 0.24308 261.969);
+    --color-focus-inset: oklch(100% 0.00011 271.152);
 
     /* ── Typographie ─────────────────────────────────────────────────── */
     --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -1487,12 +1487,58 @@ a.btn[aria-disabled="true"] {
     pointer-events: none;
 }
 
+/* ── Icône seule (bouton carré) ──────────────────────────────────────── */
+button.icon,
+a.btn.icon {
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  --_icon-size: 1.125rem;
+}
+
+button.icon.sm,  a.btn.icon.sm  { width: 2rem;   height: 2rem;   --_icon-size: 1rem; }
+button.icon,     a.btn.icon     { width: 2.5rem;  height: 2.5rem; --_icon-size: 1.125rem; }
+button.icon.lg,  a.btn.icon.lg  { width: 3rem;   height: 3rem;   --_icon-size: 1.25rem; }
+button.icon.xl,  a.btn.icon.xl  { width: 3.5rem;  height: 3.5rem; --_icon-size: 1.5rem; }
+
+button.icon svg,
+a.btn.icon svg {
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* ── Icône + label ───────────────────────────────────────────────────── */
+button.icon-start,
+button.icon-end,
+a.btn.icon-start,
+a.btn.icon-end {
+  gap: 0.8em;
+}
+
+button.icon-start.sm, a.btn.icon-start.sm,
+button.icon-end.sm,   a.btn.icon-end.sm  { gap: 0.3em; --_icon-size: 1rem; }
+
+button.icon-start.lg, a.btn.icon-start.lg,
+button.icon-end.lg,   a.btn.icon-end.lg  { gap: 0.4em; --_icon-size: 1.25rem; }
+
+button.icon-start.xl, a.btn.icon-start.xl,
+button.icon-end.xl,   a.btn.icon-end.xl  { gap: 0.45em; --_icon-size: 1.5rem; }
+
+button.icon-start svg, a.btn.icon-start svg,
+button.icon-end svg,   a.btn.icon-end svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
 /* ==========================================================================
   ICONS
 ========================================================================== */
 
 iconify-icon {
-  color: var(--color-primary);
   font-size: 24px;
 }
 

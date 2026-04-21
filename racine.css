@@ -128,8 +128,7 @@
     --focus-offset: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
+[data-theme="dark"] {
         /* Arrière-plans */
         --color-bg: #161616;
         --color-bg-subtle: #262626;
@@ -162,7 +161,6 @@
         --color-danger: #ff8389;
         --color-info: #78a9ff;
         --color-focus: #4589ff;
-    }
 }
 
 /* ==========================================================================

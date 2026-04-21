@@ -27,6 +27,7 @@
         <h1>Racine.css</h1>
         <nav>
             <ul>
+                <li><a href="#color">Colors</a></li>
                 <li><a href="#typo">Typographie</a></li>
                 <li><a href="#listes">Listes</a></li>
                 <li><a href="#tableaux">Tableaux</a></li>
@@ -34,7 +35,7 @@
                 <li><a href="#composants">Composants</a></li>
             </ul>
         </nav>
-        <button id="theme-toggle" aria-label="Toggle theme" class="flat">Light 🌙</button>
+        <button id="theme-toggle" class="flat">🌙</button>
 
     </header>
 
@@ -60,6 +61,11 @@
             <p>
                 <strong>Racine.css</strong> stylise n'importe quelle page HTML5.
             </p>
+        </section>
+
+        <!-- ── COLORS ───────────────────────────────────────────── -->
+        <section id="color">
+            <h1>Color palette</h1>
         </section>
 
         <!-- ── TYPOGRAPHIE ───────────────────────────────────────────── -->
@@ -408,207 +414,101 @@
         <section>
 
             <h1>Boutons</h1>
+            <h3>Styles</h3>
 
             <!-- ── SOLID ──────────────────────────────────────────────────── -->
-            <div id="solid">
-                <h3>Solid (défaut)</h3>
-                <p>Aucune classe de style requise. C'est la variante par défaut.</p>
-
-                <h5>Couleurs</h5>
-                <div>
-                    <button>Primary</button>
-                    <button class="success">Success</button>
-                    <button class="warning">Warning</button>
-                    <button class="danger">Danger</button>
-                    <button class="info">Info</button>
-                </div>
-
-                <h5>Sur balise <code>&lt;a&gt;</code></h5>
-                <div>
-                    <a class="btn" href="#">Primary</a>
-                    <a class="btn success" href="#">Success</a>
-                    <a class="btn warning" href="#">Warning</a>
-                    <a class="btn danger" href="#">Danger</a>
-                    <a class="btn info" href="#">Info</a>
-                </div>
-
-                <h5>Désactivés</h5>
-                <div>
-                    <button disabled>Primary</button>
-                    <button class="success" disabled>Success</button>
-                    <button class="warning" disabled>Warning</button>
-                    <button class="danger" disabled>Danger</button>
-                    <button class="info" disabled>Info</button>
-                </div>
+            <h5>Solid (défaut)</h5>
+            <div>
+                <button>Primary</button>
+                <button class="success">Success</button>
+                <button class="warning">Warning</button>
+                <button class="danger">Danger</button>
+                <button class="info">Info</button>
             </div>
 
             <!-- ── OUTLINE ────────────────────────────────────────────────── -->
-            <section id="outline">
-                <h3>Outline</h3>
-                <p>Fond transparent, bordure et texte colorés. Le hover remplit le fond.</p>
+            <h5>Outline</h5>
+            <div>
+                <button class="outline">Primary</button>
+                <button class="outline success">Success</button>
+                <button class="outline warning">Warning</button>
+                <button class="outline danger">Danger</button>
+                <button class="outline info">Info</button>
+            </div>
 
-                <h5>Couleurs</h5>
-                <div>
-                    <button class="outline">Primary</button>
-                    <button class="outline success">Success</button>
-                    <button class="outline warning">Warning</button>
-                    <button class="outline danger">Danger</button>
-                    <button class="outline info">Info</button>
-                </div>
-
-                <h5>Désactivés</h5>
-                <div>
-                    <button class="outline" disabled>Primary</button>
-                    <button class="outline success" disabled>Success</button>
-                    <button class="outline warning" disabled>Warning</button>
-                    <button class="outline danger" disabled>Danger</button>
-                    <button class="outline info" disabled>Info</button>
-                </div>
-            </section>
 
             <!-- ── DISCREET ───────────────────────────────────────────────── -->
-            <section id="discreet">
-                <h3>Discreet</h3>
-                <p>Fond coloré très léger (14% opacité), texte coloré, sans bordure. Parfait pour les badges d'action ou
-                    les
-                    zones de notification.
-                </p>
+            <h5>Discreet</h5>
+            <div>
+                <button class="discreet">Primary</button>
+                <button class="discreet success">Success</button>
+                <button class="discreet warning">Warning</button>
+                <button class="discreet danger">Danger</button>
+                <button class="discreet info">Info</button>
+            </div>
 
-                <h5>Couleurs</h5>
-                <div>
-                    <button class="discreet">Primary</button>
-                    <button class="discreet success">Success</button>
-                    <button class="discreet warning">Warning</button>
-                    <button class="discreet danger">Danger</button>
-                    <button class="discreet info">Info</button>
-                </div>
 
-                <h5>Désactivés</h5>
-                <div>
-                    <button class="discreet" disabled>Primary</button>
-                    <button class="discreet success" disabled>Success</button>
-                    <button class="discreet warning" disabled>Warning</button>
-                    <button class="discreet danger" disabled>Danger</button>
-                    <button class="discreet info" disabled>Info</button>
-                </div>
-            </section>
+            <h5>Flat</h5>
+            <div>
+                <button class="flat">Primary</button>
+                <button class="flat success">Success</button>
+                <button class="flat warning">Warning</button>
+                <button class="flat danger">Danger</button>
+                <button class="flat info">Info</button>
+            </div>
 
-            <!-- ── FLAT ───────────────────────────────────────────────────── -->
-            <section id="flat">
-                <h3>Flat</h3>
-                <p>Pas de fond ni de bordure au repos. Le hover révèle un fond léger. Idéal pour les actions
-                    tertiaires.</p>
+            <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
+            <h5>Balise a</h5>
+            <div>
+                <a class="btn">primary</a>
+                <a class="btn outline">outline</a>
+                <a class="btn discreet">discreet</a>
+                <a class="btn flat">flat</a>
+            </div>
 
-                <h5>Couleurs</h5>
-                <div>
-                    <button class="flat">Primary</button>
-                    <button class="flat success">Success</button>
-                    <button class="flat warning">Warning</button>
-                    <button class="flat danger">Danger</button>
-                    <button class="flat info">Info</button>
-                </div>
-
-                <h5>Désactivés</h5>
-                <div>
-                    <button class="flat" disabled>Primary</button>
-                    <button class="flat success" disabled>Success</button>
-                    <button class="flat warning" disabled>Warning</button>
-                    <button class="flat danger" disabled>Danger</button>
-                    <button class="flat info" disabled>Info</button>
-                </div>
-            </section>
 
             <!-- ── TAILLES ────────────────────────────────────────────────── -->
-            <section id="tailles">
-                <h3>Tailles</h3>
-                <p>Quatre tailles disponibles. Sans classe de taille, <code>md</code> s'applique par défaut.</p>
+            <h3>Tailles</h3>
+            <p>Quatre tailles disponibles. Sans classe de taille, <code>md</code> s'applique par défaut.</p>
 
-                <h5>Solid</h5>
-                <div>
-                    <button class="sm">SM</button>
-                    <button>MD</button>
-                    <button class="lg">LG</button>
-                    <button class="xl">XL</button>
-                </div>
+            <h5>Solid</h5>
+            <div>
+                <button class="sm">SM</button>
+                <button>MD</button>
+                <button class="lg">LG</button>
+                <button class="xl">XL</button>
+            </div>
 
-                <h5>Outline</h5>
-                <div>
-                    <button class="sm outline">SM</button>
-                    <button class="outline">MD</button>
-                    <button class="lg outline">LG</button>
-                    <button class="xl outline">XL</button>
-                </div>
+            <h5>Outline</h5>
+            <div>
+                <button class="sm outline">SM</button>
+                <button class="outline">MD</button>
+                <button class="lg outline">LG</button>
+                <button class="xl outline">XL</button>
+            </div>
 
-                <h5>Discreet</h5>
-                <div>
-                    <button class="sm discreet">SM</button>
-                    <button class="discreet">MD</button>
-                    <button class="lg discreet">LG</button>
-                    <button class="xl discreet">XL</button>
-                </div>
+            <h5>Discreet</h5>
+            <div>
+                <button class="sm discreet">SM</button>
+                <button class="discreet">MD</button>
+                <button class="lg discreet">LG</button>
+                <button class="xl discreet">XL</button>
+            </div>
 
-                <h5>Flat</h5>
-                <div>
-                    <button class="sm flat">SM</button>
-                    <button class="flat">MD</button>
-                    <button class="lg flat">LG</button>
-                    <button class="xl flat">XL</button>
-                </div>
-            </section>
-
-            <!-- ── COMBINAISONS LIBRES ────────────────────────────────────── -->
-            <section id="combos">
-                <h3>Combinaisons libres</h3>
-                <p>Exemples d'usage réel combinant style + taille + couleur.</p>
-
-                <h5>Actions critiques</h5>
-                <p>
-                    <button class="danger">Supprimer le compte</button>
-                    <button class="outline danger">Annuler</button>
-                </p>
-
-                <h5>Validation de formulaire</h5>
-                <p>
-                    <button class="lg">Enregistrer</button>
-                    <button class="lg discreet">Annuler</button>
-                </p>
-
-                <h5>Barre d'outils</h5>
-                <p>
-                    <button class="sm flat info">Filtrer</button>
-                    <button class="sm flat info">Trier</button>
-                    <button class="sm flat info">Exporter</button>
-                    <button class="sm outline danger">Supprimer</button>
-                </p>
-
-                <h5>Call-to-action</h5>
-                <p>
-                    <button class="xl">Commencer gratuitement</button>
-                    <button class="xl outline">Voir la démo</button>
-                </p>
-
-                <h5>Notifications inline</h5>
-                <p>
-                    <button class="sm discreet success">Confirmé</button>
-                    <button class="sm discreet warning">En attente</button>
-                    <button class="sm discreet danger">Erreur</button>
-                    <button class="sm discreet info">En cours</button>
-                </p>
-
-                <h5>Navigation par liens</h5>
-                <p>
-                    <a class="btn lg" href="#">Documentation</a>
-                    <a class="btn lg outline info" href="#">GitHub</a>
-                    <a class="btn lg discreet" href="#">Changelog</a>
-                </p>
-            </section>
+            <h5>Flat</h5>
+            <div>
+                <button class="sm flat">SM</button>
+                <button class="flat">MD</button>
+                <button class="lg flat">LG</button>
+                <button class="xl flat">XL</button>
+            </div>
         </section>
 
     </main>
 
     <!-- ================================================================
        FOOTER
-  ================================================================== -->
+    ================================================================== -->
     <footer>
         <p>
             <strong>Racine.css v0.0.1</strong>
@@ -621,5 +521,7 @@
     </footer>
 
 </body>
+
+<script src="./main.js"></script>
 
 </html>

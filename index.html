@@ -26,7 +26,7 @@
        HEADER — Navigation principale
   ================================================================== -->
     <header>
-        <h1>Racine.css</h1>
+        <h1 class="font-serif" style="font-size: var(--font-size-3xl);">Racine.css</h1>
         <nav>
             <ul>
                 <li><a href="#color">Couleurs</a></li>
@@ -69,36 +69,43 @@
         <section id="colors">
             <h2>Palette de couleur</h2>
 
-            <h5>Background</h5>
+            <h5>Fond</h5>
             <div style="background:var(--color-bg);border:.5px solid var(--color-border-subtle)">--color-bg</div>
             <div style="background:var(--color-bg-subtle)">--color-bg-subtle</div>
             <div style="background:var(--color-bg-ui)">--color-bg-ui</div>
             <div style="background:var(--color-bg-hover)">--color-bg-hover</div>
             <div style="background:var(--color-bg-active)">--color-bg-active</div>
 
-            <h5>Border</h5>
+            <h5>Bordure</h5>
             <div style="background:var(--color-border)">--color-border</div>
             <div style="background:var(--color-border-subtle)">--color-border-subtle</div>
-            <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong</div>
+            <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong
+            </div>
 
-            <h5>Text</h5>
+            <h5>Texte</h5>
             <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
-            <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">--color-text-secondary</div>
-            <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">--color-text-placeholder</div>
-            <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled</div>
-            <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">--color-text-inverse</div>
+            <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">--color-text-secondary
+            </div>
+            <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">
+                --color-text-placeholder</div>
+            <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled
+            </div>
+            <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">
+                --color-text-inverse</div>
 
-            <h5>Primary</h5>
+            <h5>Principale</h5>
             <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
-            <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover</div>
-            <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">--color-primary-active</div>
+            <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover
+            </div>
+            <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">--color-primary-active
+            </div>
             <div style="background:var(--color-primary-discreet)">--color-primary-discreet</div>
 
-            <h5>Accent</h5>
+            <h5>Accentuée</h5>
             <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
             <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover</div>
 
-            <h5>Contextual</h5>
+            <h5>Contextuelle</h5>
             <div style="background:var(--color-success);color:var(--color-text-inverse)">--color-success</div>
             <div style="background:var(--color-warning)">--color-warning</div>
             <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
@@ -130,7 +137,8 @@
             <p>
                 Les liens sont <a href="#">clairement identifiables</a> grâce à leur couleur primaire.
                 Le texte peut être <strong>en gras</strong>, <em>en italique</em>,
-                <mark>surligné</mark>, <del>barré</del>, ou rendu en <small>petite taille</small>.
+                <mark>surligné</mark>, <del>barré</del>, en <sub>sub</sub>, <sup>sup</sup> ou rendu en <small>petite
+                    taille</small>.
             </p>
 
             <p>
@@ -139,6 +147,13 @@
                 Le code inline ressemble à <code>display: block</code> et les raccourcis clavier à
                 <kbd>Ctrl</kbd> + <kbd>K</kbd>.
             </p>
+
+            <p>Annotation Ruby: <ruby>漢<rp>(</rp>
+                    <rt>かん</rt>
+                    <rp>)</rp>字<rp>(</rp>
+                    <rt>じ</rt>
+                    <rp>)</rp>
+                </ruby></p>
 
             <blockquote>
                 <p>
@@ -162,6 +177,8 @@
   &lt;p&gt;Contenu…&lt;/p&gt;
 &lt;/article&gt;</code></pre>
 
+
+            <h5>Séparation</h5>
             <hr>
 
         </section>
@@ -402,12 +419,12 @@
                     redéfinissez les variables de couleur. Les tokens sont déjà prêts à être surchargés :
                 </p>
                 <pre><code>@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg:   #161616;
-    --color-text: #f4f4f4;
-    /* … autres tokens … */
-  }
-}</code></pre>
+                :root {
+                    --color-bg:   #161616;
+                    --color-text: #f4f4f4;
+                    /* … autres tokens … */
+                }
+                }</code></pre>
             </details>
 
             <details>
@@ -418,6 +435,22 @@
                     fonctionnent sans script.
                 </p>
             </details>
+
+            <h3>Dialog</h3>
+            <dialog open style="position:fixed; top:50%; left: 50%; transform: translate(-50%, -50%);">
+                <h3>Titre du dialog</h3>
+                <p>Voici un élément natif de "dialog".</p>
+                <button>Action</button>
+                <form method="dialog">
+                    <button type="submit" class="flat">Fermer</button>
+                </form>
+            </dialog>
+
+            <h3>Popover</h3>
+            <button popovertarget="pop1">Afficher la popover</button>
+            <div popover id="pop1">
+                <p>Native popover content.</p>
+            </div>
 
             <h3>Figure & image</h3>
             <figure>

@@ -246,7 +246,7 @@ body>header {
     align-items: center;
     gap: var(--space-lg);
     padding-block: var(--space-lg);
-    border-bottom: var(--border-width-heavy) solid var(--color-border-strong);
+    border-bottom: var(--border-width) solid var(--color-border-strong);
     position: sticky;
     top: 0;
     background-color: var(--color-bg);
@@ -306,7 +306,7 @@ body>header nav a {
     text-transform: uppercase;
     color: var(--color-text);
     text-decoration: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: var(--border-width) solid transparent;
     transition: color var(--transition-base), border-color var(--transition-base), background-color var(--transition-base);
 }
 
@@ -625,7 +625,7 @@ pre code {
 hr {
     margin-block: var(--space-3xl);
     border: none;
-    border-top: var(--border-width-heavy) solid var(--color-border-strong);
+    border-top: var(--border-width) solid var(--color-border);
 }
 
 /* ── Font utilities ──────────────────────────────────────────────────── */

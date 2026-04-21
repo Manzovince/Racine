@@ -29,7 +29,7 @@
         <h1>Racine.css</h1>
         <nav>
             <ul>
-                <li><a href="#color">Colors</a></li>
+                <li><a href="#color">Couleurs</a></li>
                 <li><a href="#typo">Typographie</a></li>
                 <li><a href="#listes">Listes</a></li>
                 <li><a href="#tableaux">Tableaux</a></li>
@@ -66,153 +66,44 @@
         </section>
 
         <!-- ── COLORS ───────────────────────────────────────────── -->
-        <section id="color">
-            <h1>Color palette</h1>
+        <section id="colors">
+            <h2>Palette de couleur</h2>
 
-            <div
-                style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:1rem">
+            <h5>Background</h5>
+            <div style="background:var(--color-bg);border:.5px solid var(--color-border-subtle)">--color-bg</div>
+            <div style="background:var(--color-bg-subtle)">--color-bg-subtle</div>
+            <div style="background:var(--color-bg-ui)">--color-bg-ui</div>
+            <div style="background:var(--color-bg-hover)">--color-bg-hover</div>
+            <div style="background:var(--color-bg-active)">--color-bg-active</div>
 
-                <!-- Backgrounds -->
-                <div>
-                    <div style="height:64px;background:var(--color-bg);border: 1px solid var(--color-border-subtle)">
-                    </div>
-                    <code>--color-bg</code>
-                </div>
+            <h5>Border</h5>
+            <div style="background:var(--color-border)">--color-border</div>
+            <div style="background:var(--color-border-subtle)">--color-border-subtle</div>
+            <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong</div>
 
-                <div>
-                    <div style="height:64px;background:var(--color-bg-subtle);">
-                    </div>
-                    <code>--color-bg-subtle</code>
-                </div>
+            <h5>Text</h5>
+            <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
+            <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">--color-text-secondary</div>
+            <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">--color-text-placeholder</div>
+            <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled</div>
+            <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">--color-text-inverse</div>
 
-                <div>
-                    <div style="height:64px;background:var(--color-bg-ui);"></div>
-                    <code>--color-bg-ui</code>
-                </div>
+            <h5>Primary</h5>
+            <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
+            <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover</div>
+            <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">--color-primary-active</div>
+            <div style="background:var(--color-primary-discreet)">--color-primary-discreet</div>
 
-                <div>
-                    <div style="height:64px;background:var(--color-bg-hover);"></div>
-                    <code>--color-bg-hover</code>
-                </div>
+            <h5>Accent</h5>
+            <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
+            <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover</div>
 
-                <div>
-                    <div style="height:64px;background:var(--color-bg-active);">
-                    </div>
-                    <code>--color-bg-active</code>
-                </div>
-
-                <!-- Borders -->
-                <div>
-                    <div style="height:64px;background:var(--color-border);"></div>
-                    <code>--color-border</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-border-subtle);">
-                    </div>
-                    <code>--color-border-subtle</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-border-strong);">
-                    </div>
-                    <code>--color-border-strong</code>
-                </div>
-
-                <!-- Text -->
-                <div>
-                    <div style="height:64px;background:var(--color-text);"></div>
-                    <code>--color-text</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-text-secondary);">
-                    </div>
-                    <code>--color-text-secondary</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-text-placeholder);">
-                    </div>
-                    <code>--color-text-placeholder</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-text-disabled);">
-                    </div>
-                    <code>--color-text-disabled</code>
-                </div>
-
-                <div>
-                    <div
-                        style="height:64px;background:var(--color-text-inverse);border: 1px solid var(--color-border-subtle)">
-                    </div>
-                    <code>--color-text-inverse</code>
-                </div>
-
-                <!-- Primary -->
-                <div>
-                    <div style="height:64px;background:var(--color-primary);"></div>
-                    <code>--color-primary</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-primary-hover);">
-                    </div>
-                    <code>--color-primary-hover</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-primary-active);">
-                    </div>
-                    <code>--color-primary-active</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-primary-discreet);">
-                    </div>
-                    <code>--color-primary-discreet</code>
-                </div>
-
-                <!-- Accent -->
-                <div>
-                    <div style="height:64px;background:var(--color-accent);"></div>
-                    <code>--color-accent</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-accent-hover);">
-                    </div>
-                    <code>--color-accent-hover</code>
-                </div>
-
-                <!-- Semantic -->
-                <div>
-                    <div style="height:64px;background:var(--color-success);"></div>
-                    <code>--color-success</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-warning);"></div>
-                    <code>--color-warning</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-danger);"></div>
-                    <code>--color-danger</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-info);"></div>
-                    <code>--color-info</code>
-                </div>
-
-                <div>
-                    <div style="height:64px;background:var(--color-focus);"></div>
-                    <code>--color-focus</code>
-                </div>
-
-            </div>
+            <h5>Contextual</h5>
+            <div style="background:var(--color-success);color:var(--color-text-inverse)">--color-success</div>
+            <div style="background:var(--color-warning)">--color-warning</div>
+            <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
+            <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
+            <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
         </section>
 
         <!-- ── TYPOGRAPHIE ───────────────────────────────────────────── -->
@@ -478,7 +369,7 @@
             <progress value="65" max="100"></progress>
 
             <label>Niveau de batterie</label>
-            <meter value="0.7" min="0" max="1" low="0.25" high="0.75" optimum="1"></meter>
+            <meter value="0.8" min="0" max="1" low="0.25" high="0.75" optimum="1"></meter>
 
         </section>
 
@@ -606,7 +497,7 @@
             </div>
 
             <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
-            <h5>Balise a</h5>
+            <h3>Balise &lt;a&gt;</h3>
             <div>
                 <a class="btn">primary</a>
                 <a class="btn outline">outline</a>
@@ -619,36 +510,11 @@
             <h3>Tailles</h3>
             <p>Quatre tailles disponibles. Sans classe de taille, <code>md</code> s'applique par défaut.</p>
 
-            <h5>Solid</h5>
             <div>
                 <button class="sm">SM</button>
-                <button>MD</button>
-                <button class="lg">LG</button>
-                <button class="xl">XL</button>
-            </div>
-
-            <h5>Outline</h5>
-            <div>
-                <button class="sm outline">SM</button>
                 <button class="outline">MD</button>
-                <button class="lg outline">LG</button>
-                <button class="xl outline">XL</button>
-            </div>
-
-            <h5>Discreet</h5>
-            <div>
-                <button class="sm discreet">SM</button>
-                <button class="discreet">MD</button>
                 <button class="lg discreet">LG</button>
-                <button class="xl discreet">XL</button>
-            </div>
-
-            <h5>Flat</h5>
-            <div>
-                <button class="sm flat">SM</button>
-                <button class="flat">MD</button>
-                <button class="lg flat">LG</button>
-                <button class="xl flat">XL</button>
+                <button class="xl">XL</button>
             </div>
 
             <!-- ── WITH ICONS ────────────────────────────────────────────── -->

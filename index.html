@@ -31,15 +31,15 @@
         </a>
         <nav>
             <ul>
-                <li><a href="#colors">Couleurs</a></li>
-                <li><a href="#typo">Typographie</a></li>
-                <li><a href="#listes">Listes</a></li>
-                <li><a href="#tableaux">Tableaux</a></li>
+                <li><a href="#couleurs">Couleurs</a></li>
+                <li><a href="#text">Texte</a></li>
+                <li><a href="#tableau">Tableau</a></li>
                 <li><a href="#formulaires">Formulaires</a></li>
                 <li><a href="#composants">Composants</a></li>
                 <li><a href="#media">Media</a></li>
                 <li><a href="#buttons">Boutons</a></li>
                 <li><a href="#icons">Icons</a></li>
+                <li><a href="#other">Autre</a></li>
             </ul>
         </nav>
     </header>
@@ -65,6 +65,9 @@
 
                 <input type="radio" name="view" id="paper-theme" value="paper-theme">
                 <label for="paper-theme">Paper</label>
+
+                <input type="radio" name="view" id="forest-theme" value="forest-theme">
+                <label for="forest-theme">Forest</label>
             </div>
 
         </section>
@@ -72,7 +75,7 @@
         <!-- ================================================================
             COLORS
          ================================================================== -->
-        <section id="colors">
+        <section id="couleurs">
             <h2>Palette de couleur</h2>
 
             <h5>Fond</h5>
@@ -142,8 +145,8 @@
         <!-- ================================================================
             TYPOGRAPHIE
          ================================================================== -->
-        <section id="typo">
-            <h2>Typographie</h2>
+        <section id="text">
+            <h2>Texte</h2>
 
             <h1>Titre h1 — Niveau 1</h1>
             <h2>Titre h2 — Niveau 2</h2>
@@ -211,15 +214,9 @@
             <h5>Séparation</h5>
             <hr>
 
-        </section>
-
-        <!-- ================================================================
-            LISTES
-         ================================================================== -->
-        <section id="listes">
             <h2>Listes</h2>
 
-            <h4>Liste non ordonnée</h4>
+            <h5>Liste non ordonnée</h5>
             <ul>
                 <li>Variables CSS pour chaque token de design</li>
                 <li>Échelle typographique modulaire avec <code>clamp()</code></li>
@@ -233,7 +230,7 @@
                 <li>Responsive natif via unités relatives</li>
             </ul>
 
-            <h4>Liste ordonnée</h4>
+            <h5>Liste ordonnée</h5>
             <ol>
                 <li>Télécharger <code>racine.css</code></li>
                 <li>L'inclure dans le <code>&lt;head&gt;</code> de votre HTML</li>
@@ -242,7 +239,7 @@
                 <li>Déployer</li>
             </ol>
 
-            <h4>Liste de définitions</h4>
+            <h5>Liste de définitions</h5>
             <dl>
                 <dt>Design Token</dt>
                 <dd>Variable stockant une décision de design (couleur, espacement) pour en garantir la cohérence.</dd>
@@ -254,7 +251,7 @@
                 <dd>Web Content Accessibility Guidelines — normes d'accessibilité publiées par le W3C.</dd>
             </dl>
 
-            <h4>Fil d'ariane</h4>
+            <h5>Fil d'ariane <i>(avec <code>.breadcrumbs</code>)</i></h5>
             <ul class="breadcrumbs">
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#">Documentation</a></li>
@@ -266,8 +263,8 @@
         <!-- ================================================================
             TABLEAUX
          ================================================================== -->
-        <section id="tableaux">
-            <h2>Tableaux</h2>
+        <section id="tableau">
+            <h2>Tableau</h2>
 
             <table>
                 <caption>Comparatif de frameworks CSS classless populaires</caption>
@@ -322,7 +319,6 @@
         <!-- ================================================================
             FORMULAIRES
          ================================================================== -->
-
         <section id="formulaires">
             <h2>Formulaires</h2>
 
@@ -384,7 +380,7 @@
 
                 <br><br>
 
-                <label for="toggle">Frequency</label>
+                <label for="toggle">Frequency <i>(avec <code>.toggle</code>)</i></label>
                 <div id="toggle" class="toggle">
                     <input type="radio" name="view" id="day" value="day">
                     <label for="day">Day</label>
@@ -445,86 +441,6 @@
 
             <label>Niveau de batterie</label>
             <meter value="0.8" min="0" max="1" low="0.25" high="0.75" optimum="1"></meter>
-
-        </section>
-
-        <!-- ================================================================
-            COMPOSANTS INTERACTIF
-         ================================================================== -->
-        <section id="composants">
-            <h2>Composants interactifs</h2>
-
-            <h4>Encart <i>(aside)</i></h4>
-            <aside>
-                <strong>Note :</strong> Ce framework est conçu comme une fondation.
-                Les variables CSS permettent de surcharger l'ensemble du design en quelques lignes.
-                Commencez par modifier <code>--color-primary</code> et <code>--font-sans</code>.
-            </aside>
-
-            <h4>Accordéons <i>(details/summary)</i></h4>
-            <details>
-                <summary>Comment personnaliser les couleurs ?</summary>
-                <p>
-                    Surchargez simplement les variables CSS dans votre propre feuille de style.
-                    Par exemple : <code>:root { --color-primary: #your-color; }</code>
-                    Toutes les couleurs se mettront à jour automatiquement.
-                </p>
-            </details>
-            <details open>
-                <summary>Comment ajouter un thème sombre ?</summary>
-                <p>
-                    Ajoutez un bloc <code>@media (prefers-color-scheme: dark)</code> et
-                    redéfinissez les variables de couleur. Les tokens sont déjà prêts à être surchargés :
-                </p>
-                <pre><code>@media (prefers-color-scheme: dark) {
-                :root {
-                    --color-bg:   #161616;
-                    --color-text: #f4f4f4;
-                    /* … autres tokens … */
-                }
-                }</code></pre>
-            </details>
-            <details>
-                <summary>Y a-t-il des dépendances JavaScript ?</summary>
-                <p>
-                    Aucune. Ce framework est 100% CSS. Aucun JS n'est nécessaire pour le style de base.
-                    Les interactions natives du navigateur (<code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>)
-                    fonctionnent sans script.
-                </p>
-            </details>
-
-            <h4>Modale <i>(dialog)</i></h4>
-            <button onclick="document.getElementById('dialog1').showModal();">Ouvrir la modale</button>
-            <dialog id="dialog1">
-                <h3>Titre du dialog</h3>
-                <form method="dialog">
-                    <button type="submit" class="flat icon"><iconify-icon icon="mdi:close"></iconify-icon></button>
-                </form>
-                <p>Voici un élément natif de "dialog".</p>
-                <form method="dialog">
-                    <button type="submit" class="flat">Fermer</button>
-                </form>
-            </dialog>
-
-            <h4>Popover</h4>
-            <button popovertarget="pop1" style="anchor-name: --pop1;">Popover au clic</button>
-            <div popover id="pop1" style="position-anchor: --pop1; top: anchor(top);left: calc(anchor(right) + 8px);">
-                <p>Bonjour le monde !</p>
-            </div>
-
-            <h4>Adresse</h4>
-            <address>
-                <strong>Anthropic</strong><br>
-                548 Market St, PMB 90375<br>
-                San Francisco, CA 94104<br>
-                <a href="mailto:hello@anthropic.com">hello@anthropic.com</a>
-            </address>
-
-            <h4>Horodatage</h4>
-            <p>
-                Dernière mise à jour :
-                <time datetime="2026-01-01">1er Janvier 2026</time>.
-            </p>
 
         </section>
 
@@ -592,6 +508,85 @@
             <embed src="file.swf" type="application/x-shockwave-flash" width="200" height="100">
         </section>
 
+        <!-- ================================================================
+            COMPOSANTS INTERACTIF
+         ================================================================== -->
+        <section id="composants">
+            <h2>Composants interactifs</h2>
+
+            <h5>Encart <i>(aside)</i></h5>
+            <aside>
+                <strong>Note :</strong> Ce framework est conçu comme une fondation.
+                Les variables CSS permettent de surcharger l'ensemble du design en quelques lignes.
+                Commencez par modifier <code>--color-primary</code> et <code>--font-sans</code>.
+            </aside>
+
+            <h5>Accordéons <i>(details/summary)</i></h5>
+            <details>
+                <summary>Comment personnaliser les couleurs ?</summary>
+                <p>
+                    Surchargez simplement les variables CSS dans votre propre feuille de style.
+                    Par exemple : <code>:root { --color-primary: #your-color; }</code>
+                    Toutes les couleurs se mettront à jour automatiquement.
+                </p>
+            </details>
+            <details open>
+                <summary>Comment ajouter un thème sombre ?</summary>
+                <p>
+                    Ajoutez un bloc <code>@media (prefers-color-scheme: dark)</code> et
+                    redéfinissez les variables de couleur. Les tokens sont déjà prêts à être surchargés :
+                </p>
+                <pre><code>@media (prefers-color-scheme: dark) {
+                :root {
+                    --color-bg:   #161616;
+                    --color-text: #f4f4f4;
+                    /* … autres tokens … */
+                }
+                }</code></pre>
+            </details>
+            <details>
+                <summary>Y a-t-il des dépendances JavaScript ?</summary>
+                <p>
+                    Aucune. Ce framework est 100% CSS. Aucun JS n'est nécessaire pour le style de base.
+                    Les interactions natives du navigateur (<code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>)
+                    fonctionnent sans script.
+                </p>
+            </details>
+
+            <h5>Modale <i>(dialog)</i></h5>
+            <button onclick="document.getElementById('dialog1').showModal();">Ouvrir la modale</button>
+            <dialog id="dialog1">
+                <h3>Titre du dialog</h3>
+                <form method="dialog">
+                    <button type="submit" class="flat icon"><iconify-icon icon="mdi:close"></iconify-icon></button>
+                </form>
+                <p>Voici un élément natif de "dialog".</p>
+                <form method="dialog">
+                    <button type="submit" class="flat">Fermer</button>
+                </form>
+            </dialog>
+
+            <h5>Popover</h5>
+            <button popovertarget="pop1" style="anchor-name: --pop1;">Popover au clic</button>
+            <div popover id="pop1" style="position-anchor: --pop1; top: anchor(top);left: calc(anchor(right) + 8px);">
+                <p>Bonjour le monde !</p>
+            </div>
+
+            <h5>Adresse</h5>
+            <address>
+                <strong>Anthropic</strong><br>
+                548 Market St, PMB 90375<br>
+                San Francisco, CA 94104<br>
+                <a href="mailto:hello@anthropic.com">hello@anthropic.com</a>
+            </address>
+
+            <h5>Horodatage</h5>
+            <p>
+                Dernière mise à jour :
+                <time datetime="2026-01-01">1er Janvier 2026</time>.
+            </p>
+
+        </section>
 
         <!-- ================================================================
             BUTTONS
@@ -599,8 +594,6 @@
         <section id="buttons">
 
             <h1>Boutons</h1>
-            <h3>Styles</h3>
-            <p>Quatre styles disponibles. Sans classe de style, <code>solid</code> s'applique par défaut.</p>
 
             <!-- ── SOLID ──────────────────────────────────────────────────── -->
             <h5>Solid</h5>
@@ -644,7 +637,7 @@
             </div>
 
             <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
-            <h3>Balise &lt;a&gt;</h3>
+            <h5>Balise &lt;a&gt; <i>(avec <code>.btn</code>)</i> </h5>
             <div>
                 <a class="btn">primary</a>
                 <a class="btn outline">outline</a>
@@ -654,9 +647,7 @@
 
 
             <!-- ── TAILLES ────────────────────────────────────────────────── -->
-            <h3>Tailles</h3>
-            <p>Quatre tailles disponibles. Sans classe de taille, <code>md</code> s'applique par défaut.</p>
-
+            <h5>Tailles</h5>
             <div>
                 <button class="sm">SM</button>
                 <button class="outline">MD</button>
@@ -665,9 +656,7 @@
             </div>
 
             <!-- ── WITH ICONS ────────────────────────────────────────────── -->
-            <h3>Avec icons</h3>
-            <p>Fonctionne avec <code>icon</code>, <code>icon-start</code> ou <code>icon-end</code>.</p>
-
+            <h5>Icons <i>(avec <code>.icon</code>, <code>.icon-start</code> ou <code>.icon-end</code>)</i></h5>
             <div>
                 <button class="flat icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
                 <button class="outline icon-start"><iconify-icon icon="mdi:home"></iconify-icon>Home</button>
@@ -675,7 +664,6 @@
                 <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
             </div>
         </section>
-
 
         <!-- ================================================================
             ICONS
@@ -745,6 +733,24 @@
             <iconify-icon icon="svg-spinners:pulse-rings-3"></iconify-icon>
         </section>
 
+        <!-- ================================================================
+            OTHER
+        ================================================================== -->
+        <section id="other">
+            <h1>Autre</h1>
+
+            <!-- ── TITLE ───────────────────────────────────────────────── -->
+            <h5>Skeleton</h5>
+            <h2 class="skeleton">Ce titre est en train de charger...</h2>
+            <br>
+            <p class="skeleton" style="white-space: pre;">
+                Ce paragraphe est en train de charger et le background
+                ne dépassera pas la fin de cette phrase.</p>
+            <br><br>
+            <img src="" alt="" height="200" width="400" class="skeleton">
+
+        </section>
+
     </main>
 
     <!-- ================================================================
@@ -755,9 +761,8 @@
             <strong>Racine.css v0.0.1</strong>
         </p>
         <p>
-            Licence MIT · Construit avec
-            <abbr title="Cascading Style Sheets">CSS</abbr> Custom Properties ·
-            <time datetime="2025">2026</time>
+            Licence MIT · Construit par Vincent Manzoni ·
+            <time datetime="2026">2026</time>
         </p>
     </footer>
 

@@ -190,6 +190,36 @@
     --color-focus: oklch(45% 0.12 250);
 }
 
+[data-theme="forest-theme"] {
+    --color-bg:  oklch(22% 0.025 165); 
+    --color-bg-subtle: oklch(20% 0.028 155);
+    --color-bg-ui: oklch(23% 0.030 152);
+    --color-bg-hover: oklch(27% 0.032 152);
+    --color-bg-active: oklch(31% 0.033 150);
+
+    --color-border: oklch(38% 0.035 148);
+    --color-border-subtle: oklch(26% 0.030 152);
+    --color-border-strong: oklch(52% 0.040 145);
+
+    --color-text: oklch(92% 0.018 135);
+    --color-text-secondary: oklch(68% 0.030 145);
+    --color-text-placeholder: oklch(50% 0.025 148);
+    --color-text-disabled: oklch(38% 0.020 150);
+    --color-text-inverse: oklch(16.5% 0.025 155);
+
+    --color-primary: oklch(72% 0.15 145);
+    --color-primary-hover: oklch(78% 0.16 145);
+    --color-primary-active: oklch(83% 0.14 145);
+    --color-accent: oklch(68% 0.13 95);
+    --color-accent-hover: oklch(74% 0.14 95);
+
+    --color-success: oklch(70% 0.16 145);
+    --color-warning: oklch(75% 0.14 88);
+    --color-danger: oklch(60% 0.17 22);
+    --color-info: oklch(68% 0.12 210);
+    --color-focus: oklch(72% 0.15 145);
+}
+
 /* ==========================================================================
   RESET & BASE
 ========================================================================== */
@@ -713,7 +743,7 @@ dd {
 }
 
 .breadcrumbs li:first-child {
-padding-left: 0;
+    padding-left: 0;
 }
 
 .breadcrumbs li:first-child::before {
@@ -1637,6 +1667,34 @@ a.btn.icon-end svg {
 
 iconify-icon {
     font-size: 24px;
+}
+
+/* ==========================================================================
+  SKELETON
+========================================================================== */
+
+.skeleton {
+    display: inline;
+    background-clip: content-box;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    color: transparent !important;
+    user-select: none;
+    cursor: default;
+    background-color: var(--color-bg-subtle);
+    animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        background-color: var(--color-bg-subtle);
+    }
+    50% {
+        background-color: var(--color-bg);
+    }
+    100% {
+        background-color: var(--color-bg-subtle);
+    }
 }
 
 /* ==========================================================================

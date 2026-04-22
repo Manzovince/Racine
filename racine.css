@@ -131,33 +131,28 @@
 }
 
 [data-theme="dark-theme"] {
-    /* Arrière-plans */
     --color-bg: oklch(20.019% 0.00002 271.152);
     --color-bg-subtle: oklch(26.862% 0.00003 271.152);
     --color-bg-ui: oklch(34.458% 0.00004 271.152);
     --color-bg-hover: oklch(39.793% 0.00005 271.152);
     --color-bg-active: oklch(43.861% 0.00005 271.152);
 
-    /* Bordures */
     --color-border: oklch(54.171% 0.00006 271.152);
     --color-border-subtle: oklch(34.458% 0.00004 271.152);
     --color-border-strong: oklch(96.715% 0.00011 271.152);
 
-    /* Texte */
     --color-text: oklch(96.715% 0.00011 271.152);
     --color-text-secondary: oklch(82.656% 0.00009 271.152);
     --color-text-placeholder: oklch(54.171% 0.00006 271.152);
     --color-text-disabled: oklch(43.861% 0.00005 271.152);
     --color-text-inverse: oklch(20.019% 0.00002 271.152);
 
-    /* Couleurs d'action */
     --color-primary: #4589ff;
     --color-primary-hover: #74aaff;
     --color-primary-active: #a6c8ff;
     --color-accent: #ff6b35;
     --color-accent-hover: #ff8c60;
 
-    /* Sémantiques */
     --color-success: #42be65;
     --color-warning: #f1c21b;
     --color-danger: #ff8389;
@@ -166,29 +161,28 @@
 }
 
 [data-theme="paper-theme"] {
-    /* Arrière-plans */
     --color-bg: oklch(95.763% 0.00849 67.438);
     --color-bg-subtle: oklch(92% 0.012 67);
     --color-bg-ui: oklch(89% 0.015 65);
     --color-bg-hover: oklch(86% 0.018 65);
     --color-bg-active: oklch(83% 0.020 64);
-    /* Bordures */
+
     --color-border: oklch(75% 0.025 60);
     --color-border-subtle: oklch(88% 0.015 65);
     --color-border-strong: oklch(55% 0.035 55);
-    /* Texte */
+
     --color-text: oklch(20.699% 0.00751 67.326);
     --color-text-secondary: oklch(45% 0.030 55);
     --color-text-placeholder: oklch(62% 0.022 60);
     --color-text-disabled: oklch(72% 0.015 62);
     --color-text-inverse: oklch(96% 0.008 70);
-    /* Couleurs d'action */
+
     --color-primary: oklch(45% 0.12 250);
     --color-primary-hover: oklch(38% 0.14 250);
     --color-primary-active: oklch(32% 0.15 250);
     --color-accent: oklch(52% 0.15 35);
     --color-accent-hover: oklch(45% 0.17 35);
-    /* Sémantiques */
+
     --color-success: oklch(52% 0.13 145);
     --color-warning: oklch(68% 0.14 75);
     --color-danger: oklch(52% 0.16 25);

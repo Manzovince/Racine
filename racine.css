@@ -349,50 +349,6 @@ body>header nav a:focus-visible {
     outline-offset: -2px;
 }
 
-/* ── Navigation standalone ───────────────────────────────────────────── */
-body>nav {
-    padding-block: var(--space-base);
-    border-bottom: var(--border-width) solid var(--color-border-subtle);
-}
-
-body>nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs);
-    list-style: none;
-    padding: 0;
-    border: none;
-}
-
-body>nav ul li {
-    padding: 0;
-    border: none;
-}
-
-body>nav ul li::before {
-    display: none;
-}
-
-body>nav a {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2xs);
-    padding: var(--space-2xs) var(--space-sm);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    letter-spacing: var(--letter-spacing-wide);
-    text-transform: uppercase;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    border: var(--border-width) solid transparent;
-    transition: color var(--transition-base), border-color var(--transition-base);
-}
-
-body>nav a:hover {
-    color: var(--color-text);
-    border-color: var(--color-border);
-}
-
 /* ── Main ────────────────────────────────────────────────────────────── */
 body>main {
     padding-block: var(--space-4xl);
@@ -668,7 +624,6 @@ hr {
 ul,
 ol {
     padding-left: var(--space-xl);
-    /* margin-bottom: var(--space-base); */
 }
 
 ul {
@@ -749,6 +704,28 @@ dd {
     padding-left: var(--space-base);
     border-left: 2px solid var(--color-border-subtle);
     margin-top: var(--space-3xs);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    list-style: none;
+}
+
+.breadcrumbs li:first-child {
+padding-left: 0;
+}
+
+.breadcrumbs li:first-child::before {
+    content: "";
+    margin: 0 8px;
+}
+
+.breadcrumbs li:not(:first-child)::before {
+    content: "/";
+    margin: 0 8px;
+    color: var(--color-text);
+    font-weight: var(--font-weight-regular)
 }
 
 /* ==========================================================================
@@ -934,7 +911,6 @@ textarea::placeholder {
 textarea {
     min-height: 8rem;
     resize: vertical;
-    border-bottom: var(--border-width) solid var(--color-border);
 }
 
 /* ── Select ──────────────────────────────────────────────────────────── */

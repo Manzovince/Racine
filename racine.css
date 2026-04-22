@@ -191,7 +191,7 @@
 }
 
 [data-theme="forest-theme"] {
-    --color-bg:  oklch(22% 0.025 165); 
+    --color-bg:  oklch(22% 0.025 165);
     --color-bg-subtle: oklch(20% 0.028 155);
     --color-bg-ui: oklch(23% 0.030 152);
     --color-bg-hover: oklch(27% 0.032 152);
@@ -1675,9 +1675,6 @@ iconify-icon {
 
 .skeleton {
     display: inline;
-    background-clip: content-box;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
     color: transparent !important;
     user-select: none;
     cursor: default;

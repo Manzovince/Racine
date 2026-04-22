@@ -26,7 +26,9 @@
        HEADER — Navigation principale
      ================================================================== -->
     <header>
-        <h1 class="font-serif" style="font-size: var(--font-size-3xl);">Racine.css</h1>
+        <a href="#" style="text-decoration: none;">
+            <h1 class="font-serif" style="font-size: var(--font-size-3xl);">Racine.css</h1>
+        </a>
         <nav>
             <ul>
                 <li><a href="#colors">Couleurs</a></li>
@@ -40,8 +42,6 @@
                 <li><a href="#icons">Icons</a></li>
             </ul>
         </nav>
-        <button id="theme-toggle" class="flat icon"><iconify-icon icon="lucide:moon"></iconify-icon></button>
-
     </header>
 
     <!-- ================================================================
@@ -66,6 +66,18 @@
             <p>
                 <strong>Racine.css</strong> stylise n'importe quelle page HTML5. Sans classes, mais avec classe.
             </p>
+            <label>Thème</label>
+            <div id="toggle" class="toggle">
+                <input type="radio" name="view" id="light-theme" value="light-theme" checked>
+                <label for="light-theme">Light</label>
+
+                <input type="radio" name="view" id="dark-theme" value="dark-theme">
+                <label for="dark-theme">Dark</label>
+
+                <input type="radio" name="view" id="paper-theme" value="paper-theme">
+                <label for="paper-theme">Paper</label>
+            </div>
+
         </section>
 
         <!-- ================================================================
@@ -75,47 +87,67 @@
             <h2>Palette de couleur</h2>
 
             <h5>Fond</h5>
-            <div style="background:var(--color-bg);border:.5px solid var(--color-border-subtle)">--color-bg</div>
-            <div style="background:var(--color-bg-subtle)">--color-bg-subtle</div>
-            <div style="background:var(--color-bg-ui)">--color-bg-ui</div>
-            <div style="background:var(--color-bg-hover)">--color-bg-hover</div>
-            <div style="background:var(--color-bg-active)">--color-bg-active</div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-bg);border:.5px solid var(--color-border-subtle)">--color-bg</div>
+                <div style="background:var(--color-bg-subtle)">--color-bg-subtle</div>
+                <div style="background:var(--color-bg-ui)">--color-bg-ui</div>
+                <div style="background:var(--color-bg-hover)">--color-bg-hover</div>
+                <div style="background:var(--color-bg-active)">--color-bg-active</div>
+            </div>
 
             <h5>Bordure</h5>
-            <div style="background:var(--color-border)">--color-border</div>
-            <div style="background:var(--color-border-subtle)">--color-border-subtle</div>
-            <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-border)">--color-border</div>
+                <div style="background:var(--color-border-subtle)">--color-border-subtle</div>
+                <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong
+                </div>
             </div>
+
 
             <h5>Texte</h5>
-            <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
-            <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">--color-text-secondary
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
+                <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">
+                    --color-text-secondary
+                </div>
+                <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">
+                    --color-text-placeholder</div>
+                <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled
+                </div>
+                <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">
+                    --color-text-inverse</div>
             </div>
-            <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">
-                --color-text-placeholder</div>
-            <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled
-            </div>
-            <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">
-                --color-text-inverse</div>
+
 
             <h5>Principale</h5>
-            <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
-            <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
+                <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover
+                </div>
+                <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">
+                    --color-primary-active
+                </div>
+                <div style="background:var(--color-primary-discreet)">--color-primary-discreet</div>
             </div>
-            <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">--color-primary-active
-            </div>
-            <div style="background:var(--color-primary-discreet)">--color-primary-discreet</div>
+
 
             <h5>Accentuée</h5>
-            <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
-            <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover</div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
+                <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover
+                </div>
+            </div>
+
 
             <h5>Contextuelle</h5>
-            <div style="background:var(--color-success);color:var(--color-text-inverse)">--color-success</div>
-            <div style="background:var(--color-warning)">--color-warning</div>
-            <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
-            <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
-            <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-success);color:var(--color-text-inverse)">--color-success</div>
+                <div style="background:var(--color-warning)">--color-warning</div>
+                <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
+                <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
+                <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
+            </div>
+
         </section>
 
         <!-- ================================================================
@@ -143,8 +175,8 @@
 
             <p>
                 Les liens sont <a href="#">clairement identifiables</a> grâce à leur couleur primaire.
-                Le texte peut être <strong>en gras</strong>, <em>en italique</em>,
-                <mark>surligné</mark>, <del>barré</del>, en <sub>sub</sub>, <sup>sup</sup> ou rendu en <small>petite
+                Le texte peut être en <strong>gras</strong>, <em>italique</em>,
+                <mark>surligné</mark>, <del>barré</del>, <sub>sub</sub>, <sup>sup</sup> ou rendu en <small>petite
                     taille</small>.
             </p>
 
@@ -299,7 +331,7 @@
             <h2>Formulaires</h2>
 
             <fieldset>
-                <legend>Informations personnelles</legend>
+                <legend>Champs</legend>
 
                 <label for="nom">Nom complet</label>
                 <input type="text" id="nom" name="nom" placeholder="Jean Dupont" autocomplete="name">
@@ -313,11 +345,11 @@
                 <label for="tel">Téléphone</label>
                 <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00">
 
-                <label for="date">Date de naissance</label>
-                <input type="date" id="date" name="date">
-
                 <label for="pwd">Mot de passe</label>
                 <input type="password" id="pwd" name="pwd" placeholder="••••••••">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message ici…"></textarea>
 
                 <label for="disabled">Champ désactivé</label>
                 <input type="text" id="disabled" name="disabled" value="Non modifiable" disabled>
@@ -325,7 +357,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>Préférences</legend>
+                <legend>Sélécteurs</legend>
 
                 <label for="pays">Pays</label>
                 <select id="pays" name="pays">
@@ -345,8 +377,8 @@
                     <option value="it">Italien</option>
                 </select>
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Votre message ici…"></textarea>
+                <label for="date">Date de naissance</label>
+                <input type="date" id="date" name="date">
 
                 <label for="volume">Volume (range)</label>
                 <input type="range" id="volume" name="volume" min="0" max="100" value="65">
@@ -354,10 +386,24 @@
                 <label for="couleur">Couleur préférée</label>
                 <input type="color" id="couleur" name="couleur" value="#0f62fe">
 
-            </fieldset>
+                <br><br>
 
-            <fieldset>
-                <legend>Consentements</legend>
+                <label for="toggle">Frequency</label>
+                <div id="toggle" class="toggle">
+                    <input type="radio" name="view" id="day" value="day">
+                    <label for="day">Day</label>
+
+                    <input type="radio" name="view" id="week" value="week">
+                    <label for="week">Week</label>
+
+                    <input type="radio" name="view" id="month" value="month" checked>
+                    <label for="month">Month</label>
+
+                    <input type="radio" name="view" id="year" value="year">
+                    <label for="year">Year</label>
+                </div>
+
+                <br><br>
 
                 <label>
                     <input type="checkbox" name="cgu" id="cgu">

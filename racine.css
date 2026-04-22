@@ -9,39 +9,6 @@
 ========================================================================== */
 
 :root {
-    /* ── Couleurs ────────────────────────────────────────────────────── */
-    --color-bg: oklch(100% 0.00011 271.152);
-    --color-bg-subtle: oklch(96.715% 0.00011 271.152);
-    --color-bg-ui: oklch(90.67% 0.0001 271.152);
-    --color-bg-hover: oklch(86.07% 0.0001 271.152);
-    --color-bg-active: oklch(82.656% 0.00009 271.152);
-
-    --color-border: oklch(64.341% 0.00007 271.152);
-    --color-border-subtle: oklch(90.67% 0.0001 271.152);
-    --color-border-strong: oklch(20.019% 0.00002 271.152);
-
-    --color-text: oklch(20.019% 0.00002 271.152);
-    --color-text-secondary: oklch(43.861% 0.00005 271.152);
-    --color-text-placeholder: oklch(73.16% 0.00008 271.152);
-    --color-text-disabled: oklch(82.656% 0.00009 271.152);
-    --color-text-inverse: oklch(100% 0.00011 271.152);
-
-    --color-primary: oklch(55.655% 0.24308 261.969);
-    --color-primary-hover: oklch(50.049% 0.23561 262.243);
-    --color-primary-active: oklch(36.297% 0.18401 263.073);
-    --color-primary-discreet: oklch(55.838% 0.24195 261.841 / 0.2);
-
-    --color-accent: color-mix(in srgb, var(--color-primary) 80%, white);
-    --color-accent-hover: color-mix(in srgb, var(--color-primary) 90%, white);
-
-    --color-success: oklch(52.722% 0.14074 148.316);
-    --color-warning: oklch(83.212% 0.16547 90.445);
-    --color-danger: oklch(56.921% 0.21741 25.916);
-    --color-info: oklch(45.403% 0.22109 262.649);
-
-    --color-focus: oklch(55.655% 0.24308 261.969);
-    --color-focus-inset: oklch(100% 0.00011 271.152);
-
     /* ── Typographie ─────────────────────────────────────────────────── */
     --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     --font-serif: 'Cormorant Garamond', serif;
@@ -129,7 +96,41 @@
     --focus-offset: 2px;
 }
 
-[data-theme="dark"] {
+[data-theme="light-theme"] {
+    --color-bg: oklch(100% 0.00011 271.152);
+    --color-bg-subtle: oklch(96.715% 0.00011 271.152);
+    --color-bg-ui: oklch(90.67% 0.0001 271.152);
+    --color-bg-hover: oklch(86.07% 0.0001 271.152);
+    --color-bg-active: oklch(82.656% 0.00009 271.152);
+
+    --color-border: oklch(64.341% 0.00007 271.152);
+    --color-border-subtle: oklch(90.67% 0.0001 271.152);
+    --color-border-strong: oklch(20.019% 0.00002 271.152);
+
+    --color-text: oklch(20.019% 0.00002 271.152);
+    --color-text-secondary: oklch(43.861% 0.00005 271.152);
+    --color-text-placeholder: oklch(73.16% 0.00008 271.152);
+    --color-text-disabled: oklch(82.656% 0.00009 271.152);
+    --color-text-inverse: oklch(100% 0.00011 271.152);
+
+    --color-primary: oklch(55.655% 0.24308 261.969);
+    --color-primary-hover: oklch(50.049% 0.23561 262.243);
+    --color-primary-active: oklch(36.297% 0.18401 263.073);
+    --color-primary-discreet: oklch(55.838% 0.24195 261.841 / 0.2);
+
+    --color-accent: color-mix(in srgb, var(--color-primary) 80%, white);
+    --color-accent-hover: color-mix(in srgb, var(--color-primary) 90%, white);
+
+    --color-success: oklch(52.722% 0.14074 148.316);
+    --color-warning: oklch(83.212% 0.16547 90.445);
+    --color-danger: oklch(56.921% 0.21741 25.916);
+    --color-info: oklch(45.403% 0.22109 262.649);
+
+    --color-focus: oklch(55.655% 0.24308 261.969);
+    --color-focus-inset: oklch(100% 0.00011 271.152);
+}
+
+[data-theme="dark-theme"] {
     /* Arrière-plans */
     --color-bg: oklch(20.019% 0.00002 271.152);
     --color-bg-subtle: oklch(26.862% 0.00003 271.152);
@@ -162,6 +163,37 @@
     --color-danger: #ff8389;
     --color-info: #78a9ff;
     --color-focus: #4589ff;
+}
+
+[data-theme="paper-theme"] {
+    /* Arrière-plans */
+    --color-bg: oklch(95.763% 0.00849 67.438);
+    --color-bg-subtle: oklch(92% 0.012 67);
+    --color-bg-ui: oklch(89% 0.015 65);
+    --color-bg-hover: oklch(86% 0.018 65);
+    --color-bg-active: oklch(83% 0.020 64);
+    /* Bordures */
+    --color-border: oklch(75% 0.025 60);
+    --color-border-subtle: oklch(88% 0.015 65);
+    --color-border-strong: oklch(55% 0.035 55);
+    /* Texte */
+    --color-text: oklch(20.699% 0.00751 67.326);
+    --color-text-secondary: oklch(45% 0.030 55);
+    --color-text-placeholder: oklch(62% 0.022 60);
+    --color-text-disabled: oklch(72% 0.015 62);
+    --color-text-inverse: oklch(96% 0.008 70);
+    /* Couleurs d'action */
+    --color-primary: oklch(45% 0.12 250);
+    --color-primary-hover: oklch(38% 0.14 250);
+    --color-primary-active: oklch(32% 0.15 250);
+    --color-accent: oklch(52% 0.15 35);
+    --color-accent-hover: oklch(45% 0.17 35);
+    /* Sémantiques */
+    --color-success: oklch(52% 0.13 145);
+    --color-warning: oklch(68% 0.14 75);
+    --color-danger: oklch(52% 0.16 25);
+    --color-info: oklch(55% 0.11 245);
+    --color-focus: oklch(45% 0.12 250);
 }
 
 /* ==========================================================================
@@ -245,6 +277,7 @@ body>nav {
 body>header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-lg);
     padding-block: var(--space-lg);
     border-bottom: var(--border-width) solid var(--color-border-strong);
@@ -1013,6 +1046,39 @@ input[type="checkbox"]:checked:disabled,
 input[type="radio"]:checked:disabled {
     background-color: var(--color-text-disabled);
 }
+
+/* ── Toggle ───────────────────────────────────────────────────────────── */
+.toggle {
+    display: inline-flex;
+    border: 1px solid var(--color-border-subtle);
+    overflow: hidden;
+}
+
+.toggle label {
+    padding: var(--space-xs) var(--space-base);
+    margin-bottom: 0;
+    background: var(--color-bg-subtle);
+    cursor: pointer;
+    border-right: 1px solid var(--color-border-subtle);
+}
+
+.toggle label:hover {
+    background: var(--color-bg-hover);
+}
+
+.toggle label:last-child {
+    border-right: none;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle input:checked+label {
+    background: var(--color-bg-active);
+    color: var(--color-text);
+}
+
 
 /* ── Range ───────────────────────────────────────────────────────────── */
 input[type="range"] {

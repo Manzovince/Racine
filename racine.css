@@ -569,16 +569,18 @@ b {
 }
 
 em,
-i {
+i,
+cite {
     font-style: italic;
 }
 
 mark {
-    background-color: var(--color-warning);
+    background-color: color-mix(in srgb, var(--color-warning) 40%, transparent);
     color: var(--color-text);
     padding: 0 var(--space-3xs);
 }
 
+s,
 del {
     color: var(--color-text-secondary);
     text-decoration-color: var(--color-danger);
@@ -1117,6 +1119,10 @@ input[type="radio"]:checked:disabled {
     color: var(--color-text);
 }
 
+/* ── Switch ───────────────────────────────────────────────────────────── */
+input[type="checkbox"][role="switch"] {
+    background-color: red;
+}
 
 /* ── Range ───────────────────────────────────────────────────────────── */
 input[type="range"] {

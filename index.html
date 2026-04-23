@@ -48,8 +48,11 @@
 
         <!-- ── HERO ──────────────────────────────────────────────────── -->
         <section id="hero">
-            <h1 class="font-serif" style="font-size: var(--font-size-5xl);"><strong>Racine.css</strong> stylise
+            <hgroup>
+                <h1 class="font-serif" style="font-size: var(--font-size-5xl);"><strong>Racine.css</strong> stylise
                 n'importe quelle page HTML5.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit cumque voluptas porro in dolores quod accusamus? Laborum est obcaecati eligendi. Similique molestiae provident id facere temporibus, quasi fugiat deleniti vitae recusandae facilis non nihil, nulla corrupti laudantium? Odit repellendus libero quibusdam.</p>
+            </hgroup>
 
             <h4>Principes</h4>
             <ul>
@@ -374,7 +377,7 @@
 
                 <label for="pays">Pays</label>
                 <select id="pays" name="pays">
-                    <option value="" disabled selected>- Sélectionner un pays -</option>
+                    <option value="" disabled selected hidden>- Sélectionner un pays -</option>
                     <option value="fr">France</option>
                     <option value="be">Belgique</option>
                     <option value="ch">Suisse</option>
@@ -383,8 +386,8 @@
 
                 <label for="langues">Langues (sélection multiple)</label>
                 <select id="langues" name="langues" multiple>
-                    <option value="fr">Français</option>
-                    <option value="en">Anglais</option>
+                    <option value="fr" selected>Français</option>
+                    <option value="en" selected>Anglais</option>
                     <option value="de">Allemand</option>
                     <option value="es">Espagnol</option>
                     <option value="it">Italien</option>
@@ -444,8 +447,15 @@
                     Offre Pro (sélectionnée)
                 </label>
                 <label>
-                    <input type="radio" name="abonnement" value="enterprise">
+                    <input type="radio" name="abonnement" value="enterprise" disabled>
                     Offre Enterprise
+                </label>
+
+                <br>
+
+                <label>
+                    <input type="checkbox" name="switch" role="switch">
+                    Enable AI
                 </label>
 
             </fieldset>

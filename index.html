@@ -48,17 +48,15 @@
 
         <!-- ── HERO ──────────────────────────────────────────────────── -->
         <section id="hero">
-            <h1>Un système de conception minimaliste</h1>
-            <p><strong>Racine.css</strong> stylise n'importe quelle page HTML5.</p>
+            <h1 class="font-serif" style="font-size: var(--font-size-5xl);"><strong>Racine.css</strong> stylise
+                n'importe quelle page HTML5.</h1>
 
             <h4>Principes</h4>
             <ul>
-                <li><strong>Sémantique d'abord.</strong> Priorité au sens des balises pour une structure logique et
+                <li><strong>Sémantique.</strong> Priorité au sens des balises pour une structure logique et
                     robuste.</li>
-                <li><strong>Noms de classes limpides.</strong> Des intitulés courts, explicites et immédiatement
-                    compréhensibles.</li>
-                <li><strong>Performance brute.</strong> Chaque caractère est optimisé pour un rendu instantané.</li>
-                <li><strong>Accessibilité par le minimalisme.</strong> Faire simple pour inclure tout le monde.</li>
+                <li><strong>Performant.</strong> Chaque caractère est optimisé pour un rendu instantané.</li>
+                <li><strong>Accessible.</strong> Faire simple pour inclure tout le monde.</li>
             </ul>
 
             <h4>Thème</h4>
@@ -101,7 +99,6 @@
                 </div>
             </div>
 
-
             <h5>Texte</h5>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
@@ -116,7 +113,6 @@
                     --color-text-inverse</div>
             </div>
 
-
             <h5>Principale</h5>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
@@ -129,14 +125,15 @@
                     --color-primary-discreet</div>
             </div>
 
-
             <h5>Accentuée</h5>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
                 <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover
                 </div>
+                <div style="background:var(--color-accent-active);color:var(--color-text-inverse)">--color-accent-active
+                </div>
+                <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
             </div>
-
 
             <h5>Contextuelle</h5>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
@@ -144,7 +141,24 @@
                 <div style="background:var(--color-warning)">--color-warning</div>
                 <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
                 <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
-                <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-success-hover);color:var(--color-text-inverse)">--color-success-hover
+                </div>
+                <div style="background:var(--color-warning-hover)">--color-warning-hover</div>
+                <div style="background:var(--color-danger-hover);color:var(--color-text-inverse)">--color-danger-hover
+                </div>
+                <div style="background:var(--color-info-hover);color:var(--color-text-inverse)">--color-info-hover</div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div style="background:var(--color-success-active);color:var(--color-text-inverse)">
+                    --color-success-active
+                </div>
+                <div style="background:var(--color-warning-active)">--color-warning-active</div>
+                <div style="background:var(--color-danger-active);color:var(--color-text-inverse)">--color-danger-active
+                </div>
+                <div style="background:var(--color-info-active);color:var(--color-text-inverse)">--color-info-active
+                </div>
             </div>
 
         </section>
@@ -438,7 +452,7 @@
 
             <p>
                 <button type="submit">Envoyer le formulaire</button>
-                <input type="reset" value="Réinitialiser">
+                <input type="reset" value="Réinitialiser" class="btn outline danger">
             </p>
 
             <h3>Barre de progression</h3>

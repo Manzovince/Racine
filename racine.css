@@ -107,6 +107,25 @@
     --z-index-negative: -1;
     --z-index-0: 0;
     --z-index-max: 9999;
+
+    /* ── Color variants ─────────────────────────────────────────────────────── */
+    --color-primary-hover: color-mix(in srgb, var(--color-primary) 80%, white);
+    --color-primary-active: color-mix(in srgb, var(--color-primary) 80%, black);
+
+    --color-accent-hover: color-mix(in srgb, var(--color-accent) 80%, white);
+    --color-accent-active: color-mix(in srgb, var(--color-accent) 80%, black);
+
+    --color-success-hover: color-mix(in srgb, var(--color-success) 80%, white);
+    --color-success-active: color-mix(in srgb, var(--color-success) 80%, black);
+
+    --color-warning-hover: color-mix(in srgb, var(--color-warning) 80%, white);
+    --color-warning-active: color-mix(in srgb, var(--color-warning) 80%, black);
+
+    --color-danger-hover: color-mix(in srgb, var(--color-danger) 80%, white);
+    --color-danger-active: color-mix(in srgb, var(--color-danger) 80%, black);
+
+    --color-info-hover: color-mix(in srgb, var(--color-info) 80%, white);
+    --color-info-active: color-mix(in srgb, var(--color-info) 80%, black);
 }
 
 [data-theme="light-theme"] {
@@ -127,12 +146,7 @@
     --color-text-inverse: oklch(100% 0.00011 271.152);
 
     --color-primary: oklch(55.655% 0.24308 261.969);
-    --color-primary-hover: oklch(50.049% 0.23561 262.243);
-    --color-primary-active: oklch(36.297% 0.18401 263.073);
-    --color-primary-discreet: oklch(55.838% 0.24195 261.841 / 0.2);
-
     --color-accent: color-mix(in srgb, var(--color-primary) 80%, white);
-    --color-accent-hover: color-mix(in srgb, var(--color-primary) 90%, white);
 
     --color-success: oklch(52.722% 0.14074 148.316);
     --color-warning: oklch(83.212% 0.16547 90.445);
@@ -140,7 +154,6 @@
     --color-info: oklch(45.403% 0.22109 262.649);
 
     --color-focus: oklch(55.655% 0.24308 261.969);
-    --color-focus-inset: oklch(100% 0.00011 271.152);
 }
 
 [data-theme="dark-theme"] {
@@ -160,17 +173,14 @@
     --color-text-disabled: oklch(43.861% 0.00005 271.152);
     --color-text-inverse: oklch(20.019% 0.00002 271.152);
 
-    --color-primary: #4589ff;
-    --color-primary-hover: #74aaff;
-    --color-primary-active: #a6c8ff;
-    --color-accent: #ff6b35;
-    --color-accent-hover: #ff8c60;
+    --color-primary: oklch(64.699% 0.18891 260.597);
+    --color-accent: oklch(70.45% 0.19257 39.216);
 
-    --color-success: #42be65;
-    --color-warning: #f1c21b;
-    --color-danger: #ff8389;
-    --color-info: #78a9ff;
-    --color-focus: #4589ff;
+    --color-success: oklch(71.204% 0.16767 149.316);
+    --color-warning: oklch(83.212% 0.16547 90.445);
+    --color-danger: oklch(75.077% 0.15075 18.323);
+    --color-info: oklch(73.646% 0.13614 261.098);
+    --color-focus: oklch(64.699% 0.18891 260.597);
 }
 
 [data-theme="paper-theme"] {
@@ -191,10 +201,7 @@
     --color-text-inverse: oklch(96% 0.008 70);
 
     --color-primary: oklch(45% 0.12 250);
-    --color-primary-hover: oklch(38% 0.14 250);
-    --color-primary-active: oklch(32% 0.15 250);
     --color-accent: oklch(52% 0.15 35);
-    --color-accent-hover: oklch(45% 0.17 35);
 
     --color-success: oklch(52% 0.13 145);
     --color-warning: oklch(68% 0.14 75);
@@ -221,10 +228,7 @@
     --color-text-inverse: oklch(16.5% 0.025 155);
 
     --color-primary: oklch(83.323% 0.14145 76.633);
-    --color-primary-hover: oklch(90% 0.14145 76.633);
-    --color-primary-active: oklch(70% 0.14145 76.633);
     --color-accent: oklch(68% 0.13 95);
-    --color-accent-hover: oklch(74% 0.14 95);
 
     --color-success: oklch(70% 0.16 145);
     --color-warning: oklch(75% 0.14 88);
@@ -1120,7 +1124,7 @@ input[type="range"] {
     height: 2px;
     padding: 0;
     margin-bottom: var(--space-base);
-    background: var(--color-bg-ui);
+    background: var(--color-bg-active);
     border: none;
     cursor: pointer;
     appearance: none;
@@ -1436,7 +1440,7 @@ time {
 
 /* ── Base ────────────────────────────────────────────────────────────── */
 button,
-a.btn,
+.btn,
 [type="button"],
 input[type="reset"],
 [type="submit"] {
@@ -1468,14 +1472,14 @@ input[type="reset"],
 
 /* ── Tailles ─────────────────────────────────────────────────────────── */
 button.sm,
-a.btn.sm {
+.btn.sm {
     font-size: var(--font-size-xs);
     padding: var(--space-2xs) var(--space-sm);
     min-height: 2rem;
 }
 
 button,
-a.btn,
+.btn,
 input[type="reset"] {
     font-size: var(--font-size-sm);
     padding: var(--space-sm) var(--space-base);
@@ -1483,14 +1487,14 @@ input[type="reset"] {
 }
 
 button.lg,
-a.btn.lg {
+.btn.lg {
     font-size: var(--font-size-sm);
     padding: var(--space-base) var(--space-lg);
     min-height: 3rem;
 }
 
 button.xl,
-a.btn.xl {
+.btn.xl {
     font-size: var(--font-size-base);
     padding: var(--space-lg) var(--space-2xl);
     min-height: 3.5rem;
@@ -1498,7 +1502,7 @@ a.btn.xl {
 
 /* ── Couleurs — redéfinition des tokens ──────────────────────────────── */
 button.primary,
-a.btn.primary {
+.btn.primary {
     --btn-bg: var(--color-primary);
     --btn-hover: var(--color-primary-hover);
     --btn-active: var(--color-primary-active);
@@ -1506,75 +1510,75 @@ a.btn.primary {
 }
 
 button.success,
-a.btn.success {
+.btn.success {
     --btn-bg: var(--color-success);
-    --btn-hover: #198038;
-    --btn-active: #0e6027;
+    --btn-hover: var(--color-success-hover);
+    --btn-active: var(--color-success-active);
     --btn-text: #fff;
 }
 
 button.warning,
-a.btn.warning {
+.btn.warning {
     --btn-bg: var(--color-warning);
-    --btn-hover: #d4aa17;
-    --btn-active: #b89213;
+    --btn-hover: var(--color-warning-hover);
+    --btn-active: var(--color-warning-active);
     --btn-text: var(--color-text);
     /* noir sur jaune */
 }
 
 button.danger,
-a.btn.danger {
+.btn.danger {
     --btn-bg: var(--color-danger);
-    --btn-hover: #ba1b1b;
-    --btn-active: #a11b1b;
+    --btn-hover: var(--color-danger-hover);
+    --btn-active: var(--color-danger-active);
     --btn-text: #fff;
 }
 
 button.info,
-a.btn.info {
+.btn.info {
     --btn-bg: var(--color-info);
-    --btn-hover: #0035bd;
-    --btn-active: #002999;
+    --btn-hover: var(--color-info-hover);
+    --btn-active: var(--color-info-active);
     --btn-text: #fff;
 }
 
 /* ── SOLID (défaut — aucune classe de style) ─────────────────────────── */
 input[type="reset"],
 button:not(.outline):not(.discreet):not(.flat),
-a.btn:not(.outline):not(.discreet):not(.flat) {
+.btn:not(.outline):not(.discreet):not(.flat) {
     background-color: var(--_bg);
     color: var(--_text);
     border-color: var(--_bg);
 }
 
 button:not(.outline):not(.discreet):not(.flat):hover,
-a.btn:not(.outline):not(.discreet):not(.flat):hover {
+.btn:not(.outline):not(.discreet):not(.flat):hover {
     background-color: var(--_hover);
     border-color: var(--_hover);
 }
 
 button:not(.outline):not(.discreet):not(.flat):active,
-a.btn:not(.outline):not(.discreet):not(.flat):active {
+.btn:not(.outline):not(.discreet):not(.flat):active {
     background-color: var(--_active);
     border-color: var(--_active);
 }
 
 /* ── OUTLINE ─────────────────────────────────────────────────────────── */
 button.outline,
-a.btn.outline {
+.btn.outline {
     background-color: transparent;
     color: var(--_bg);
     border-color: var(--_bg);
 }
 
 button.outline:hover,
-a.btn.outline:hover {
+.btn.outline:hover {
     background-color: var(--_bg);
     color: var(--_text);
 }
 
 button.outline:active,
-a.btn.outline:active {
+.btn.outline:active {
     background-color: var(--_active);
     border-color: var(--_active);
     color: var(--_text);
@@ -1582,37 +1586,37 @@ a.btn.outline:active {
 
 /* ── DISCREET ────────────────────────────────────────────────────────────── */
 button.discreet,
-a.btn.discreet {
+.btn.discreet {
     background-color: color-mix(in srgb, var(--_bg) 14%, transparent);
     color: var(--_bg);
     border-color: transparent;
 }
 
 button.discreet:hover,
-a.btn.discreet:hover {
+.btn.discreet:hover {
     background-color: color-mix(in srgb, var(--_bg) 22%, transparent);
 }
 
 button.discreet:active,
-a.btn.discreet:active {
+.btn.discreet:active {
     background-color: color-mix(in srgb, var(--_bg) 30%, transparent);
 }
 
 /* ── FLAT ────────────────────────────────────────────────────────── */
 button.flat,
-a.btn.flat {
+.btn.flat {
     background-color: transparent;
     color: var(--_bg);
     border-color: transparent;
 }
 
 button.flat:hover,
-a.btn.flat:hover {
+.btn.flat:hover {
     background-color: color-mix(in srgb, var(--_bg) 12%, transparent);
 }
 
 button.flat:active,
-a.btn.flat:active {
+.btn.flat:active {
     background-color: color-mix(in srgb, var(--_bg) 22%, transparent);
 }
 
@@ -1620,22 +1624,22 @@ a.btn.flat:active {
 button.warning.outline,
 button.warning.discreet,
 button.warning.flat,
-a.btn.warning.outline,
-a.btn.warning.discreet,
-a.btn.warning.flat {
+.btn.warning.outline,
+.btn.warning.discreet,
+.btn.warning.flat {
     color: color-mix(in srgb, var(--color-warning) 75%, #000);
 }
 
 /* ── Focus (WCAG) ────────────────────────────────────────────────────── */
 button:focus-visible,
-a.btn:focus-visible {
+.btn:focus-visible {
     outline: 2px solid var(--_bg);
     outline-offset: var(--focus-offset);
 }
 
 /* ── Disabled ────────────────────────────────────────────────────────── */
 button:disabled,
-a.btn[aria-disabled="true"] {
+.btn[aria-disabled="true"] {
     opacity: 0.38;
     cursor: not-allowed;
     pointer-events: none;
@@ -1643,7 +1647,7 @@ a.btn[aria-disabled="true"] {
 
 /* ── Icône seule (bouton carré) ──────────────────────────────────────── */
 button.icon,
-a.btn.icon {
+.btn.icon {
     padding: 0;
     aspect-ratio: 1 / 1;
     justify-content: center;
@@ -1651,35 +1655,35 @@ a.btn.icon {
 }
 
 button.icon.sm,
-a.btn.icon.sm {
+.btn.icon.sm {
     width: 2rem;
     height: 2rem;
     --_icon-size: 1rem;
 }
 
 button.icon,
-a.btn.icon {
+.btn.icon {
     width: 2.5rem;
     height: 2.5rem;
     --_icon-size: 1.125rem;
 }
 
 button.icon.lg,
-a.btn.icon.lg {
+.btn.icon.lg {
     width: 3rem;
     height: 3rem;
     --_icon-size: 1.25rem;
 }
 
 button.icon.xl,
-a.btn.icon.xl {
+.btn.icon.xl {
     width: 3.5rem;
     height: 3.5rem;
     --_icon-size: 1.5rem;
 }
 
 button.icon svg,
-a.btn.icon svg {
+.btn.icon svg {
     width: var(--_icon-size);
     height: var(--_icon-size);
     flex-shrink: 0;
@@ -1689,39 +1693,39 @@ a.btn.icon svg {
 /* ── Icône + label ───────────────────────────────────────────────────── */
 button.icon-start,
 button.icon-end,
-a.btn.icon-start,
-a.btn.icon-end {
+.btn.icon-start,
+.btn.icon-end {
     gap: 0.8em;
 }
 
 button.icon-start.sm,
-a.btn.icon-start.sm,
+.btn.icon-start.sm,
 button.icon-end.sm,
-a.btn.icon-end.sm {
+.btn.icon-end.sm {
     gap: 0.3em;
     --_icon-size: 1rem;
 }
 
 button.icon-start.lg,
-a.btn.icon-start.lg,
+.btn.icon-start.lg,
 button.icon-end.lg,
-a.btn.icon-end.lg {
+.btn.icon-end.lg {
     gap: 0.4em;
     --_icon-size: 1.25rem;
 }
 
 button.icon-start.xl,
-a.btn.icon-start.xl,
+.btn.icon-start.xl,
 button.icon-end.xl,
-a.btn.icon-end.xl {
+.btn.icon-end.xl {
     gap: 0.45em;
     --_icon-size: 1.5rem;
 }
 
 button.icon-start svg,
-a.btn.icon-start svg,
+.btn.icon-start svg,
 button.icon-end svg,
-a.btn.icon-end svg {
+.btn.icon-end svg {
     width: 1em;
     height: 1em;
     flex-shrink: 0;

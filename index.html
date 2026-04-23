@@ -44,18 +44,24 @@
         </nav>
     </header>
 
-    <!-- ================================================================
-       MAIN
-  ================================================================== -->
     <main>
 
         <!-- ── HERO ──────────────────────────────────────────────────── -->
         <section id="hero">
             <h1>Un système de conception minimaliste</h1>
-            <p>
-                <strong>Racine.css</strong> stylise n'importe quelle page HTML5. Sans classes, mais avec classe.
-            </p>
-            <label>Thème</label>
+            <p><strong>Racine.css</strong> stylise n'importe quelle page HTML5.</p>
+
+            <h4>Principes</h4>
+            <ul>
+                <li><strong>Sémantique d'abord.</strong> Priorité au sens des balises pour une structure logique et
+                    robuste.</li>
+                <li><strong>Noms de classes limpides.</strong> Des intitulés courts, explicites et immédiatement
+                    compréhensibles.</li>
+                <li><strong>Performance brute.</strong> Chaque caractère est optimisé pour un rendu instantané.</li>
+                <li><strong>Accessibilité par le minimalisme.</strong> Faire simple pour inclure tout le monde.</li>
+            </ul>
+
+            <h4>Thème</h4>
             <div id="toggle" class="toggle">
                 <input type="radio" name="view" id="light-theme" value="light-theme" checked>
                 <label for="light-theme">Light</label>
@@ -119,7 +125,8 @@
                 <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">
                     --color-primary-active
                 </div>
-                <div style="background:var(--color-primary-discreet)">--color-primary-discreet</div>
+                <div style="background:color-mix(in srgb, var(--color-primary-active) 22%, transparent);">
+                    --color-primary-discreet</div>
             </div>
 
 
@@ -432,7 +439,6 @@
             <p>
                 <button type="submit">Envoyer le formulaire</button>
                 <input type="reset" value="Réinitialiser">
-                <button type="button" disabled>Action désactivée</button>
             </p>
 
             <h3>Barre de progression</h3>
@@ -526,25 +532,11 @@
                 <summary>Comment personnaliser les couleurs ?</summary>
                 <p>
                     Surchargez simplement les variables CSS dans votre propre feuille de style.
-                    Par exemple : <code>:root { --color-primary: #your-color; }</code>
+                    Par exemple : <code>[data-theme="your-theme"] { --color-primary: #your-color; }</code>
                     Toutes les couleurs se mettront à jour automatiquement.
                 </p>
             </details>
             <details open>
-                <summary>Comment ajouter un thème sombre ?</summary>
-                <p>
-                    Ajoutez un bloc <code>@media (prefers-color-scheme: dark)</code> et
-                    redéfinissez les variables de couleur. Les tokens sont déjà prêts à être surchargés :
-                </p>
-                <pre><code>@media (prefers-color-scheme: dark) {
-                :root {
-                    --color-bg:   #161616;
-                    --color-text: #f4f4f4;
-                    /* … autres tokens … */
-                }
-                }</code></pre>
-            </details>
-            <details>
                 <summary>Y a-t-il des dépendances JavaScript ?</summary>
                 <p>
                     Aucune. Ce framework est 100% CSS. Aucun JS n'est nécessaire pour le style de base.
@@ -571,6 +563,11 @@
             <div popover id="pop1" style="position-anchor: --pop1; top: anchor(top);left: calc(anchor(right) + 8px);">
                 <p>Bonjour le monde !</p>
             </div>
+
+            <h5>Tooltip</h5>
+            <a data-tooltip="Bonjour le monde !">Tooltip au survol</a>
+            <br><br>
+            <button data-tooltip="Bonjour le monde !">Tooltip au survol</button>
 
             <h5>Adresse</h5>
             <address>
@@ -691,9 +688,20 @@
             <iconify-icon icon="lucide:calendar"></iconify-icon>
             <iconify-icon icon="lucide:chart-bar"></iconify-icon>
 
+            <!-- ── REMIX ──────────────────────────────────────────────────── -->
+            <h5>Remix icons</h5>
+            <iconify-icon icon="ri:home-3-line"></iconify-icon>
+            <iconify-icon icon="ri:settings-3-line"></iconify-icon>
+            <iconify-icon icon="ri:user-line"></iconify-icon>
+            <iconify-icon icon="ri:search-line"></iconify-icon>
+            <iconify-icon icon="ri:shopping-cart-2-line"></iconify-icon>
+            <iconify-icon icon="ri:mail-line"></iconify-icon>
+            <iconify-icon icon="ri:calendar-line"></iconify-icon>
+            <iconify-icon icon="ri:bar-chart-fill"></iconify-icon>
+
             <!-- ── SOCIAL MEDIA ───────────────────────────────────────────── -->
             <h5>Social media</h5>
-            <iconify-icon icon="line-md:github-loop"></iconify-icon>
+            <iconify-icon icon="logos:github-icon"></iconify-icon>
             <iconify-icon icon="logos:discord-icon"></iconify-icon>
             <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
             <iconify-icon icon="skill-icons:instagram"></iconify-icon>
@@ -760,10 +768,7 @@
         <p>
             <strong>Racine.css v0.0.1</strong>
         </p>
-        <p>
-            Licence MIT · Construit par Vincent Manzoni ·
-            <time datetime="2026">2026</time>
-        </p>
+        <p>&copy; <time id="year" datetime="2026">2026</time> · Tous droits réservés · Vincent Manzoni</p>
     </footer>
 
 </body>

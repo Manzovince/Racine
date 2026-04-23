@@ -86,7 +86,7 @@
             <h2>Palette de couleur</h2>
 
             <h5>Fond</h5>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div
                 <div style="background:var(--color-bg);border:.5px solid var(--color-border-subtle)">--color-bg</div>
                 <div style="background:var(--color-bg-subtle)">--color-bg-subtle</div>
                 <div style="background:var(--color-bg-ui)">--color-bg-ui</div>
@@ -95,7 +95,7 @@
             </div>
 
             <h5>Bordure</h5>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div>
                 <div style="background:var(--color-border)">--color-border</div>
                 <div style="background:var(--color-border-subtle)">--color-border-subtle</div>
                 <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong
@@ -103,7 +103,7 @@
             </div>
 
             <h5>Texte</h5>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div>
                 <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
                 <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">
                     --color-text-secondary
@@ -117,7 +117,7 @@
             </div>
 
             <h5>Principale</h5>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div>
                 <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
                 <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover
                 </div>
@@ -129,7 +129,7 @@
             </div>
 
             <h5>Accentuée</h5>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div>
                 <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
                 <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover
                 </div>
@@ -139,29 +139,35 @@
             </div>
 
             <h5>Contextuelle</h5>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div>
                 <div style="background:var(--color-success);color:var(--color-text-inverse)">--color-success</div>
-                <div style="background:var(--color-warning)">--color-warning</div>
-                <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
-                <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
-            </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div style="background:var(--color-success-hover);color:var(--color-text-inverse)">--color-success-hover
                 </div>
-                <div style="background:var(--color-warning-hover)">--color-warning-hover</div>
-                <div style="background:var(--color-danger-hover);color:var(--color-text-inverse)">--color-danger-hover
-                </div>
-                <div style="background:var(--color-info-hover);color:var(--color-text-inverse)">--color-info-hover</div>
-            </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div style="background:var(--color-success-active);color:var(--color-text-inverse)">
                     --color-success-active
                 </div>
+
+                <div style="background:var(--color-warning)">--color-warning</div>
+                <div style="background:var(--color-warning-hover)">--color-warning-hover</div>
                 <div style="background:var(--color-warning-active)">--color-warning-active</div>
+
+
+                <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
+                <div style="background:var(--color-danger-hover);color:var(--color-text-inverse)">--color-danger-hover
+                </div>
                 <div style="background:var(--color-danger-active);color:var(--color-text-inverse)">--color-danger-active
                 </div>
+
+                <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
+                <div style="background:var(--color-info-hover);color:var(--color-text-inverse)">--color-info-hover</div>
                 <div style="background:var(--color-info-active);color:var(--color-text-inverse)">--color-info-active
                 </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                
+                
+                
             </div>
 
         </section>
@@ -412,7 +418,7 @@
                     <input type="radio" name="view" id="week" value="week">
                     <label for="week">Week</label>
 
-                    <input type="radio" name="view" id="month" value="month" checked>
+                    <input type="radio" name="view" id="month" value="month">
                     <label for="month">Month</label>
 
                     <input type="radio" name="view" id="year" value="year">
@@ -468,6 +474,8 @@
             <h3>Barre de progression</h3>
             <label>Progression : 65%</label>
             <progress value="65" max="100"></progress>
+
+            <br><br>
 
             <label>Niveau de batterie</label>
             <meter value="0.8" min="0" max="1" low="0.25" high="0.75" optimum="1"></meter>

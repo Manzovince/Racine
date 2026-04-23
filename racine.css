@@ -1032,6 +1032,20 @@ input[type="radio"] {
     border-radius: 50%;
 }
 
+label:has(input[type="radio"]:enabled:hover, input[type="checkbox"]:enabled:hover) {
+    color: var(--color-text);
+}
+
+label:has(input[type="radio"]:enabled:checked, input[type="checkbox"]:enabled:checked) {
+    color: var(--color-text);
+}
+
+label:has(input[type="radio"]:disabled, input[type="checkbox"]:disabled) {
+    opacity: .4;
+    cursor: default;
+    pointer-events: none;
+}
+
 input[type="checkbox"]::before {
     content: '';
     width: 0.6rem;
@@ -1073,7 +1087,7 @@ input[type="radio"]:focus-visible {
 input[type="checkbox"]:hover:not(:disabled),
 input[type="radio"]:hover:not(:disabled) {
     border-color: var(--color-border-strong);
-    background-color: var(--color-bg-hover);
+    background-color: var(--color-primary-hover);
 }
 
 input[type="checkbox"]:disabled,
@@ -1120,8 +1134,40 @@ input[type="radio"]:checked:disabled {
 }
 
 /* ── Switch ───────────────────────────────────────────────────────────── */
-input[type="checkbox"][role="switch"] {
-    background-color: red;
+input[type=checkbox][role=switch] {
+    appearance: none;
+    width: 40px;
+    height: 24px;
+    background: var(--color-border-tertiary);
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: background .2s;
+}
+
+input[type=checkbox][role=switch]::before {
+    display: none;
+    /* This one is a bit ugly, need to hide the clip-path from above, better css can be wrote */
+}
+
+input[type=checkbox][role=switch]::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform .2s;
+}
+
+input[type=checkbox][role=switch]:checked {
+    background: var(--color-primary);
+}
+
+input[type=checkbox][role=switch]:checked::after {
+    transform: translateX(16px);
 }
 
 /* ── Range ───────────────────────────────────────────────────────────── */
@@ -1195,7 +1241,7 @@ details {
 }
 
 details[open] {
-    border-color: var(--color-primary);
+    border-color: var(--color-border-strong);
 }
 
 summary {

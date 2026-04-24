@@ -237,6 +237,29 @@
     --color-focus: oklch(72% 0.15 145);
 }
 
+[data-theme="ocean-theme"] {
+    --color-bg: oklch(18% 0.030 230);
+    --color-bg-subtle: oklch(16% 0.032 222);
+    --color-bg-ui: oklch(20% 0.035 225);
+    --color-bg-hover: oklch(24% 0.038 225);
+    --color-bg-active: oklch(28% 0.040 222);
+    --color-border: oklch(35% 0.042 220);
+    --color-border-subtle: oklch(23% 0.035 225);
+    --color-border-strong: oklch(50% 0.048 215);
+    --color-text: oklch(93% 0.015 210);
+    --color-text-secondary: oklch(66% 0.032 220);
+    --color-text-placeholder: oklch(48% 0.028 222);
+    --color-text-disabled: oklch(36% 0.022 225);
+    --color-text-inverse: oklch(14% 0.028 230);
+    --color-primary: oklch(72% 0.160 205);
+    --color-accent: oklch(65% 0.140 185);
+    --color-success: oklch(70% 0.150 168);
+    --color-warning: oklch(75% 0.138 85);
+    --color-danger: oklch(60% 0.170 22);
+    --color-info: oklch(70% 0.130 230);
+    --color-focus: oklch(68% 0.155 205);
+}
+
 /* ==========================================================================
   RESET & BASE
 ========================================================================== */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="paper">
 
 <head>
     <meta charset="UTF-8">
@@ -42,6 +42,31 @@
                 <li><a href="#other">Autre</a></li>
             </ul>
         </nav>
+        <button popovertarget="theme-dropdown" style="anchor-name: --theme-dropdown;" class="sm">Thèmes</button>
+        <div popover id="theme-dropdown"
+            style="position-anchor: --theme-dropdown; top: anchor(bottom);left: anchor(left); padding: 0">
+            <div id="toggle" class="toggle" style="flex-direction: column;">
+                <input type="radio" name="view" id="light-theme" value="light-theme" checked>
+                <label for="light-theme" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
+                        icon="lucide:sun" style="font-size: 16px;"></iconify-icon></label>
+
+                <input type="radio" name="view" id="dark-theme" value="dark-theme">
+                <label for="dark-theme" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
+                        icon="lucide:moon" style="font-size: 16px;"></iconify-icon></label>
+
+                <input type="radio" name="view" id="paper-theme" value="paper-theme">
+                <label for="paper-theme" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
+                        icon="lucide:file-text" style="font-size: 16px;"></iconify-icon> </label>
+
+                <input type="radio" name="view" id="forest-theme" value="forest-theme">
+                <label for="forest-theme" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
+                        icon="lucide:trees" style="font-size: 16px;"></iconify-icon></label>
+
+                <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
+                <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
+                        icon="lucide:waves-ladder" style="font-size: 16px;"></iconify-icon></label>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -75,22 +100,24 @@
 
             <div id="toggle" class="toggle">
                 <input type="radio" name="view" id="light-theme" value="light-theme" checked>
-                <label for="light-theme">Light</label>
+                <label for="light-theme" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
+                        icon="lucide:sun" style="font-size: 16px;"></iconify-icon></label>
 
                 <input type="radio" name="view" id="dark-theme" value="dark-theme">
-                <label for="dark-theme">Dark</label>
+                <label for="dark-theme" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
+                        icon="lucide:moon" style="font-size: 16px;"></iconify-icon></label>
 
                 <input type="radio" name="view" id="paper-theme" value="paper-theme">
-                <label for="paper-theme" style="display: flex; gap: 8px">Paper <iconify-icon icon="lucide:file-text"
-                        style="font-size: 20px;"></iconify-icon> </label>
+                <label for="paper-theme" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
+                        icon="lucide:file-text" style="font-size: 16px;"></iconify-icon> </label>
 
                 <input type="radio" name="view" id="forest-theme" value="forest-theme">
-                <label for="forest-theme" style="display: flex; gap: 8px">Forest <iconify-icon icon="lucide:trees"
-                        style="font-size: 20px;"></iconify-icon></label>
+                <label for="forest-theme" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
+                        icon="lucide:trees" style="font-size: 16px;"></iconify-icon></label>
 
                 <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
-                <label for="ocean-theme" style="display: flex; gap: 8px">Ocean <iconify-icon icon="lucide:waves-ladder"
-                        style="font-size: 20px;"></iconify-icon></label>
+                <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
+                        icon="lucide:waves-ladder" style="font-size: 16px;"></iconify-icon></label>
             </div>
 
             <h5>Fond</h5>
@@ -193,7 +220,7 @@
             <h5>Titre h5 — Niveau 5</h5>
             <h6>Titre h6 — Niveau 6</h6>
 
-            <p class="font-serif" style="font-size: 2.5rem;">
+            <p class="font-serif" style="font-size: 2rem;">
                 Un texte avec <strong>Cormorant Garamond</strong>, qui fonctionne aussi en <i>italique</i>.
             </p>
 
@@ -289,7 +316,7 @@
                 <dd>Web Content Accessibility Guidelines — normes d'accessibilité publiées par le W3C.</dd>
             </dl>
 
-            <h5>Fil d'ariane <i>(avec <code>.breadcrumbs</code>)</i></h5>
+            <h5>Fil d'ariane <i style="text-transform: none;">(avec <code>.breadcrumbs</code>)</i></h5>
             <ul class="breadcrumbs">
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#">Documentation</a></li>
@@ -560,6 +587,80 @@
         <section id="composants">
             <h2>Composants interactifs</h2>
 
+            <h3>Boutons</h3>
+
+            <!-- ── SOLID ──────────────────────────────────────────────────── -->
+            <h5>Solid</h5>
+            <div>
+                <button>Primary</button>
+                <button class="success">Success</button>
+                <button class="warning">Warning</button>
+                <button class="danger">Danger</button>
+                <button class="info">Info</button>
+            </div>
+
+            <!-- ── OUTLINE ────────────────────────────────────────────────── -->
+            <h5>Outline</h5>
+            <div>
+                <button class="outline">Primary</button>
+                <button class="outline success">Success</button>
+                <button class="outline warning">Warning</button>
+                <button class="outline danger">Danger</button>
+                <button class="outline info">Info</button>
+            </div>
+
+
+            <!-- ── DISCREET ───────────────────────────────────────────────── -->
+            <h5>Discreet</h5>
+            <div>
+                <button class="discreet">Primary</button>
+                <button class="discreet success">Success</button>
+                <button class="discreet warning">Warning</button>
+                <button class="discreet danger">Danger</button>
+                <button class="discreet info">Info</button>
+            </div>
+
+
+            <h5>Flat</h5>
+            <div>
+                <button class="flat">Primary</button>
+                <button class="flat success">Success</button>
+                <button class="flat warning">Warning</button>
+                <button class="flat danger">Danger</button>
+                <button class="flat info">Info</button>
+            </div>
+
+            <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
+            <h5>Balise &lt;a&gt; <i style="text-transform: none;">(avec <code>.btn</code>)</i> </h5>
+            <div>
+                <a class="btn">primary</a>
+                <a class="btn outline">outline</a>
+                <a class="btn discreet">discreet</a>
+                <a class="btn flat">flat</a>
+            </div>
+
+
+            <!-- ── TAILLES ────────────────────────────────────────────────── -->
+            <h5>Tailles</h5>
+            <div>
+                <button class="sm">SM</button>
+                <button class="outline">MD</button>
+                <button class="lg discreet">LG</button>
+                <button class="xl">XL</button>
+            </div>
+
+            <!-- ── WITH ICONS ────────────────────────────────────────────── -->
+            <h5>Icons <i style="text-transform: none;">(avec <code>.icon</code>, <code>.icon-start</code> ou
+                    <code>.icon-end</code>)</i></h5>
+            <div style="display: flex; align-items:center; gap: 8px">
+                <button class="flat icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
+                <button class="outline icon-start">Home</button>
+                <button class="danger icon-end sm"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
+                <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
+            </div>
+
+            <hr>
+
             <h5>Encart <i>(aside)</i></h5>
             <aside>
                 <strong>Note :</strong> Ce framework est conçu comme une fondation.
@@ -604,6 +705,33 @@
                 <p>Bonjour le monde !</p>
             </div>
 
+            <br><br>
+
+            <button popovertarget="pop2" style="anchor-name: --pop2;">Dropdown popover</button>
+            <div popover id="pop2" style="position-anchor: --pop2; top: anchor(bottom);left: anchor(left); padding: 0;">
+                <div id="toggle" class="toggle" style="flex-direction: column;">
+                <input type="radio" name="view" id="light-theme" value="light-theme" checked>
+                <label for="light-theme" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
+                        icon="lucide:sun" style="font-size: 16px;"></iconify-icon></label>
+
+                <input type="radio" name="view" id="dark-theme" value="dark-theme">
+                <label for="dark-theme" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
+                        icon="lucide:moon" style="font-size: 16px;"></iconify-icon></label>
+
+                <input type="radio" name="view" id="paper-theme" value="paper-theme">
+                <label for="paper-theme" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
+                        icon="lucide:file-text" style="font-size: 16px;"></iconify-icon> </label>
+
+                <input type="radio" name="view" id="forest-theme" value="forest-theme">
+                <label for="forest-theme" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
+                        icon="lucide:trees" style="font-size: 16px;"></iconify-icon></label>
+
+                <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
+                <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
+                        icon="lucide:waves-ladder" style="font-size: 16px;"></iconify-icon></label>
+            </div>
+            </div>
+
             <h5>Tooltip</h5>
             <a data-tooltip="Bonjour le monde !">Tooltip au survol</a>
             <br><br>
@@ -630,76 +758,7 @@
          ================================================================== -->
         <section id="buttons">
 
-            <h1>Boutons</h1>
-
-            <!-- ── SOLID ──────────────────────────────────────────────────── -->
-            <h5>Solid</h5>
-            <div>
-                <button>Primary</button>
-                <button class="success">Success</button>
-                <button class="warning">Warning</button>
-                <button class="danger">Danger</button>
-                <button class="info">Info</button>
-            </div>
-
-            <!-- ── OUTLINE ────────────────────────────────────────────────── -->
-            <h5>Outline</h5>
-            <div>
-                <button class="outline">Primary</button>
-                <button class="outline success">Success</button>
-                <button class="outline warning">Warning</button>
-                <button class="outline danger">Danger</button>
-                <button class="outline info">Info</button>
-            </div>
-
-
-            <!-- ── DISCREET ───────────────────────────────────────────────── -->
-            <h5>Discreet</h5>
-            <div>
-                <button class="discreet">Primary</button>
-                <button class="discreet success">Success</button>
-                <button class="discreet warning">Warning</button>
-                <button class="discreet danger">Danger</button>
-                <button class="discreet info">Info</button>
-            </div>
-
-
-            <h5>Flat</h5>
-            <div>
-                <button class="flat">Primary</button>
-                <button class="flat success">Success</button>
-                <button class="flat warning">Warning</button>
-                <button class="flat danger">Danger</button>
-                <button class="flat info">Info</button>
-            </div>
-
-            <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
-            <h5>Balise &lt;a&gt; <i>(avec <code>.btn</code>)</i> </h5>
-            <div>
-                <a class="btn">primary</a>
-                <a class="btn outline">outline</a>
-                <a class="btn discreet">discreet</a>
-                <a class="btn flat">flat</a>
-            </div>
-
-
-            <!-- ── TAILLES ────────────────────────────────────────────────── -->
-            <h5>Tailles</h5>
-            <div>
-                <button class="sm">SM</button>
-                <button class="outline">MD</button>
-                <button class="lg discreet">LG</button>
-                <button class="xl">XL</button>
-            </div>
-
-            <!-- ── WITH ICONS ────────────────────────────────────────────── -->
-            <h5>Icons <i>(avec <code>.icon</code>, <code>.icon-start</code> ou <code>.icon-end</code>)</i></h5>
-            <div>
-                <button class="flat icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
-                <button class="outline icon-start"><iconify-icon icon="mdi:home"></iconify-icon>Home</button>
-                <button class="danger icon-end sm"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
-                <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
-            </div>
+            
         </section>
 
         <!-- ================================================================

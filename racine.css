@@ -9,29 +9,19 @@
 ========================================================================== */
 
 :root {
-    /* ── Typographie ─────────────────────────────────────────────────── */
     --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     --font-serif: 'Cormorant Garamond', serif;
     --font-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 
     --font-size-xs: 0.75rem;
-    /*  12px */
     --font-size-sm: 0.875rem;
-    /*  14px */
     --font-size-base: 1rem;
-    /*  16px */
     --font-size-lg: 1.125rem;
-    /*  18px */
     --font-size-xl: 1.25rem;
-    /*  20px */
     --font-size-2xl: 1.5rem;
-    /*  24px */
     --font-size-3xl: 2rem;
-    /*  32px */
     --font-size-4xl: 2.625rem;
-    /*  42px */
     --font-size-5xl: 3.375rem;
-    /*  54px */
 
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -48,54 +38,34 @@
     --letter-spacing-wide: 0.08em;
     --letter-spacing-wider: 0.16em;
 
-    /* ── Espacement (Échelle 4px / modulaire) ────────────────────────── */
     --space-3xs: 0.125rem;
-    /*  2px */
     --space-2xs: 0.25rem;
-    /*  4px */
     --space-xs: 0.5rem;
-    /*  8px */
     --space-sm: 0.75rem;
-    /* 12px */
     --space-base: 1rem;
-    /* 16px */
     --space-lg: 1.5rem;
-    /* 24px */
     --space-xl: 2rem;
-    /* 32px */
     --space-2xl: 2.5rem;
-    /* 40px */
     --space-3xl: 3rem;
-    /* 48px */
     --space-4xl: 4rem;
-    /* 64px */
     --space-5xl: 5rem;
-    /* 80px */
     --space-6xl: 6rem;
-    /* 96px */
     --space-7xl: 7rem;
-    /* 112px */
     --space-8xl: 8rem;
-    /* 128px */
 
-    /* ── Layout ──────────────────────────────────────────────────────── */
     --max-width: 80rem;
-    /* 1280px */
     --content-width: 65ch;
     --border-radius: 0;
     --border-width: 1px;
     --border-width-heavy: 2px;
 
-    /* ── Transitions ─────────────────────────────────────────────────── */
     --transition-fast: 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
     --transition-base: 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
     --transition-slow: 240ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
-    /* ── Focus Ring ──────────────────────────────────────────────────── */
     --focus-outline: 2px solid var(--color-focus);
     --focus-offset: 2px;
 
-    /* ── Shadow ──────────────────────────────────────────────────────── */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
@@ -103,12 +73,10 @@
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 
-    /* ── Z-index ─────────────────────────────────────────────────────── */
     --z-index-negative: -1;
     --z-index-0: 0;
     --z-index-max: 9999;
 
-    /* ── Color variants ─────────────────────────────────────────────────────── */
     --color-primary-hover: color-mix(in srgb, var(--color-primary) 80%, white);
     --color-primary-active: color-mix(in srgb, var(--color-primary) 80%, black);
 
@@ -134,25 +102,20 @@
     --color-bg-ui: oklch(90.67% 0.0001 271.152);
     --color-bg-hover: oklch(86.07% 0.0001 271.152);
     --color-bg-active: oklch(82.656% 0.00009 271.152);
-
     --color-border: oklch(64.341% 0.00007 271.152);
     --color-border-subtle: oklch(90.67% 0.0001 271.152);
     --color-border-strong: oklch(20.019% 0.00002 271.152);
-
     --color-text: oklch(20.019% 0.00002 271.152);
     --color-text-secondary: oklch(43.861% 0.00005 271.152);
     --color-text-placeholder: oklch(73.16% 0.00008 271.152);
     --color-text-disabled: oklch(82.656% 0.00009 271.152);
     --color-text-inverse: oklch(100% 0.00011 271.152);
-
     --color-primary: oklch(55.655% 0.24308 261.969);
     --color-accent: color-mix(in srgb, var(--color-primary) 80%, white);
-
     --color-success: oklch(52.722% 0.14074 148.316);
     --color-warning: oklch(83.212% 0.16547 90.445);
     --color-danger: oklch(56.921% 0.21741 25.916);
     --color-info: oklch(45.403% 0.22109 262.649);
-
     --color-focus: oklch(55.655% 0.24308 261.969);
 }
 
@@ -162,20 +125,16 @@
     --color-bg-ui: oklch(34.458% 0.00004 271.152);
     --color-bg-hover: oklch(39.793% 0.00005 271.152);
     --color-bg-active: oklch(43.861% 0.00005 271.152);
-
     --color-border: oklch(54.171% 0.00006 271.152);
     --color-border-subtle: oklch(34.458% 0.00004 271.152);
     --color-border-strong: oklch(96.715% 0.00011 271.152);
-
     --color-text: oklch(96.715% 0.00011 271.152);
     --color-text-secondary: oklch(82.656% 0.00009 271.152);
     --color-text-placeholder: oklch(54.171% 0.00006 271.152);
     --color-text-disabled: oklch(43.861% 0.00005 271.152);
     --color-text-inverse: oklch(20.019% 0.00002 271.152);
-
     --color-primary: oklch(64.699% 0.18891 260.597);
     --color-accent: oklch(70.45% 0.19257 39.216);
-
     --color-success: oklch(71.204% 0.16767 149.316);
     --color-warning: oklch(83.212% 0.16547 90.445);
     --color-danger: oklch(75.077% 0.15075 18.323);
@@ -189,20 +148,16 @@
     --color-bg-ui: oklch(89% 0.015 65);
     --color-bg-hover: oklch(86% 0.018 65);
     --color-bg-active: oklch(83% 0.020 64);
-
     --color-border: oklch(75% 0.025 60);
     --color-border-subtle: oklch(88% 0.015 65);
     --color-border-strong: oklch(55% 0.035 55);
-
     --color-text: oklch(20.699% 0.00751 67.326);
     --color-text-secondary: oklch(45% 0.030 55);
     --color-text-placeholder: oklch(62% 0.022 60);
     --color-text-disabled: oklch(72% 0.015 62);
     --color-text-inverse: oklch(96% 0.008 70);
-
     --color-primary: oklch(45% 0.12 250);
     --color-accent: oklch(52% 0.15 35);
-
     --color-success: oklch(52% 0.13 145);
     --color-warning: oklch(68% 0.14 75);
     --color-danger: oklch(52% 0.16 25);
@@ -216,20 +171,16 @@
     --color-bg-ui: oklch(23% 0.030 152);
     --color-bg-hover: oklch(27% 0.032 152);
     --color-bg-active: oklch(31% 0.033 150);
-
     --color-border: oklch(38% 0.035 148);
     --color-border-subtle: oklch(26% 0.030 152);
     --color-border-strong: oklch(52% 0.040 145);
-
     --color-text: oklch(92% 0.018 135);
     --color-text-secondary: oklch(68% 0.030 145);
     --color-text-placeholder: oklch(50% 0.025 148);
     --color-text-disabled: oklch(38% 0.020 150);
     --color-text-inverse: oklch(16.5% 0.025 155);
-
     --color-primary: oklch(83.323% 0.14145 76.633);
     --color-accent: oklch(68% 0.13 95);
-
     --color-success: oklch(70% 0.16 145);
     --color-warning: oklch(75% 0.14 88);
     --color-danger: oklch(60% 0.17 22);
@@ -513,14 +464,12 @@ h1 {
     font-weight: var(--font-weight-light);
     letter-spacing: -0.03em;
     margin-bottom: var(--space-lg);
-    padding-bottom: var(--space-lg);
 }
 
 h2 {
     font-size: clamp(var(--font-size-2xl), 2.5vw + 0.5rem, var(--font-size-4xl));
     font-weight: var(--font-weight-regular);
     position: relative;
-    padding-bottom: var(--space-sm);
 }
 
 h3 {

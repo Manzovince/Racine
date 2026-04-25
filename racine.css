@@ -11,7 +11,9 @@
 :root {
     --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     --font-serif: 'Cormorant Garamond', serif;
+    --font-serif-upright: 'Cormorant Upright', serif;
     --font-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+    --font-cursive: 'La Belle Aurore', cursive;
 
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -433,6 +435,20 @@ body>footer {
     color: var(--color-text-secondary);
 }
 
+/* Color swatches */
+
+.swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin-bottom: 2rem;
+}
+
+.swatch-grid div {
+    padding: var(--space-base) var(--space-base);
+    font-size: 12px;
+    font-family: var(--font-mono, monospace);
+}
+
 /* ==========================================================================
   TYPOGRAPHIE
 ========================================================================== */
@@ -657,6 +673,22 @@ hr {
 /* ── Font utilities ──────────────────────────────────────────────────── */
 .font-serif {
     font-family: var(--font-serif);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-serif-upright {
+    font-family: var(--font-serif-upright);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+.font-cursive {
+    font-family: var(--font-cursive);
 }
 
 /* ==========================================================================
@@ -1299,16 +1331,22 @@ dialog {
     width: 100%;
 }
 
-dialog form:first-of-type {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: var(--space-xl);
-}
-
 dialog::backdrop {
     background-color: rgb(22 22 22 / 0.7);
     backdrop-filter: blur(4px);
+}
+
+dialog .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+dialog .footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
 }
 
 /* ── Popover ─────────────────────────────────────────────────────────── */
@@ -1323,31 +1361,32 @@ dialog::backdrop {
 
 /* ── Tooltip ─────────────────────────────────────────────────────────── */
 
-a[data-tooltip],
-button[data-tooltip] {
+[data-tooltip] {
     position: relative;
 }
 
-a[data-tooltip]::after,
-button[data-tooltip]::after {
+[data-tooltip]::after {
+    all: initial;
     content: attr(data-tooltip);
-    max-width: 65ch;
-    text-transform: none;
+    font-family: var(--font-sans);
     font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-sm);
+    text-transform: none;
+    color: var(--color-text);
     opacity: 0;
     position: absolute;
     left: calc(100% + 8px);
-    font-size: var(--font-size-sm);
+    top: 0;
+    white-space: nowrap;
     border: solid var(--border-width) var(--color-border);
     padding: var(--space-xs);
-    color: var(--color-text);
     background-color: var(--color-bg-subtle);
     box-shadow: var(--shadow-md);
     z-index: var(--z-index-max);
+    pointer-events: none;
 }
 
-a[data-tooltip]:hover::after,
-button[data-tooltip]:hover::after {
+[data-tooltip]:hover::after {
     opacity: 1;
 }
 

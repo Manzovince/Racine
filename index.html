@@ -9,10 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+Upright:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=La+Belle+Aurore&display=swap"
         rel="stylesheet">
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
@@ -64,7 +61,7 @@
 
                 <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
                 <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
-                        icon="lucide:waves-ladder" style="font-size: 16px;"></iconify-icon></label>
+                        icon="lucide:fish" style="font-size: 16px;"></iconify-icon></label>
             </div>
         </div>
     </header>
@@ -76,18 +73,15 @@
             <hgroup>
                 <h1 class="font-serif" style="font-size: var(--font-size-5xl);"><strong>Racine.css</strong> stylise
                     n'importe quelle page HTML5.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit cumque voluptas porro in
-                    dolores quod accusamus? Laborum est obcaecati eligendi. Similique molestiae provident id facere
-                    temporibus, quasi fugiat deleniti vitae recusandae facilis non nihil, nulla corrupti laudantium?
-                    Odit repellendus libero quibusdam.</p>
+                <p>Une bibliothèque CSS moderne et flexible pour styliser vos pages HTML5, </p>
             </hgroup>
 
             <h4>Principes</h4>
             <ul>
-                <li><strong>Sémantique.</strong> Priorité au sens des balises pour une structure logique et
+                <li><strong>Sémantique d'abord.</strong> S'appuyer sur le sens des balises pour une structure logique et
                     robuste.</li>
-                <li><strong>Performant.</strong> Chaque caractère est optimisé pour un rendu instantané.</li>
-                <li><strong>Accessible.</strong> Faire simple pour inclure tout le monde.</li>
+                <li><strong>Versatile.</strong> Adaptable à différents contextes et besoins.</li>
+                <li><strong>Accessible.</strong> Conçu pour être utilisé par tous.</li>
             </ul>
 
         </section>
@@ -117,93 +111,68 @@
 
                 <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
                 <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
-                        icon="lucide:waves-ladder" style="font-size: 16px;"></iconify-icon></label>
+                        icon="lucide:fish" style="font-size: 16px;"></iconify-icon></label>
             </div>
 
             <h5>Fond</h5>
-            <div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-bg);border:.5px solid var(--color-border-subtle)">--color-bg</div>
                 <div style="background:var(--color-bg-subtle)">--color-bg-subtle</div>
                 <div style="background:var(--color-bg-ui)">--color-bg-ui</div>
                 <div style="background:var(--color-bg-hover)">--color-bg-hover</div>
                 <div style="background:var(--color-bg-active)">--color-bg-active</div>
             </div>
-
+            
             <h5>Bordure</h5>
-            <div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-border)">--color-border</div>
                 <div style="background:var(--color-border-subtle)">--color-border-subtle</div>
-                <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong
-                </div>
+                <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong</div>
             </div>
-
+            
             <h5>Texte</h5>
-            <div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
-                <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">
-                    --color-text-secondary
+                <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">--color-text-secondary</div>
+                <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">--color-text-placeholder</div>
+                <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled</div>
+                <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">--color-text-inverse
                 </div>
-                <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">
-                    --color-text-placeholder</div>
-                <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled
-                </div>
-                <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">
-                    --color-text-inverse</div>
             </div>
-
+            
             <h5>Principale</h5>
-            <div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
-                <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover
+                <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover</div>
+                <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">--color-primary-active</div>
+                <div style="background:color-mix(in srgb, var(--color-primary-active) 22%, transparent)">--color-primary-discreet
                 </div>
-                <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">
-                    --color-primary-active
-                </div>
-                <div style="background:color-mix(in srgb, var(--color-primary-active) 22%, transparent);">
-                    --color-primary-discreet</div>
             </div>
-
+            
             <h5>Accentuée</h5>
-            <div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
-                <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover
-                </div>
-                <div style="background:var(--color-accent-active);color:var(--color-text-inverse)">--color-accent-active
-                </div>
+                <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover</div>
+                <div style="background:var(--color-accent-active);color:var(--color-text-inverse)">--color-accent-active</div>
                 <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
             </div>
-
+            
             <h5>Contextuelle</h5>
-            <div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-success);color:var(--color-text-inverse)">--color-success</div>
-                <div style="background:var(--color-success-hover);color:var(--color-text-inverse)">--color-success-hover
-                </div>
-                <div style="background:var(--color-success-active);color:var(--color-text-inverse)">
-                    --color-success-active
-                </div>
-
+                <div style="background:var(--color-success-hover);color:var(--color-text-inverse)">--color-success-hover</div>
+                <div style="background:var(--color-success-active);color:var(--color-text-inverse)">--color-success-active</div>
                 <div style="background:var(--color-warning)">--color-warning</div>
                 <div style="background:var(--color-warning-hover)">--color-warning-hover</div>
                 <div style="background:var(--color-warning-active)">--color-warning-active</div>
-
-
                 <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
-                <div style="background:var(--color-danger-hover);color:var(--color-text-inverse)">--color-danger-hover
-                </div>
-                <div style="background:var(--color-danger-active);color:var(--color-text-inverse)">--color-danger-active
-                </div>
-
+                <div style="background:var(--color-danger-hover);color:var(--color-text-inverse)">--color-danger-hover</div>
+                <div style="background:var(--color-danger-active);color:var(--color-text-inverse)">--color-danger-active</div>
                 <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
                 <div style="background:var(--color-info-hover);color:var(--color-text-inverse)">--color-info-hover</div>
-                <div style="background:var(--color-info-active);color:var(--color-text-inverse)">--color-info-active
-                </div>
+                <div style="background:var(--color-info-active);color:var(--color-text-inverse)">--color-info-active</div>
             </div>
-
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-
-
-
-            </div>
+            </section>
 
         </section>
 
@@ -222,6 +191,14 @@
 
             <p class="font-serif" style="font-size: 2rem;">
                 Un texte avec <strong>Cormorant Garamond</strong>, qui fonctionne aussi en <i>italique</i>.
+            </p>
+
+            <p class="font-serif-upright" style="font-size: 2rem;">
+                Un texte avec <strong>Cormorant Upright</strong>, qui fonctionne aussi en <i>italique</i>.
+            </p>
+
+            <p class="font-cursive" style="font-size: 2rem;">
+                Un texte avec <strong>La belle aurore</strong>, qui fonctionne aussi en <i>italique</i>.
             </p>
 
             <p>
@@ -689,14 +666,19 @@
             <h5>Modale <i>(dialog)</i></h5>
             <button onclick="document.getElementById('dialog1').showModal();">Ouvrir la modale</button>
             <dialog id="dialog1">
-                <h3>Titre du dialog</h3>
-                <form method="dialog">
-                    <button type="submit" class="flat icon"><iconify-icon icon="mdi:close"></iconify-icon></button>
-                </form>
+                <div class="header">
+                    <h3>Titre du dialog</h3>
+                    <form method="dialog">
+                        <button type="submit" class="flat icon"><iconify-icon icon="mdi:close"></iconify-icon></button>
+                    </form>
+                </div>
                 <p>Voici un élément natif de "dialog".</p>
-                <form method="dialog">
-                    <button type="submit" class="flat">Fermer</button>
-                </form>
+                <div class="footer">
+                    <button>Action</button>
+                    <form method="dialog">
+                        <button type="submit" class="flat">Fermer</button>
+                    </form>
+                </div>
             </dialog>
 
             <h5>Popover</h5>
@@ -710,26 +692,15 @@
             <button popovertarget="pop2" style="anchor-name: --pop2;">Dropdown popover</button>
             <div popover id="pop2" style="position-anchor: --pop2; top: anchor(bottom);left: anchor(left); padding: 0;">
                 <div id="toggle" class="toggle" style="flex-direction: column;">
-                <input type="radio" name="view" id="light-theme" value="light-theme" checked>
-                <label for="light-theme" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
-                        icon="lucide:sun" style="font-size: 16px;"></iconify-icon></label>
+                    <input type="radio" name="view" id="dropdown1" value="dropdown1" checked>
+                    <label for="dropdown1">One</label>
 
-                <input type="radio" name="view" id="dark-theme" value="dark-theme">
-                <label for="dark-theme" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
-                        icon="lucide:moon" style="font-size: 16px;"></iconify-icon></label>
+                    <input type="radio" name="view" id="dropdown2" value="dropdown2">
+                    <label for="dropdown2">Two</label>
 
-                <input type="radio" name="view" id="paper-theme" value="paper-theme">
-                <label for="paper-theme" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
-                        icon="lucide:file-text" style="font-size: 16px;"></iconify-icon> </label>
-
-                <input type="radio" name="view" id="forest-theme" value="forest-theme">
-                <label for="forest-theme" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
-                        icon="lucide:trees" style="font-size: 16px;"></iconify-icon></label>
-
-                <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
-                <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
-                        icon="lucide:waves-ladder" style="font-size: 16px;"></iconify-icon></label>
-            </div>
+                    <input type="radio" name="view" id="dropdown3" value="dropdown3">
+                    <label for="dropdown3">Three</label>
+                </div>
             </div>
 
             <h5>Tooltip</h5>

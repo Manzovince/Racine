@@ -28,15 +28,8 @@
         </a>
         <nav>
             <ul>
-                <li><a href="#couleurs">Couleurs</a></li>
-                <li><a href="#text">Texte</a></li>
-                <li><a href="#tableau">Tableau</a></li>
-                <li><a href="#formulaires">Formulaires</a></li>
-                <li><a href="#composants">Composants</a></li>
-                <li><a href="#media">Media</a></li>
-                <li><a href="#buttons">Boutons</a></li>
-                <li><a href="#icons">Icons</a></li>
-                <li><a href="#other">Autre</a></li>
+                <li><a href="#">Introduction</a></li>
+                <li><a href="#">Librairie</a></li>
             </ul>
         </nav>
         <button popovertarget="theme-dropdown" style="anchor-name: --theme-dropdown;" class="sm">Thèmes</button>
@@ -65,6 +58,19 @@
             </div>
         </div>
     </header>
+
+    <!-- Side Navigation -->
+    <nav id="side-nav">
+        <a href="#hero">Introduction</a>
+        <a href="#couleurs">Couleurs</a>
+        <a href="#text">Texte</a>
+        <a href="#tableau">Tableau</a>
+        <a href="#formulaires">Formulaires</a>
+        <a href="#media">Media</a>
+        <a href="#composants">Composants</a>
+        <a href="#icons">Icons</a>
+        <a href="#other">Autre</a>
+    </nav>
 
     <main>
 
@@ -122,57 +128,78 @@
                 <div style="background:var(--color-bg-hover)">--color-bg-hover</div>
                 <div style="background:var(--color-bg-active)">--color-bg-active</div>
             </div>
-            
+
             <h5>Bordure</h5>
             <div class="swatch-grid">
                 <div style="background:var(--color-border)">--color-border</div>
                 <div style="background:var(--color-border-subtle)">--color-border-subtle</div>
-                <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong</div>
+                <div style="background:var(--color-border-strong);color:var(--color-text-inverse)">--color-border-strong
+                </div>
             </div>
-            
+
             <h5>Texte</h5>
             <div class="swatch-grid">
                 <div style="background:var(--color-text);color:var(--color-text-inverse)">--color-text</div>
-                <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">--color-text-secondary</div>
-                <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">--color-text-placeholder</div>
-                <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled</div>
-                <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">--color-text-inverse
+                <div style="background:var(--color-text-secondary);color:var(--color-text-inverse)">
+                    --color-text-secondary</div>
+                <div style="background:var(--color-text-placeholder);color:var(--color-text-inverse)">
+                    --color-text-placeholder</div>
+                <div style="background:var(--color-text-disabled);color:var(--color-text-inverse)">--color-text-disabled
+                </div>
+                <div style="background:var(--color-text-inverse);border:.5px solid var(--color-border-subtle)">
+                    --color-text-inverse
                 </div>
             </div>
-            
+
             <h5>Principale</h5>
             <div class="swatch-grid">
                 <div style="background:var(--color-primary);color:var(--color-text-inverse)">--color-primary</div>
-                <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover</div>
-                <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">--color-primary-active</div>
-                <div style="background:color-mix(in srgb, var(--color-primary-active) 22%, transparent)">--color-primary-discreet
+                <div style="background:var(--color-primary-hover);color:var(--color-text-inverse)">--color-primary-hover
+                </div>
+                <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">
+                    --color-primary-active</div>
+                <div style="background:color-mix(in srgb, var(--color-primary-active) 22%, transparent)">
+                    --color-primary-discreet
                 </div>
             </div>
-            
+
             <h5>Accentuée</h5>
             <div class="swatch-grid">
                 <div style="background:var(--color-accent);color:var(--color-text-inverse)">--color-accent</div>
-                <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover</div>
-                <div style="background:var(--color-accent-active);color:var(--color-text-inverse)">--color-accent-active</div>
+                <div style="background:var(--color-accent-hover);color:var(--color-text-inverse)">--color-accent-hover
+                </div>
+                <div style="background:var(--color-accent-active);color:var(--color-text-inverse)">--color-accent-active
+                </div>
                 <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
             </div>
-            
+
             <h5>Contextuelle</h5>
             <div class="swatch-grid">
                 <div style="background:var(--color-success);color:var(--color-text-inverse)">--color-success</div>
-                <div style="background:var(--color-success-hover);color:var(--color-text-inverse)">--color-success-hover</div>
-                <div style="background:var(--color-success-active);color:var(--color-text-inverse)">--color-success-active</div>
+                <div style="background:var(--color-success-hover);color:var(--color-text-inverse)">--color-success-hover
+                </div>
+                <div style="background:var(--color-success-active);color:var(--color-text-inverse)">
+                    --color-success-active</div>
+            </div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-warning)">--color-warning</div>
                 <div style="background:var(--color-warning-hover)">--color-warning-hover</div>
                 <div style="background:var(--color-warning-active)">--color-warning-active</div>
+            </div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-danger);color:var(--color-text-inverse)">--color-danger</div>
-                <div style="background:var(--color-danger-hover);color:var(--color-text-inverse)">--color-danger-hover</div>
-                <div style="background:var(--color-danger-active);color:var(--color-text-inverse)">--color-danger-active</div>
+                <div style="background:var(--color-danger-hover);color:var(--color-text-inverse)">--color-danger-hover
+                </div>
+                <div style="background:var(--color-danger-active);color:var(--color-text-inverse)">--color-danger-active
+                </div>
+            </div>
+            <div class="swatch-grid">
                 <div style="background:var(--color-info);color:var(--color-text-inverse)">--color-info</div>
                 <div style="background:var(--color-info-hover);color:var(--color-text-inverse)">--color-info-hover</div>
-                <div style="background:var(--color-info-active);color:var(--color-text-inverse)">--color-info-active</div>
+                <div style="background:var(--color-info-active);color:var(--color-text-inverse)">--color-info-active
+                </div>
             </div>
-            </section>
+        </section>
 
         </section>
 
@@ -188,18 +215,6 @@
             <h4>Titre h4 — Niveau 4</h4>
             <h5>Titre h5 — Niveau 5</h5>
             <h6>Titre h6 — Niveau 6</h6>
-
-            <p class="font-serif" style="font-size: 2rem;">
-                Un texte avec <strong>Cormorant Garamond</strong>, qui fonctionne aussi en <i>italique</i>.
-            </p>
-
-            <p class="font-serif-upright" style="font-size: 2rem;">
-                Un texte avec <strong>Cormorant Upright</strong>, qui fonctionne aussi en <i>italique</i>.
-            </p>
-
-            <p class="font-cursive" style="font-size: 2rem;">
-                Un texte avec <strong>La belle aurore</strong>, qui fonctionne aussi en <i>italique</i>.
-            </p>
 
             <p>
                 Le corps de texte utilise <strong>IBM Plex Sans</strong> en 16px avec une hauteur de ligne
@@ -221,13 +236,47 @@
                 <kbd>Ctrl</kbd> + <kbd>K</kbd>.
             </p>
 
+            <h5>Autres polices</h5>
+            <p class="font-serif" style="font-size: var(--font-size-2xl);">
+                Un texte avec <strong>Cormorant Garamond</strong>, qui fonctionne aussi en <i>italique</i>. Lorem ipsum,
+                dolor sit
+                amet consectetur adipisicing elit. Quas, repudiandae. Impedit harum cumque delectus molestias vero,
+                dolorum
+                repudiandae quidem porro rerum aperiam rem recusandae.
+            </p>
+
+            <p class="font-serif-upright" style="font-size: var(--font-size-2xl);">
+                Un texte avec <strong>Cormorant Upright</strong>, qui fonctionne aussi en <i>italique</i>. Lorem ipsum,
+                dolor sit
+                amet consectetur adipisicing elit. Quas, repudiandae. Impedit harum cumque delectus molestias vero,
+                dolorum
+                repudiandae quidem porro rerum aperiam rem recusandae.
+            </p>
+
+            <p class="font-cursive" style="font-size: var(--font-size-3xl);">
+                Un texte avec <strong>La belle aurore</strong>, qui fonctionne aussi en <i>italique</i>. Lorem ipsum,
+                dolor sit amet
+                consectetur adipisicing elit. Quas, repudiandae. Impedit harum cumque delectus molestias vero, dolorum
+                repudiandae
+                quidem porro rerum aperiam rem recusandae.
+            </p>
+
             <h5>Annotation Ruby</h5>
-            <p><ruby>漢<rp>(</rp>
+            <span>
+                <ruby>漢<rp>(</rp>
                     <rt>かん</rt>
                     <rp>)</rp>字<rp>(</rp>
                     <rt>じ</rt>
                     <rp>)</rp>
-                </ruby></p>
+                </ruby>
+            </span>
+
+            <span>
+                <ruby>Texte principale<rp>(</rp>
+                    <rt>Texte secondaire</rt>
+                    <rp>)</rp>
+                </ruby>
+            </span>
 
             <h5>Citation</h5>
             <blockquote>
@@ -253,8 +302,10 @@
 &lt;/article&gt;</code></pre>
 
 
-            <h5>Séparation</h5>
+            <h5>Séparation <i style="text-transform: none;">(avec <code>.hr</code>)</i></h5>
+            <hr style="border-color: var(--color-border-subtle);">
             <hr>
+            <hr style="border-color: var(--color-border-strong);">
 
             <h2>Listes</h2>
 
@@ -435,6 +486,16 @@
 
                     <input type="radio" name="view" id="year" value="year">
                     <label for="year">Year</label>
+                </div>
+                <div id="toggle" class="toggle" style="margin-left: 32px; gap: 8px;">
+                    <input type="checkbox" name="view" id="aaa" value="aaa">
+                    <label for="aaa">Day</label>
+
+                    <input type="checkbox" name="view" id="bbb" value="bbb">
+                    <label for="bbb">Week</label>
+
+                    <input type="checkbox" name="view" id="ccc" value="ccc">
+                    <label for="ccc">Month</label>
                 </div>
 
                 <br><br>

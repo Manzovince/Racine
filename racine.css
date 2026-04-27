@@ -214,8 +214,30 @@
 }
 
 /* ==========================================================================
-  RESET & BASE
+  Utilities
 ========================================================================== */
+
+/* ── Font utilities ──────────────────────────────────────────────────── */
+.font-serif {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-serif-upright {
+    font-family: var(--font-serif-upright);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+.font-cursive {
+    font-family: var(--font-cursive);
+    line-height: 1.4;
+}
 
 *,
 *::before,
@@ -350,7 +372,7 @@ body>header nav ul li::before {
 body>header nav a {
     display: inline-flex;
     align-items: center;
-    padding: var(--space-xs) var(--space-base);
+    padding: var(--space-2xs) var(--space-xs);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     letter-spacing: var(--letter-spacing-wide);
@@ -440,7 +462,6 @@ body>footer {
 .swatch-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    margin-bottom: 2rem;
 }
 
 .swatch-grid div {
@@ -668,27 +689,6 @@ hr {
     margin-block: var(--space-3xl);
     border: none;
     border-top: var(--border-width) solid var(--color-border);
-}
-
-/* ── Font utilities ──────────────────────────────────────────────────── */
-.font-serif {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-style: normal;
-}
-
-.font-serif-upright {
-    font-family: var(--font-serif-upright);
-    font-weight: 400;
-    font-style: normal;
-}
-
-.font-mono {
-    font-family: var(--font-mono);
-}
-
-.font-cursive {
-    font-family: var(--font-cursive);
 }
 
 /* ==========================================================================
@@ -932,6 +932,7 @@ select {
     /* border-bottom: var(--border-width) solid var(--color-border); */
     appearance: none;
     -webkit-appearance: none;
+    /* color-scheme: dark; */
     transition:
         border-color var(--transition-base),
         background-color var(--transition-base);
@@ -960,7 +961,7 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
     outline: none;
-    background-color: var(--color-bg);
+    background-color: var(--color-bg-subtle);
     border-bottom-color: var(--color-focus);
     box-shadow: 0 2px 0 0 var(--color-focus);
 }
@@ -979,6 +980,11 @@ input::placeholder,
 textarea::placeholder {
     color: var(--color-text-placeholder);
     font-style: italic;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.5);
 }
 
 /* ── Textarea ────────────────────────────────────────────────────────── */
@@ -1108,7 +1114,6 @@ input[type="radio"]:checked:disabled {
 /* ── Toggle ───────────────────────────────────────────────────────────── */
 .toggle {
     display: inline-flex;
-    border: 1px solid var(--color-border-subtle);
     overflow: hidden;
 }
 
@@ -1117,15 +1122,11 @@ input[type="radio"]:checked:disabled {
     margin-bottom: 0;
     background: var(--color-bg-subtle);
     cursor: pointer;
-    border-right: 1px solid var(--color-border-subtle);
+    border: 1px solid var(--color-border-subtle);
 }
 
 .toggle label:hover {
     background: var(--color-bg-hover);
-}
-
-.toggle label:last-child {
-    border-right: none;
 }
 
 .toggle input {
@@ -1828,6 +1829,39 @@ iconify-icon {
     100% {
         background-color: var(--color-bg-subtle);
     }
+}
+
+/* ==========================================================================
+  SIDE NAVIGATION
+========================================================================== */
+
+#side-nav {
+    position: fixed;
+    top: 50%;
+    right: var(--space-lg);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    z-index: var(--z-index-max);
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+#side-nav a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    /* writing-mode: vertical-rl;
+    text-orientation: mixed; */
+    transition: color var(--transition-base);
+}
+
+#side-nav a:hover {
+    color: var(--color-primary);
 }
 
 /* ==========================================================================

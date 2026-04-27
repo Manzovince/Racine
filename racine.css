@@ -998,11 +998,11 @@ input[type="search"] {
 
 /* Feedback */
 input[aria-invalid="false"] {
-    border-left: solid var(--border-width-heavy) var(--color-success);
+    border-bottom: solid var(--border-width-heavy) var(--color-success) !important;
 }
 
 input[aria-invalid="true"] {
-    border-left: solid var(--border-width-heavy) var(--color-danger);
+    border: solid var(--border-width-heavy) var(--color-danger);
 }
 
 /* ── Textarea ────────────────────────────────────────────────────────── */

@@ -15,6 +15,7 @@
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="racine.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -417,6 +418,8 @@
 
             <fieldset>
                 <legend>Champs</legend>
+
+                <input type="search" id="search" name="search" placeholder="Commencez à chercher...">
 
                 <label for="nom">Nom complet</label>
                 <input type="text" id="nom" name="nom" placeholder="Jean Dupont" autocomplete="name">
@@ -879,6 +882,23 @@
                 ne dépassera pas la fin de cette phrase.</p>
             <br><br>
             <img src="" alt="" height="200" width="400" class="skeleton">
+
+            <!-- ── ILLUSTRATIONS ───────────────────────────────────────────── -->
+            <h5>Schémas</h5>
+            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="border: solid 1px var(--color-border);">
+                <defs>
+                    <pattern id="hachures" width="6" height="6" patternUnits="userSpaceOnUse"
+                        patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="8" stroke="var(--color-border-strong)" stroke-width="1" />
+                    </pattern>
+                    <clipPath id="intersection">
+                        <circle cx="150" cy="150" r="80" />
+                    </clipPath>
+                </defs>
+                <circle cx="150" cy="150" r="80" fill="none" stroke="var(--color-primary)" stroke-width="2" />
+                <circle cx="250" cy="150" r="80" fill="none" stroke="var(--color-accent)" stroke-width="2" />
+                <circle cx="250" cy="150" r="80" fill="url(#hachures)" clip-path="url(#intersection)" />
+            </svg>
 
         </section>
 

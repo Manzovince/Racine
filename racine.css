@@ -980,7 +980,7 @@ input::placeholder,
 textarea::placeholder {
     color: var(--color-text-placeholder);
     font-style: italic;
-}2
+}
 
 /* Datepicker */
 input[type="date"]::-webkit-calendar-picker-indicator {

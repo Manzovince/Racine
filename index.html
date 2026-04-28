@@ -580,7 +580,7 @@
             </figure>
 
             <h4>Image Map</h4>
-            <img src="map.png" alt="Image map" usemap="#map-example" width="200" height="100">
+            <img src="https://picsum.photos/600/400" alt="Image map" usemap="#map-example" width="600" height="400">
             <map name="map-example">
                 <area shape="rect" coords="0,0,100,100" href="#" alt="Left half">
                 <area shape="circle" coords="150,50,40" href="#" alt="Right circle">
@@ -588,39 +588,170 @@
 
             <h4>Audio</h4>
             <audio controls preload="metadata">
-                <source src="audio.ogg" type="audio/ogg">
-                <source src="audio.mp3" type="audio/mpeg">
+                <source src="https://commons.wikimedia.org/wiki/File:Lorem_ipsum.ogg" type="audio/ogg">
+                <!-- <source src="audio.mp3" type="audio/mpeg"> -->
                 Your browser does not support the audio element.
                 <track kind="captions" src="captions.vtt" srclang="en" label="English">
             </audio>
 
             <h4>Video</h4>
-            <video controls width="320" height="240" poster="poster.png" preload="metadata">
-                <source src="video.webm" type="video/webm">
-                <source src="video.mp4" type="video/mp4">
+            <video controls width="600" height="400" poster="poster.png" preload="metadata">
+                <source src="https://lorem.video/test_1080p_vp9_30fps_30s_25crf_opus_128kbps.webm" type="video/webm">
+                <source src="https://lorem.video/720p" type="video/mp4">
                 Your browser does not support the video element.
                 <track kind="subtitles" src="subtitles.vtt" srclang="fr" label="Français">
                 <track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters">
             </video>
 
             <h4>Canvas</h4>
-            <canvas id="canvas-el" width="200" height="100">
+            <canvas id="canvas-el" width="600" height="400"
+                style="border: solid var(--border-width) var(--color-border)">
                 Canvas not supported.
             </canvas>
+            <script>
+                const canvas = document.getElementById('canvas-el');
+                const ctx = canvas.getContext('2d');
+                const colors = ['#7F77DD', '#1D9E75', '#D85A30', '#378ADD', '#D4537E'];
+                let balls = [];
+
+                function Ball(x, y) {
+                    this.x = x; this.y = y;
+                    this.r = 10 + Math.random() * 20;
+                    this.vx = (Math.random() - 0.5) * 6;
+                    this.vy = (Math.random() - 0.5) * 6;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                }
+
+                Ball.prototype.update = function () {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x - this.r < 0) { this.x = this.r; this.vx *= -1; }
+                    if (this.x + this.r > canvas.width) { this.x = canvas.width - this.r; this.vx *= -1; }
+                    if (this.y - this.r < 0) { this.y = this.r; this.vy *= -1; }
+                    if (this.y + this.r > canvas.height) { this.y = canvas.height - this.r; this.vy *= -1; }
+                };
+
+                Ball.prototype.draw = function () {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = 0.85;
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                };
+
+                // Seed initial balls
+                for (let i = 0; i < 8; i++)
+                    balls.push(new Ball(50 + Math.random() * 500, 50 + Math.random() * 300));
+
+                // Click to add
+                canvas.addEventListener('click', e => {
+                    const r = canvas.getBoundingClientRect();
+                    balls.push(new Ball(e.clientX - r.left, e.clientY - r.top));
+                });
+
+                function loop() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    balls.forEach(b => { b.update(); b.draw(); });
+                    requestAnimationFrame(loop);
+                }
+                loop();
+            </script>
 
             <h4>SVG (inline)</h4>
-            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" role="img"
-                aria-label="A circle">
-                <title>Circle</title>
-                <desc>A simple filled circle</desc>
-                <circle cx="50" cy="50" r="40" fill="black"></circle>
+            <svg width="600" height="440" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Arrow marker -->
+                    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                        orient="auto-start-reverse">
+                        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </marker>
+                    <!-- Pattern fill -->
+                    <pattern id="dots" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1.5" fill="#7F77DD" />
+                    </pattern>
+                    <!-- Gradient fill -->
+                    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#7F77DD" />
+                        <stop offset="100%" stop-color="#1D9E75" />
+                    </linearGradient>
+                    <!-- ClipPath -->
+                    <clipPath id="clip1">
+                        <rect x="0" y="0" width="60" height="60" />
+                    </clipPath>
+                    <!-- Reusable shape -->
+                    <circle id="dot" cx="0" cy="0" r="8" fill="#BA7517" />
+                </defs>
+                <!-- rect -->
+                <rect x="40" y="40" width="70" height="44" rx="4" fill="none" stroke="#7F77DD" stroke-width="1.5" />
+                <!-- circle -->
+                <circle cx="175" cy="62" r="22" fill="none" stroke="#1D9E75" stroke-width="1.5" />
+                <!-- ellipse -->
+                <ellipse cx="285" cy="62" rx="40" ry="22" fill="none" stroke="#D85A30" stroke-width="1.5" />
+                <!-- gradient fill -->
+                <rect x="360" y="40" width="80" height="44" rx="4" fill="url(#grad)" />
+                <!-- pattern fill -->
+                <rect x="470" y="40" width="70" height="44" rx="4" fill="url(#dots)" stroke="#7F77DD"
+                    stroke-width="0.5" />
+                <!-- line + marker -->
+                <line x1="40" y1="128" x2="100" y2="168" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)" />
+                <!-- polyline -->
+                <polyline points="140,168 158,128 176,148 194,128 212,168" fill="none" stroke="#D4537E"
+                    stroke-width="1.5" />
+                <!-- polygon -->
+                <polygon points="290,128 318,168 262,168" fill="#BA7517" opacity="0.85" />
+                <!-- path: quadratic bezier -->
+                <path d="M360,168 Q410,114 460,168" fill="none" stroke="#378ADD" stroke-width="1.5" />
+                <!-- path: cubic bezier -->
+                <path d="M490,168 C505,114 535,114 550,168" fill="none" stroke="#1D9E75" stroke-width="1.5" />
+                <!-- path: arc -->
+                <path d="M50,250 A40,40 0 0,1 130,250" fill="none" stroke="#D85A30" stroke-width="1.5" />
+                <!-- text + tspan -->
+                <text x="170" y="230" font-size="14" fill="#222">
+                    Hello <tspan fill="#7F77DD" font-weight="500">world</tspan>
+                </text>
+                <text x="170" y="250" font-size="12" fill="#888">secondary</text>
+                <text x="170" y="268" font-family="monospace" font-size="12" fill="#555">monospace</text>
+                <!-- g + transform (rotate) -->
+                <g transform="translate(400, 248) rotate(15)">
+                    <rect x="-45" y="-18" width="90" height="36" rx="4" fill="none" stroke="#7F77DD"
+                        stroke-width="1.5" />
+                    <text x="0" y="5" text-anchor="middle" font-size="12" fill="#7F77DD">rotated group</text>
+                </g>
+                <!-- clipPath -->
+                <g transform="translate(530, 215)">
+                    <g clip-path="url(#clip1)">
+                        <circle cx="20" cy="20" r="40" fill="#D85A30" opacity="0.8" />
+                    </g>
+                    <rect x="0" y="0" width="60" height="60" fill="none" stroke="#D85A30" stroke-width="0.5"
+                        stroke-dasharray="3,3" />
+                </g>
+                <!-- image -->
+                <image x="40" y="300" width="70" height="50"
+                    href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/SVG_logo.svg/200px-SVG_logo.svg.png" />
+                <!-- foreignObject: HTML inside SVG -->
+                <foreignObject x="140" y="300" width="130" height="50">
+                    <div xmlns="http://www.w3.org/1999/xhtml"
+                        style="font-size:12px;color:#1D9E75;border:1px solid #1D9E75;border-radius:4px;padding:6px 8px;">
+                        HTML inside SVG
+                    </div>
+                </foreignObject>
+                <!-- use: reuse a defined shape -->
+                <use href="#dot" x="310" y="320" />
+                <use href="#dot" x="335" y="315" />
+                <use href="#dot" x="360" y="320" />
+                <!-- stroke-dasharray patterns -->
+                <line x1="420" y1="308" x2="580" y2="308" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3" />
+                <line x1="420" y1="322" x2="580" y2="322" stroke="#888" stroke-width="1.5" stroke-dasharray="2,2" />
+                <line x1="420" y1="336" x2="580" y2="336" stroke="#888" stroke-width="1.5"
+                    stroke-dasharray="10,4,2,4" />
             </svg>
 
             <h4>Iframe</h4>
             <iframe src="https://example.com" width="600" height="300" title="Example iframe" loading="lazy"
                 sandbox="allow-scripts"></iframe>
 
-            <h4>Object &amp; Embed</h4>
+            <h4>Object & Embed</h4>
             <object data="file.pdf" type="application/pdf" width="300" height="150">
                 <p>PDF not supported. <a href="file.pdf">Download</a>.</p>
             </object>
@@ -887,17 +1018,19 @@
             <h2 class="skeleton">Ce titre est en train de charger...</h2>
             <br>
             <p class="skeleton" style="white-space: pre;">
-            Ce paragraphe est en train de charger et le background
-            ne dépassera pas la fin de cette phrase.
-            Mais je peux aussi écrire une loooooooooooooooooongue ligne !</p>
+                Ce paragraphe est en train de charger et le background
+                ne dépassera pas la fin de cette phrase.
+                Mais je peux aussi écrire une loooooooooooooooooongue ligne !</p>
             <br><br>
             <img src="" alt="" height="200" width="400" class="skeleton">
             <br><br>
-            <img src="" alt="" height="200" width="400" onerror="this.src='https://placehold.co/400x200?text=Source+non+disponible&font=lora';">
+            <img src="" alt="" height="200" width="400"
+                onerror="this.src='https://placehold.co/400x200?text=Source+non+disponible&font=lora';">
 
             <!-- ── ILLUSTRATIONS ───────────────────────────────────────────── -->
             <h5>Schémas</h5>
-            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="border: solid 1px var(--color-border-subtle);">
+            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"
+                style="border: solid 1px var(--color-border-subtle);">
                 <defs>
                     <pattern id="hachures" width="6" height="6" patternUnits="userSpaceOnUse"
                         patternTransform="rotate(45)">

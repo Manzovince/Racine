@@ -81,19 +81,14 @@
 
     --color-primary-hover: color-mix(in srgb, var(--color-primary) 80%, white);
     --color-primary-active: color-mix(in srgb, var(--color-primary) 80%, black);
-
     --color-accent-hover: color-mix(in srgb, var(--color-accent) 80%, white);
     --color-accent-active: color-mix(in srgb, var(--color-accent) 80%, black);
-
     --color-success-hover: color-mix(in srgb, var(--color-success) 80%, white);
     --color-success-active: color-mix(in srgb, var(--color-success) 80%, black);
-
     --color-warning-hover: color-mix(in srgb, var(--color-warning) 80%, white);
     --color-warning-active: color-mix(in srgb, var(--color-warning) 80%, black);
-
     --color-danger-hover: color-mix(in srgb, var(--color-danger) 80%, white);
     --color-danger-active: color-mix(in srgb, var(--color-danger) 80%, black);
-
     --color-info-hover: color-mix(in srgb, var(--color-info) 80%, white);
     --color-info-active: color-mix(in srgb, var(--color-info) 80%, black);
 }
@@ -1330,6 +1325,10 @@ figcaption {
 
 picture {
     display: block;
+}
+
+iframe {
+    border: solid var(--border-width) var(--color-border-subtle);
 }
 
 img.broken {

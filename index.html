@@ -640,6 +640,7 @@
             <h5>Solid</h5>
             <div>
                 <button>Primary</button>
+                <button class="accent">Accent</button>
                 <button class="success">Success</button>
                 <button class="warning">Warning</button>
                 <button class="danger">Danger</button>
@@ -650,6 +651,7 @@
             <h5>Outline</h5>
             <div>
                 <button class="outline">Primary</button>
+                <button class="outline accent">Accent</button>
                 <button class="outline success">Success</button>
                 <button class="outline warning">Warning</button>
                 <button class="outline danger">Danger</button>
@@ -661,6 +663,7 @@
             <h5>Discreet</h5>
             <div>
                 <button class="discreet">Primary</button>
+                <button class="discreet accent">Accent</button>
                 <button class="discreet success">Success</button>
                 <button class="discreet warning">Warning</button>
                 <button class="discreet danger">Danger</button>
@@ -671,6 +674,7 @@
             <h5>Flat</h5>
             <div>
                 <button class="flat">Primary</button>
+                <button class="flat accent">Accent</button>
                 <button class="flat success">Success</button>
                 <button class="flat warning">Warning</button>
                 <button class="flat danger">Danger</button>
@@ -678,7 +682,7 @@
             </div>
 
             <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
-            <h5>Balise &lt;a&gt; <i style="text-transform: none;">(avec <code>.btn</code>)</i> </h5>
+            <h5>Balise &lt;a&gt; <i style="text-transform: none;">(en ajoutant <code>.btn</code>)</i> </h5>
             <div>
                 <a class="btn">primary</a>
                 <a class="btn outline">outline</a>
@@ -699,10 +703,9 @@
             <!-- ── WITH ICONS ────────────────────────────────────────────── -->
             <h5>Icons <i style="text-transform: none;">(avec <code>.icon</code>, <code>.icon-start</code> ou
                     <code>.icon-end</code>)</i></h5>
-            <div style="display: flex; align-items:center; gap: 8px">
+            <div>
                 <button class="flat icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
-                <button class="outline icon-start">Home</button>
-                <button class="danger icon-end sm"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
+                <button class="danger icon-start sm"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
                 <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
             </div>
 
@@ -884,14 +887,17 @@
             <h2 class="skeleton">Ce titre est en train de charger...</h2>
             <br>
             <p class="skeleton" style="white-space: pre;">
-                Ce paragraphe est en train de charger et le background
-                ne dépassera pas la fin de cette phrase.</p>
+            Ce paragraphe est en train de charger et le background
+            ne dépassera pas la fin de cette phrase.
+            Mais je peux aussi écrire une loooooooooooooooooongue ligne !</p>
             <br><br>
             <img src="" alt="" height="200" width="400" class="skeleton">
+            <br><br>
+            <img src="" alt="" height="200" width="400" onerror="this.src='https://placehold.co/400x200?text=Source+non+disponible&font=lora';">
 
             <!-- ── ILLUSTRATIONS ───────────────────────────────────────────── -->
             <h5>Schémas</h5>
-            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="border: solid 1px var(--color-border);">
+            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="border: solid 1px var(--color-border-subtle);">
                 <defs>
                     <pattern id="hachures" width="6" height="6" patternUnits="userSpaceOnUse"
                         patternTransform="rotate(45)">

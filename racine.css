@@ -181,8 +181,8 @@
     --color-text-placeholder: oklch(50% 0.025 148);
     --color-text-disabled: oklch(38% 0.020 150);
     --color-text-inverse: oklch(16.5% 0.025 155);
-    --color-primary: oklch(83.323% 0.14145 76.633);
-    --color-accent: oklch(68% 0.13 95);
+    --color-primary: oklch(81.839% 0.12463 164.108);
+    --color-accent: oklch(74.165% 0.14294 74.276);
     --color-success: oklch(70% 0.16 145);
     --color-warning: oklch(75% 0.14 88);
     --color-danger: oklch(60% 0.17 22);
@@ -204,8 +204,8 @@
     --color-text-placeholder: oklch(48% 0.028 222);
     --color-text-disabled: oklch(36% 0.022 225);
     --color-text-inverse: oklch(14% 0.028 230);
-    --color-primary: oklch(72% 0.160 205);
-    --color-accent: oklch(65% 0.140 185);
+    --color-primary: oklch(65% 0.140 185);
+    --color-accent: oklch(68.313% 0.17527 50.536);
     --color-success: oklch(70% 0.150 168);
     --color-warning: oklch(75% 0.138 85);
     --color-danger: oklch(60% 0.170 22);
@@ -1332,6 +1332,14 @@ picture {
     display: block;
 }
 
+img.broken {
+  /* display: none; */
+}
+
+img.broken::after {
+  content: attr(alt);
+}
+
 /* ==========================================================================
   ÉLÉMENTS INTERACTIFS DIVERS
 ========================================================================== */
@@ -1591,6 +1599,14 @@ button.primary,
     --btn-text: var(--color-text-inverse);
 }
 
+button.accent,
+.btn.accent {
+    --btn-bg: var(--color-accent);
+    --btn-hover: var(--color-accent-hover);
+    --btn-active: var(--color-accent-active);
+    --btn-text: var(--color-text-inverse);
+}
+
 button.success,
 .btn.success {
     --btn-bg: var(--color-success);
@@ -1831,8 +1847,9 @@ iconify-icon {
     color: transparent !important;
     user-select: none;
     cursor: default;
+    border: none !important;
     background-color: var(--color-bg-subtle);
-    animation: skeleton-pulse 1.5s infinite ease-in-out;
+    animation: skeleton-pulse 2.4s infinite ease-in;
 }
 
 @keyframes skeleton-pulse {

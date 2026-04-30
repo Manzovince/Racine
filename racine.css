@@ -997,7 +997,7 @@ input[aria-invalid="false"] {
 }
 
 input[aria-invalid="true"] {
-    border: solid var(--border-width-heavy) var(--color-danger);
+    border: solid var(--border-width-heavy) var(--color-danger) !important;
 }
 
 /* ── Textarea ────────────────────────────────────────────────────────── */
@@ -1173,7 +1173,7 @@ input[type=checkbox][role=switch]::after {
     position: absolute;
     width: 16px;
     height: 16px;
-    background: #fff;
+    background: var(--color-bg-active);
     border-radius: 50%;
     top: 2px;
     left: 2px;
@@ -1186,6 +1186,7 @@ input[type=checkbox][role=switch]:checked {
 
 input[type=checkbox][role=switch]:checked::after {
     transform: translateX(16px);
+    background: var(--color-bg);
 }
 
 /* ── Range ───────────────────────────────────────────────────────────── */

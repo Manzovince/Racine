@@ -1820,7 +1820,7 @@ button.icon-end.xl,
     --_icon-size: 1.5rem;
 }
 
-button.icon-start svg,
+/* button.icon-start svg,
 .btn.icon-start svg,
 button.icon-end svg,
 .btn.icon-end svg {
@@ -1828,6 +1828,12 @@ button.icon-end svg,
     height: 1em;
     flex-shrink: 0;
     pointer-events: none;
+} */
+
+button.icon iconify-icon {
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  font-size: var(--_icon-size);
 }
 
 /* ==========================================================================
@@ -1835,7 +1841,7 @@ button.icon-end svg,
 ========================================================================== */
 
 iconify-icon {
-    font-size: 24px;
+    font-size: 32px;
 }
 
 /* ==========================================================================

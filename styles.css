@@ -17,13 +17,17 @@
     padding: 0;
 }
 
+@media screen and (max-width: 1500px) {
+    #side-nav {
+        display: none;
+    }
+}
+
 #side-nav a {
     color: var(--color-text-secondary);
     text-decoration: none;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
-    /* writing-mode: vertical-rl;
-    text-orientation: mixed; */
     transition: color var(--transition-base);
 }
 

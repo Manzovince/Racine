@@ -1333,11 +1333,10 @@ iframe {
 }
 
 img.broken {
-  /* display: none; */
-}
-
-img.broken::after {
-  content: attr(alt);
+    border: solid var(--border-width) var(--color-border-subtle);
+    padding: var(--space-xl);
+    font-style: italic;
+    color: var(--color-text-secondary)
 }
 
 /* ==========================================================================
@@ -1878,10 +1877,11 @@ iconify-icon {
   DEBUG
 ========================================================================== */
 
-.debug {
-    outline: dashed 1px purple;
+.debug, .d {
+    outline: dashed 1px red;
     outline-offset: -1px;
 }
+
 
 /* ==========================================================================
   EOF RACINE.CSS

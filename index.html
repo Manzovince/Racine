@@ -25,7 +25,7 @@
      ================================================================== -->
     <header>
         <a href="#" style="text-decoration: none;">
-            <h1 class="font-serif" style="font-size: var(--font-size-3xl);">Racine.css</h1>
+            <h1 class="font-serif" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold);">Racine.css</h1>
         </a>
         <nav>
             <ul>
@@ -36,7 +36,7 @@
         <button popovertarget="theme-dropdown" style="anchor-name: --theme-dropdown;" class="sm">Thèmes</button>
         <div popover id="theme-dropdown"
             style="position-anchor: --theme-dropdown; top: anchor(bottom);left: anchor(left); padding: 0">
-            <div id="toggle" class="toggle" style="flex-direction: column;">
+            <div id="toggle" class="toggle" style="flex-direction: column; border: none;">
                 <input type="radio" name="view" id="light-theme" value="light-theme" checked>
                 <label for="light-theme" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
                         icon="lucide:sun" style="font-size: 16px;"></iconify-icon></label>
@@ -78,7 +78,7 @@
         <!-- ── HERO ──────────────────────────────────────────────────── -->
         <section id="hero">
             <hgroup>
-                <h1 class="font-serif" style="font-size: var(--font-size-5xl);"><strong>Racine.css</strong> stylise
+                <h1 style="font-size: var(--font-size-5xl);"><strong>Racine.css</strong> stylise
                     n'importe quelle page HTML5.</h1>
                 <p>Une bibliothèque CSS moderne et flexible pour styliser vos pages HTML5, </p>
             </hgroup>
@@ -159,7 +159,7 @@
                 </div>
                 <div style="background:var(--color-primary-active);color:var(--color-text-inverse)">
                     --color-primary-active</div>
-                <div style="background:color-mix(in srgb, var(--color-primary-active) 22%, transparent)">
+                <div style="background:color-mix(in srgb, var(--color-primary) 22%, transparent)">
                     --color-primary-discreet
                 </div>
             </div>
@@ -171,6 +171,11 @@
                 </div>
                 <div style="background:var(--color-accent-active);color:var(--color-text-inverse)">--color-accent-active
                 </div>
+                <div style="background:color-mix(in srgb, var(--color-accent) 22%, transparent)">--color-accent-discreet</div>
+            </div>
+
+            <h5>Focus</h5>
+            <div class="swatch-grid">
                 <div style="background:var(--color-focus);color:var(--color-text-inverse)">--color-focus</div>
             </div>
 
@@ -836,7 +841,7 @@
                     <code>.icon-end</code>)</i></h5>
             <div>
                 <button class="discreet icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
-                <button class="danger outline icon-start sm"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
+                <button class="danger outline sm icon-start"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
                 <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
             </div>
 

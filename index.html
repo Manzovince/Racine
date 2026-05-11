@@ -25,7 +25,8 @@
      ================================================================== -->
     <header>
         <a href="#" style="text-decoration: none;">
-            <h1 class="font-serif" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold);">Racine.css</h1>
+            <h1 class="font-serif" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold);">
+                Racine.css</h1>
         </a>
         <nav>
             <ul>
@@ -170,7 +171,8 @@
                 </div>
                 <div style="background:var(--color-accent-active);color:var(--color-text-inverse)">--color-accent-active
                 </div>
-                <div style="background:color-mix(in srgb, var(--color-accent) 22%, transparent)">--color-accent-discreet</div>
+                <div style="background:color-mix(in srgb, var(--color-accent) 22%, transparent)">--color-accent-discreet
+                </div>
             </div>
 
             <h5>Focus</h5>
@@ -748,7 +750,8 @@
                 <!-- stroke-dasharray patterns -->
                 <line x1="420" y1="308" x2="580" y2="308" stroke="#888" stroke-width="1.5" stroke-dasharray="6,3" />
                 <line x1="420" y1="322" x2="580" y2="322" stroke="#888" stroke-width="1.5" stroke-dasharray="2,2" />
-                <line x1="420" y1="336" x2="580" y2="336" stroke="#888" stroke-width="1.5" stroke-dasharray="10,4,2,4" />
+                <line x1="420" y1="336" x2="580" y2="336" stroke="#888" stroke-width="1.5"
+                    stroke-dasharray="10,4,2,4" />
             </svg>
 
             <h4>Iframe</h4>
@@ -840,7 +843,8 @@
                     <code>.icon-end</code>)</i></h5>
             <div>
                 <button class="discreet icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
-                <button class="danger outline sm icon-start"><iconify-icon icon="mdi:delete"></iconify-icon>Supprimer</button>
+                <button class="danger outline sm icon-start"><iconify-icon
+                        icon="mdi:delete"></iconify-icon>Supprimer</button>
                 <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
             </div>
 
@@ -1015,7 +1019,7 @@
             OTHER
         ================================================================== -->
         <section id="other">
-            <h1>Autre</h1>
+            <h1>Classes utilitaires et autre</h1>
 
             <!-- ── SKELETON ───────────────────────────────────────────── -->
             <h5>Skeleton</h5>
@@ -1026,8 +1030,9 @@
                 ne dépassera pas la fin de cette phrase.
                 Mais je peux aussi écrire une looooongue ligne !</p>
             <br><br>
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" height="200" width="400" class="skeleton">
-            
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" height="200" width="400"
+                class="skeleton">
+
             <!-- ── BROKEN ───────────────────────────────────────────── -->
             <h5>Broken image</h5>
             <img src="" alt="" height="200" width="400"
@@ -1036,22 +1041,132 @@
             <img src="" alt="This is the alternative text of a broken image" class="broken">
 
             <!-- ── ILLUSTRATIONS ───────────────────────────────────────────── -->
-            <h5>Schémas</h5>
-            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"
-                style="border: solid 1px var(--color-border-subtle);">
-                <defs>
-                    <pattern id="hachures" width="6" height="6" patternUnits="userSpaceOnUse"
-                        patternTransform="rotate(45)">
-                        <line x1="0" y1="0" x2="0" y2="8" stroke="var(--color-border-strong)" stroke-width="1" />
-                    </pattern>
-                    <clipPath id="intersection">
-                        <circle cx="150" cy="150" r="80" />
-                    </clipPath>
-                </defs>
-                <circle cx="150" cy="150" r="80" fill="none" stroke="var(--color-primary)" stroke-width="2" />
-                <circle cx="250" cy="150" r="80" fill="none" stroke="var(--color-accent)" stroke-width="2" />
-                <circle cx="250" cy="150" r="80" fill="url(#hachures)" clip-path="url(#intersection)" />
-            </svg>
+            <h5>ILLUSTRATIONS</h5>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <!-- Schema -->
+                <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"
+                    style="border: solid 1px var(--color-border-subtle);">
+                    <defs>
+                        <pattern id="hachures" width="6" height="6" patternUnits="userSpaceOnUse"
+                            patternTransform="rotate(45)">
+                            <line x1="0" y1="0" x2="0" y2="8" stroke="var(--color-border-strong)" stroke-width="1" />
+                        </pattern>
+                        <clipPath id="intersection">
+                            <circle cx="150" cy="150" r="80" />
+                        </clipPath>
+                    </defs>
+                    <circle cx="150" cy="150" r="80" fill="none" stroke="var(--color-primary)" stroke-width="2" />
+                    <circle cx="250" cy="150" r="80" fill="none" stroke="var(--color-accent)" stroke-width="2" />
+                    <circle cx="250" cy="150" r="80" fill="url(#hachures)" clip-path="url(#intersection)" />
+                </svg>
+
+                <!-- Paper -->
+                <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg"
+                    style="border: solid 1px var(--color-border-subtle);">
+                    <filter id="paperTexture">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="5" result="noise" />
+
+                        <feDiffuseLighting in="noise" lighting-color="#fdfaf0" surfaceScale="2">
+                            <feDistantLight azimuth="45" elevation="60" />
+                        </feDiffuseLighting>
+                    </filter>
+
+                    <rect width="100%" height="100%" filter="url(#paperTexture)" opacity="0.4" />
+                </svg>
+
+                <!-- Noise -->
+                <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg"
+                    style="border: solid 1px var(--color-border-subtle);">
+                    <filter id="noiseFilter">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="8" stitchTiles="stitch" />
+                    </filter>
+
+                    <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+                </svg>
+
+                <!-- Noise 2 -->
+                <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"
+                    style="border: solid 1px var(--color-border-subtle);">
+                    <defs>
+                        <filter id="texturedNoise">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.03" result="noise" />
+
+                            <feDiffuseLighting in="noise" lighting-color="white" surfaceScale="2">
+                                <feDistantLight azimuth="45" elevation="60" />
+                            </feDiffuseLighting>
+                        </filter>
+                    </defs>
+
+                    <rect width="100%" height="100%" filter="url(#texturedNoise)" />
+                </svg>
+
+                <!-- Test -->
+                <svg width="0" height="0">
+                    <filter id="pixelate" x="0" y="0">
+                        <feMorphology operator="dilate" radius=".1" in="SourceGraphic" />
+
+                        <feComponentTransfer>
+                            <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+                            <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+                            <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+                        </feComponentTransfer>
+                    </filter>
+                </svg>
+
+                <img src="https://picsum.photos/400/300" style="filter: url(#pixelate);" />
+
+                <!-- Dots -->
+                <svg width="400" height="300" viewBox="0 0 400 300" role="img" xmlns="http://www.w3.org/2000/svg"
+                    style="border: solid 1px var(--color-border-subtle);">
+                    <defs>
+                        <filter id="dots" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+                            <feTurbulence type="turbulence" baseFrequency="0.065" numOctaves="2" seed="42"
+                                result="noise" />
+                            <feColorMatrix type="saturate" values="0" in="noise" result="gray" />
+                            <feComponentTransfer in="gray" result="threshold">
+                                <feFuncR type="discrete" tableValues="0 0 0 0 0 0 0 1" />
+                                <feFuncG type="discrete" tableValues="0 0 0 0 0 0 0 1" />
+                                <feFuncB type="discrete" tableValues="0 0 0 0 0 0 0 1" />
+                                <feFuncA type="linear" slope="1" />
+                            </feComponentTransfer>
+                            <feGaussianBlur stdDeviation="1.2" in="threshold" result="blurred" />
+                            <feComponentTransfer in="blurred" result="crisp">
+                                <feFuncR type="discrete" tableValues="0 0 0 0 0 1" />
+                                <feFuncG type="discrete" tableValues="0 0 0 0 0 1" />
+                                <feFuncB type="discrete" tableValues="0 0 0 0 0 1" />
+                            </feComponentTransfer>
+                            <feColorMatrix type="matrix" in="crisp"
+                                values="0 0 0 0 0.55&#xA;                0 0 0 0 0.55&#xA;                0 0 0 0 0.55&#xA;                0 0 0 8 -4" />
+                        </filter>
+
+                        <filter id="dots2" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+                            <feTurbulence type="turbulence" baseFrequency="0.12" numOctaves="1" seed="7"
+                                result="noise2" />
+                            <feColorMatrix type="saturate" values="0" in="noise2" result="gray2" />
+                            <feComponentTransfer in="gray2" result="t2">
+                                <feFuncR type="discrete" tableValues="0 0 0 0 0 0 1" />
+                                <feFuncG type="discrete" tableValues="0 0 0 0 0 0 1" />
+                                <feFuncB type="discrete" tableValues="0 0 0 0 0 0 1" />
+                            </feComponentTransfer>
+                            <feGaussianBlur stdDeviation="0.7" in="t2" result="b2" />
+                            <feComponentTransfer in="b2" result="c2">
+                                <feFuncR type="discrete" tableValues="0 0 0 0 1" />
+                                <feFuncG type="discrete" tableValues="0 0 0 0 1" />
+                                <feFuncB type="discrete" tableValues="0 0 0 0 1" />
+                            </feComponentTransfer>
+                            <feColorMatrix type="matrix" in="c2"
+                                values="0 0 0 0 0.4&#xA;                0 0 0 0 0.4&#xA;                0 0 0 0 0.4&#xA;                0 0 0 12 -6" />
+                        </filter>
+                    </defs>
+
+                    <rect width="400" height="300" fill="transparent" />
+                    <rect width="400" height="300" filter="url(#dots)" />
+                    <rect width="400" height="300" filter="url(#dots2)" opacity="0.5" />
+                </svg>
+
+            </div>
+
 
             <!-- ── DEBUG ───────────────────────────────────────────── -->
             <h5>Debug</h5>

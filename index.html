@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="paper">
+<html lang="fr" data-theme="paper-theme">
 
 <head>
     <meta charset="UTF-8">
@@ -37,25 +37,25 @@
         <button popovertarget="theme-dropdown" style="anchor-name: --theme-dropdown;" class="sm">Thèmes</button>
         <div popover id="theme-dropdown"
             style="position-anchor: --theme-dropdown; top: anchor(bottom);left: anchor(left); padding: 0">
-            <div id="toggle" class="toggle" style="flex-direction: column; border: none;">
-                <input type="radio" name="view" id="light-theme" value="light-theme" checked>
-                <label for="light-theme" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
+            <div class="toggle theme-switch" style="flex-direction: column; border: none;">
+                <input type="radio" name="theme-header" id="light-theme-header" value="light-theme" checked>
+                <label for="light-theme-header" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
                         icon="lucide:sun" style="font-size: 16px;"></iconify-icon></label>
 
-                <input type="radio" name="view" id="dark-theme" value="dark-theme">
-                <label for="dark-theme" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
+                <input type="radio" name="theme-header" id="dark-theme-header" value="dark-theme">
+                <label for="dark-theme-header" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
                         icon="lucide:moon" style="font-size: 16px;"></iconify-icon></label>
 
-                <input type="radio" name="view" id="paper-theme" value="paper-theme">
-                <label for="paper-theme" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
+                <input type="radio" name="theme-header" id="paper-theme-header" value="paper-theme">
+                <label for="paper-theme-header" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
                         icon="lucide:file-text" style="font-size: 16px;"></iconify-icon> </label>
 
-                <input type="radio" name="view" id="forest-theme" value="forest-theme">
-                <label for="forest-theme" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
+                <input type="radio" name="theme-header" id="forest-theme-header" value="forest-theme">
+                <label for="forest-theme-header" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
                         icon="lucide:trees" style="font-size: 16px;"></iconify-icon></label>
 
-                <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
-                <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
+                <input type="radio" name="theme-header" id="ocean-theme-header" value="ocean-theme">
+                <label for="ocean-theme-header" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
                         icon="lucide:fish" style="font-size: 16px;"></iconify-icon></label>
             </div>
         </div>
@@ -99,25 +99,25 @@
         <section id="couleurs">
             <h2>Palette de couleur</h2>
 
-            <div id="toggle" class="toggle">
-                <input type="radio" name="view" id="light-theme" value="light-theme" checked>
-                <label for="light-theme" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
+            <div class="toggle theme-switch">
+                <input type="radio" name="theme-colors" id="light-theme-colors" value="light-theme" checked>
+                <label for="light-theme-colors" style="display: flex; align-items: center; gap: 8px">Light <iconify-icon
                         icon="lucide:sun" style="font-size: 16px;"></iconify-icon></label>
 
-                <input type="radio" name="view" id="dark-theme" value="dark-theme">
-                <label for="dark-theme" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
+                <input type="radio" name="theme-colors" id="dark-theme-colors" value="dark-theme">
+                <label for="dark-theme-colors" style="display: flex; align-items: center; gap: 8px">Dark <iconify-icon
                         icon="lucide:moon" style="font-size: 16px;"></iconify-icon></label>
 
-                <input type="radio" name="view" id="paper-theme" value="paper-theme">
-                <label for="paper-theme" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
+                <input type="radio" name="theme-colors" id="paper-theme-colors" value="paper-theme">
+                <label for="paper-theme-colors" style="display: flex; align-items: center; gap: 8px">Paper <iconify-icon
                         icon="lucide:file-text" style="font-size: 16px;"></iconify-icon> </label>
 
-                <input type="radio" name="view" id="forest-theme" value="forest-theme">
-                <label for="forest-theme" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
+                <input type="radio" name="theme-colors" id="forest-theme-colors" value="forest-theme">
+                <label for="forest-theme-colors" style="display: flex; align-items: center; gap: 8px">Forest <iconify-icon
                         icon="lucide:trees" style="font-size: 16px;"></iconify-icon></label>
 
-                <input type="radio" name="view" id="ocean-theme" value="ocean-theme">
-                <label for="ocean-theme" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
+                <input type="radio" name="theme-colors" id="ocean-theme-colors" value="ocean-theme">
+                <label for="ocean-theme-colors" style="display: flex; align-items: center; gap: 8px">Ocean <iconify-icon
                         icon="lucide:fish" style="font-size: 16px;"></iconify-icon></label>
             </div>
 
@@ -206,8 +206,6 @@
                 <div style="background:var(--color-info-active);color:var(--color-text-inverse)">--color-info-active
                 </div>
             </div>
-        </section>
-
         </section>
 
         <!-- ================================================================
@@ -436,34 +434,6 @@
             </fieldset>
 
             <fieldset>
-                <legend>Variations</legend>
-
-                <label for="small">Small</label>
-                <input type="text" id="small" name="small" class="sm" value="Data">
-
-                <label for="small">Medium</label>
-                <input type="text" id="small" name="small" class="md" value="Data">
-
-                <label for="large">Large</label>
-                <input type="text" id="large" name="large" class="lg" value="Data">
-
-                <label for="xlarge">X Large</label>
-                <input type="text" id="xlarge" name="xlarge" class="xl" value="Data">
-
-                <hr style="border-color: var(--color-border-subtle)">
-
-                <label for="valid">Champ valide</label>
-                <input type="text" id="valid" name="valid" value="Bonjour" aria-invalid="false">
-
-                <label for="invalid">Champ invalide</label>
-                <input type="text" id="invalid" name="invalid" value="Au revoir" aria-invalid="true">
-
-                <label for="disabled">Champ désactivé</label>
-                <input type="text" id="disabled" name="disabled" value="Non modifiable" disabled>
-
-            </fieldset>
-
-            <fieldset>
                 <legend>Sélécteurs</legend>
 
                 <label for="pays">Pays</label>
@@ -495,28 +465,28 @@
 
                 <br><br>
 
-                <label for="toggle">Frequency <i>(avec <code>.toggle</code>)</i></label>
-                <div id="toggle" class="toggle">
-                    <input type="radio" name="view" id="day" value="day">
+                <label>Frequency <i>(avec <code>.toggle</code>)</i></label>
+                <div class="toggle">
+                    <input type="radio" name="frequency" id="day" value="day">
                     <label for="day">Day</label>
 
-                    <input type="radio" name="view" id="week" value="week">
+                    <input type="radio" name="frequency" id="week" value="week">
                     <label for="week">Week</label>
 
-                    <input type="radio" name="view" id="month" value="month">
+                    <input type="radio" name="frequency" id="month" value="month">
                     <label for="month">Month</label>
 
-                    <input type="radio" name="view" id="year" value="year">
-                    <label for="year">Year</label>
+                    <input type="radio" name="frequency" id="freq-year" value="year">
+                    <label for="freq-year">Year</label>
                 </div>
-                <div id="toggle" class="toggle" style="margin-left: 32px; gap: 8px;">
-                    <input type="checkbox" name="view" id="aaa" value="aaa">
+                <div class="toggle" style="margin-left: 32px; gap: 8px;">
+                    <input type="checkbox" name="frequency-multi" id="aaa" value="aaa">
                     <label for="aaa">Day</label>
 
-                    <input type="checkbox" name="view" id="bbb" value="bbb">
+                    <input type="checkbox" name="frequency-multi" id="bbb" value="bbb">
                     <label for="bbb">Week</label>
 
-                    <input type="checkbox" name="view" id="ccc" value="ccc">
+                    <input type="checkbox" name="frequency-multi" id="ccc" value="ccc">
                     <label for="ccc">Month</label>
                 </div>
 
@@ -558,6 +528,34 @@
                     <input type="checkbox" name="switch" role="switch">
                     Enable AI
                 </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Variations</legend>
+
+                <label for="small">Small</label>
+                <input type="text" id="small" name="small" class="sm" value="Data">
+
+                <label for="medium">Medium</label>
+                <input type="text" id="medium" name="medium" class="md" value="Data">
+
+                <label for="large">Large</label>
+                <input type="text" id="large" name="large" class="lg" value="Data">
+
+                <label for="xlarge">X Large</label>
+                <input type="text" id="xlarge" name="xlarge" class="xl" value="Data">
+
+                <hr style="border-color: var(--color-border-subtle)">
+
+                <label for="valid">Champ valide</label>
+                <input type="text" id="valid" name="valid" value="Bonjour" aria-invalid="false">
+
+                <label for="invalid">Champ invalide</label>
+                <input type="text" id="invalid" name="invalid" value="Au revoir" aria-invalid="true">
+
+                <label for="disabled">Champ désactivé</label>
+                <input type="text" id="disabled" name="disabled" value="Non modifiable" disabled>
 
             </fieldset>
 
@@ -910,14 +908,14 @@
 
             <button popovertarget="pop2" style="anchor-name: --pop2;">Dropdown popover</button>
             <div popover id="pop2" style="position-anchor: --pop2; top: anchor(bottom);left: anchor(left); padding: 0;">
-                <div id="toggle" class="toggle" style="flex-direction: column;">
-                    <input type="radio" name="view" id="dropdown1" value="dropdown1" checked>
+                <div class="toggle" style="flex-direction: column;">
+                    <input type="radio" name="dropdown-demo" id="dropdown1" value="dropdown1" checked>
                     <label for="dropdown1">Option One</label>
 
-                    <input type="radio" name="view" id="dropdown2" value="dropdown2">
+                    <input type="radio" name="dropdown-demo" id="dropdown2" value="dropdown2">
                     <label for="dropdown2">Option Two</label>
 
-                    <input type="radio" name="view" id="dropdown3" value="dropdown3">
+                    <input type="radio" name="dropdown-demo" id="dropdown3" value="dropdown3">
                     <label for="dropdown3">Option Three</label>
                 </div>
             </div>
@@ -1127,7 +1125,7 @@
                 <svg width="400" height="300" viewBox="0 0 400 300" role="img" xmlns="http://www.w3.org/2000/svg"
                     style="border: solid 1px var(--color-border-subtle);">
                     <defs>
-                        <filter id="dots" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+                        <filter id="dots-noise" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
                             <feTurbulence type="turbulence" baseFrequency="0.065" numOctaves="2" seed="42"
                                 result="noise" />
                             <feColorMatrix type="saturate" values="0" in="noise" result="gray" />
@@ -1168,7 +1166,7 @@
                     </defs>
 
                     <rect width="400" height="300" fill="transparent" />
-                    <rect width="400" height="300" filter="url(#dots)" />
+                    <rect width="400" height="300" filter="url(#dots-noise)" />
                     <rect width="400" height="300" filter="url(#dots2)" opacity="0.5" />
                 </svg>
 

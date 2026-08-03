@@ -4,12 +4,13 @@ const getSystemTheme = () =>
 const applyTheme = (theme) => {
   document.documentElement.dataset.theme = theme;
   localStorage.setItem("theme", theme);
-  const radio = document.querySelector(`#toggle input[value="${theme}"]`);
-  if (radio) radio.checked = true;
+  document.querySelectorAll(`.theme-switch input[value="${theme}"]`).forEach((radio) => {
+    radio.checked = true;
+  });
 };
 
 applyTheme(localStorage.getItem("theme") ?? getSystemTheme());
 
-document.getElementById("toggle").addEventListener("change", (e) => {
-  applyTheme(e.target.value);
+document.querySelectorAll(".theme-switch").forEach((toggle) => {
+  toggle.addEventListener("change", (e) => applyTheme(e.target.value));
 });

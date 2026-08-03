@@ -114,7 +114,6 @@
        ci-dessus pour pouvoir les ajuster sans impacter le reste des composants. */
     --color-input-bg: var(--color-surface-1);
     --color-input-bg-hover: var(--color-surface-2);
-    --color-input-bg-active: var(--color-surface-3);
     --color-input-bg-disabled: var(--color-surface-2);
 }
 
@@ -971,7 +970,6 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
     outline: none;
-    background-color: var(--color-input-bg-active);
     border-bottom-color: var(--color-focus);
     box-shadow: 0 2px 0 0 var(--color-focus);
 }

@@ -115,13 +115,27 @@
                         icon="lucide:fish" style="font-size: 16px;"></iconify-icon></label>
             </div>
 
-            <h5>Fond</h5>
+            <h5>Fond <i style="text-transform: none;">(niveaux d'élévation, dérivés de <code>--color-bg</code>)</i></h5>
             <div class="swatch-grid">
                 <div style="background:var(--color-bg);border:.5px solid var(--color-border-subtle)">--color-bg</div>
-                <div style="background:var(--color-bg-subtle)">--color-bg-subtle</div>
-                <div style="background:var(--color-bg-ui)">--color-bg-ui</div>
+                <div style="background:var(--color-surface-1)">--color-surface-1</div>
+                <div style="background:var(--color-surface-2)">--color-surface-2</div>
+                <div style="background:var(--color-surface-3)">--color-surface-3</div>
+            </div>
+
+            <h5>Interaction <i style="text-transform: none;">(composants non-input : toggle, summary, switch, range…)</i>
+            </h5>
+            <div class="swatch-grid">
                 <div style="background:var(--color-bg-hover)">--color-bg-hover</div>
                 <div style="background:var(--color-bg-active)">--color-bg-active</div>
+            </div>
+
+            <h5>Champs de formulaire <i style="text-transform: none;">(inputs, textarea, select)</i></h5>
+            <div class="swatch-grid">
+                <div style="background:var(--color-input-bg)">--color-input-bg</div>
+                <div style="background:var(--color-input-bg-hover)">--color-input-bg-hover</div>
+                <div style="background:var(--color-input-bg-active)">--color-input-bg-active</div>
+                <div style="background:var(--color-input-bg-disabled)">--color-input-bg-disabled</div>
             </div>
 
             <h5>Bordure</h5>

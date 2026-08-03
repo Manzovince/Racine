@@ -93,18 +93,22 @@
     --color-info-active: color-mix(in srgb, var(--color-info) 80%, black);
 
     /* Échelle de fond — 3 niveaux d'élévation dérivés de --color-bg.
-       On ne fait varier QUE la luminosité (l) en gardant la chroma (c) et la
-       teinte (h) du fond, pour que les niveaux restent teintés comme --color-bg
-       au lieu de virer au gris (ce qui arrive en mélangeant avec du noir/blanc pur).
-       Chaque thème ne fixe que --color-bg et --color-surface-step (le pas de
-       luminosité par niveau : négatif pour foncer, positif pour éclaircir). */
-    --color-surface-1: oklch(from var(--color-bg) calc(l + var(--color-surface-step)) c h);
-    --color-surface-2: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 2) c h);
-    --color-surface-3: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 3) c h);
+       On fait varier la luminosité (l) via --color-surface-step, ET la chroma
+       (c) via --color-surface-chroma-step : sur les thèmes dont le fond est
+       quasi neutre (ex. paper : chroma 0.008), garder c strictement identique
+       au fond ne suffit pas à paraître "teinté" — il faut monter en saturation
+       à mesure qu'on s'éloigne du fond, comme le font déjà les bordures/textes
+       du même thème. La teinte (h) elle reste identique au fond.
+       Chaque thème ne fixe que --color-bg, --color-surface-step (luminosité,
+       négatif pour foncer / positif pour éclaircir) et --color-surface-chroma-step
+       (saturation ajoutée par niveau — proche de 0 pour un thème neutre). */
+    --color-surface-1: oklch(from var(--color-bg) calc(l + var(--color-surface-step)) calc(c + var(--color-surface-chroma-step)) h);
+    --color-surface-2: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 2) calc(c + var(--color-surface-chroma-step) * 2) h);
+    --color-surface-3: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 3) calc(c + var(--color-surface-chroma-step) * 3) h);
 
     /* États d'interaction génériques (non-input) : toggle, summary, switch, range... */
-    --color-bg-hover: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 4) c h);
-    --color-bg-active: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 5) c h);
+    --color-bg-hover: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 4) calc(c + var(--color-surface-chroma-step) * 4) h);
+    --color-bg-active: oklch(from var(--color-bg) calc(l + var(--color-surface-step) * 5) calc(c + var(--color-surface-chroma-step) * 5) h);
 
     /* Tokens dédiés aux champs de formulaire — indépendants de l'échelle de surface
        ci-dessus pour pouvoir les ajuster sans impacter le reste des composants. */
@@ -117,6 +121,7 @@
 [data-theme="light-theme"] {
     --color-bg: oklch(100% 0.00011 271.152);
     --color-surface-step: -0.05;
+    --color-surface-chroma-step: 0;
     --color-border: oklch(64.341% 0.00007 271.152);
     --color-border-subtle: oklch(90.67% 0.0001 271.152);
     --color-border-strong: oklch(20.019% 0.00002 271.152);
@@ -137,6 +142,7 @@
 [data-theme="dark-theme"] {
     --color-bg: oklch(20.019% 0.00002 271.152);
     --color-surface-step: 0.05;
+    --color-surface-chroma-step: 0;
     --color-border: oklch(54.171% 0.00006 271.152);
     --color-border-subtle: oklch(34.458% 0.00004 271.152);
     --color-border-strong: oklch(96.715% 0.00011 271.152);
@@ -157,6 +163,7 @@
 [data-theme="paper-theme"] {
     --color-bg: oklch(95.763% 0.00849 67.438);
     --color-surface-step: -0.045;
+    --color-surface-chroma-step: 0.003;
     --color-border: oklch(75% 0.025 60);
     --color-border-subtle: oklch(88% 0.015 65);
     --color-border-strong: oklch(55% 0.035 55);
@@ -177,6 +184,7 @@
 [data-theme="forest-theme"] {
     --color-bg: oklch(22% 0.025 165);
     --color-surface-step: 0.055;
+    --color-surface-chroma-step: 0.002;
     --color-border: oklch(38% 0.035 148);
     --color-border-subtle: oklch(26% 0.030 152);
     --color-border-strong: oklch(52% 0.040 145);
@@ -197,6 +205,7 @@
 [data-theme="ocean-theme"] {
     --color-bg: oklch(18% 0.030 230);
     --color-surface-step: 0.06;
+    --color-surface-chroma-step: 0.0025;
     --color-border: oklch(35% 0.042 220);
     --color-border-subtle: oklch(23% 0.035 225);
     --color-border-strong: oklch(50% 0.048 215);
@@ -698,22 +707,24 @@ hr {
 
 ul,
 ol {
-    padding-left: var(--space-xl);
+    padding-left: 0;
+    list-style: none;
 }
 
-ul {
-    list-style: none;
+/* ── .list — tirets (ul) ou numéros (ol), opt-in via classe ────────────── */
+ul.list,
+ol.list {
     padding-left: 0;
 }
 
-ul li {
+ul.list li {
     position: relative;
     padding-left: var(--space-lg);
     margin-bottom: var(--space-2xs);
     line-height: var(--line-height-relaxed);
 }
 
-ul li::before {
+ul.list li::before {
     content: '—';
     position: absolute;
     left: 0;
@@ -721,13 +732,11 @@ ul li::before {
     font-weight: var(--font-weight-bold);
 }
 
-ol {
-    list-style: none;
+ol.list {
     counter-reset: ol-counter;
-    padding-left: 0;
 }
 
-ol li {
+ol.list li {
     position: relative;
     padding-left: var(--space-2xl);
     margin-bottom: var(--space-2xs);
@@ -735,7 +744,7 @@ ol li {
     line-height: var(--line-height-relaxed);
 }
 
-ol li::before {
+ol.list li::before {
     content: counter(ol-counter, decimal-leading-zero);
     position: absolute;
     left: 0;

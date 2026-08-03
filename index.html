@@ -28,6 +28,12 @@
             <h1 class="font-serif" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold);">
                 Racine.css</h1>
         </a>
+        <nav>
+            <ul>
+                <li><a href="#composants">Documentation</a></li>
+                <li><a href="https://github.com/Manzovince/Racine">GitHub</a></li>
+            </ul>
+        </nav>
         <button popovertarget="theme-dropdown" style="anchor-name: --theme-dropdown;" class="sm">Thèmes</button>
         <div popover id="theme-dropdown"
             style="position-anchor: --theme-dropdown; top: anchor(bottom);left: anchor(left); padding: 0">
@@ -78,7 +84,7 @@
             </hgroup>
 
             <h4>Principes</h4>
-            <ul>
+            <ul class="list">
                 <li><strong>Sémantique d'abord.</strong> S'appuyer sur le sens des balises pour une structure logique et
                     robuste.</li>
                 <li><strong>Versatile.</strong> Adaptable à différents contextes et besoins.</li>
@@ -238,15 +244,15 @@
             <p>
                 Les liens sont <a href="#">clairement identifiables</a> grâce à leur couleur primaire.
                 Le texte peut être en <strong>gras</strong>, <em>italique</em>,
-                <mark>surligné</mark>, <del>barré</del>, <sub>sub</sub>, <sup>sup</sup> ou rendu en <small>petite
-                    taille</small>.
+                <mark>surligné</mark>, <del>supprimé</del>, <s>obsolète</s>, <sub>sub</sub>, <sup>sup</sup> ou rendu en
+                <small>petite taille</small>.
             </p>
 
             <p>
                 Les abréviations comme <abbr title="HyperText Markup Language">HTML</abbr> et
                 <abbr title="Cascading Style Sheets">CSS</abbr> sont marquées avec un soulignement pointillé.
-                Le code inline ressemble à <code>display: block</code> et les raccourcis clavier à
-                <kbd>Ctrl</kbd> + <kbd>K</kbd>.
+                Le code inline ressemble à <code>display: block</code>, les raccourcis clavier à
+                <kbd>Ctrl</kbd> + <kbd>K</kbd>, et la sortie d'un programme à <samp>Build successful.</samp>.
             </p>
 
             <h5>Autres polices</h5>
@@ -260,6 +266,11 @@
 
             <p class="font-cursive" style="font-size: var(--font-size-3xl);">
                 Un texte avec <strong>La belle aurore</strong>, qui fonctionne aussi en <i>italique</i>.
+            </p>
+
+            <p class="font-mono">
+                Un texte avec <strong>IBM Plex Mono</strong> <i>(via <code>.font-mono</code>)</i>, idéal pour du code ou
+                des données tabulaires.
             </p>
 
             <h5>Annotation Ruby</h5>
@@ -310,13 +321,20 @@
 
             <h2>Listes</h2>
 
-            <h5>Liste non ordonnée</h5>
+            <h5>Liste par défaut <i style="text-transform: none;">(sans classe)</i></h5>
             <ul>
+                <li>Aucune puce, aucun style décoratif</li>
+                <li>Aucune indentation non plus</li>
+                <li>Utile pour du contenu simple, sans mise en avant</li>
+            </ul>
+
+            <h5>Liste non ordonnée <i style="text-transform: none;">(avec <code>.list</code>)</i></h5>
+            <ul class="list">
                 <li>Variables CSS pour chaque token de design</li>
                 <li>Échelle typographique modulaire avec <code>clamp()</code></li>
                 <li>Formulaires complets et accessibles (WCAG AA)</li>
                 <li>Aucune classe HTML requise
-                    <ul>
+                    <ul class="list">
                         <li>Sous-élément imbriqué niveau 2</li>
                         <li>Encore un sous-élément</li>
                     </ul>
@@ -324,8 +342,8 @@
                 <li>Responsive natif via unités relatives</li>
             </ul>
 
-            <h5>Liste ordonnée</h5>
-            <ol>
+            <h5>Liste ordonnée <i style="text-transform: none;">(avec <code>.list</code>)</i></h5>
+            <ol class="list">
                 <li>Télécharger <code>racine.css</code></li>
                 <li>L'inclure dans le <code>&lt;head&gt;</code> de votre HTML</li>
                 <li>Écrire du HTML5 sémantique sans classes</li>
@@ -465,6 +483,18 @@
                 <label for="date">Date de naissance</label>
                 <input type="date" id="date" name="date">
 
+                <label for="datetime">Rendez-vous <i>(datetime-local)</i></label>
+                <input type="datetime-local" id="datetime" name="datetime">
+
+                <label for="month">Mois d'expiration <i>(month)</i></label>
+                <input type="month" id="month" name="month">
+
+                <label for="week">Semaine de livraison <i>(week)</i></label>
+                <input type="week" id="week" name="week">
+
+                <label for="time">Heure de rendez-vous <i>(time)</i></label>
+                <input type="time" id="time" name="time">
+
                 <label for="volume">Volume (range)</label>
                 <input type="range" id="volume" name="volume" min="0" max="100" value="65">
 
@@ -597,6 +627,14 @@
                     Photo via Unsplash.
                 </figcaption>
             </figure>
+
+            <h4>Picture <i style="text-transform: none;">(sources responsives)</i></h4>
+            <picture>
+                <source srcset="https://picsum.photos/id/1015/1200/500" media="(min-width: 900px)">
+                <source srcset="https://picsum.photos/id/1015/700/500" media="(min-width: 500px)">
+                <img src="https://picsum.photos/id/1015/400/500" alt="Paysage de montagne, exemple de source responsive"
+                    width="400" height="500">
+            </picture>
 
             <h4>Image Map</h4>
             <img src="https://picsum.photos/600/400" alt="Image map" usemap="#map-example" width="600" height="400">
@@ -849,6 +887,15 @@
                 <button class="outline">MD</button>
                 <button class="lg discreet">LG</button>
                 <button class="xl">XL</button>
+            </div>
+
+            <!-- ── DISABLED ───────────────────────────────────────────────── -->
+            <h5>Désactivé <i style="text-transform: none;">(<code>disabled</code> ou <code>aria-disabled="true"</code>)</i>
+            </h5>
+            <div>
+                <button disabled>Primary</button>
+                <button class="outline" disabled>Outline</button>
+                <a class="btn discreet" aria-disabled="true">Discreet (a)</a>
             </div>
 
             <!-- ── WITH ICONS ────────────────────────────────────────────── -->

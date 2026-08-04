@@ -800,8 +800,7 @@ dd {
 }
 
 .breadcrumbs li:first-child::before {
-    content: "";
-    margin: 0 8px;
+    content: none;
 }
 
 .breadcrumbs li:not(:first-child)::before {
@@ -850,11 +849,22 @@ th {
     white-space: nowrap;
 }
 
-td {
+td,
+tbody th {
     padding: var(--space-sm) var(--space-base);
     border-bottom: var(--border-width) solid var(--color-border-subtle);
     vertical-align: top;
     line-height: var(--line-height-normal);
+}
+
+tbody th {
+    text-align: left;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    white-space: normal;
 }
 
 tr:last-child td {
@@ -1007,9 +1017,9 @@ input[type="search"] {
 /* Feedback */
 input[aria-invalid] {
     background-repeat: no-repeat;
-    background-position: right 12px center; /* Positions icon 12px from the right */
+    background-position: right 12px center;
     background-size: 20px 20px;
-    padding-right: 40px; /* Make room so text doesn't hide under the icon */
+    padding-right: 40px;
 }
 
 input[aria-invalid="false"] {
@@ -1195,16 +1205,33 @@ input[type="radio"]:checked:disabled {
     color: var(--color-text);
 }
 
+/* ── Tailles ─────────────────────────────────────────────────────────── */
+.toggle.sm label {
+    padding: var(--space-2xs) var(--space-sm);
+    font-size: var(--font-size-xs);
+}
+
+.toggle.lg label {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-size-lg);
+}
+
+.toggle.xl label {
+    padding: var(--space-base) var(--space-xl);
+    font-size: var(--font-size-xl);
+}
+
 /* ── Switch ───────────────────────────────────────────────────────────── */
 input[type=checkbox][role=switch] {
     appearance: none;
     width: 40px;
     height: 24px;
-    background: var(--color-border);
+    margin-inline-end: var(--space-xs);
+    background: var(--color-surface-2);
     border-radius: 12px;
     cursor: pointer;
     position: relative;
-    transition: background .2s;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
 }
 
 input[type=checkbox][role=switch]::before {
@@ -1217,20 +1244,36 @@ input[type=checkbox][role=switch]::after {
     position: absolute;
     width: 16px;
     height: 16px;
-    background: var(--color-bg-active);
+    background: var(--color-bg);
     border-radius: 50%;
     top: 2px;
     left: 2px;
-    transition: transform .2s;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+input[type=checkbox][role=switch]:hover:not(:disabled) {
+    border-color: var(--color-border-strong);
 }
 
 input[type=checkbox][role=switch]:checked {
     background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+input[type=checkbox][role=switch]:checked:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
 }
 
 input[type=checkbox][role=switch]:checked::after {
     transform: translateX(16px);
-    background: var(--color-bg);
+    background: var(--color-text-inverse);
+}
+
+input[type=checkbox][role=switch]:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
 }
 
 /* ── Range ───────────────────────────────────────────────────────────── */
@@ -1474,6 +1517,56 @@ time {
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────── */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: var(--border-width) solid var(--color-border-subtle);
+}
+
+.tabs input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tabs label {
+    order: 0;
+    margin-bottom: -1px;
+    padding: var(--space-xs) var(--space-base);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    border-bottom: var(--border-width) solid var(--color-border-subtle);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tabs label:hover {
+    color: var(--color-text);
+}
+
+.tabs input:checked+label {
+    color: var(--color-text);
+    background: var(--color-surface-1);
+    border-bottom-color: var(--color-primary);
+    border-width: var(--border-width-heavy);
+}
+
+.tabs input:focus-visible+label {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
+}
+
+.tabs-panel {
+    display: none;
+    order: 1;
+    flex-basis: 100%;
+    padding-top: var(--space-base);
+}
+
+.tabs input:checked+label+.tabs-panel {
+    display: block;
 }
 
 /* ==========================================================================
@@ -1879,6 +1972,113 @@ button.icon-end iconify-icon {
     width: var(--_icon-size);
     height: var(--_icon-size);
     font-size: var(--_icon-size);
+}
+
+/* ==========================================================================
+   BADGES
+   Usage : <span class="badge [style] [color]">Label</span>
+   Style  : (vide = solid) | outline | discreet | flat
+   Color  : (vide = neutre) | primary | accent | success | warning | danger | info
+   Forme  : .badge-pill (coins totalement arrondis)
+   ========================================================================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-3xs) var(--space-xs);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+    border: var(--border-width) solid transparent;
+    border-radius: var(--border-radius);
+
+    --_solid-bg: var(--badge-bg, var(--color-surface-2));
+    --_solid-text: var(--badge-text, var(--color-text-secondary));
+    --_accent: var(--badge-bg, var(--color-text-secondary));
+}
+
+.badge-pill {
+    border-radius: 999px;
+}
+
+/* ── Couleurs — redéfinition des tokens ──────────────────────────────── */
+.badge.primary {
+    --badge-bg: var(--color-primary);
+    --badge-text: var(--color-text-inverse);
+}
+
+.badge.accent {
+    --badge-bg: var(--color-accent);
+    --badge-text: var(--color-text-inverse);
+}
+
+.badge.success {
+    --badge-bg: var(--color-success);
+    --badge-text: #fff;
+}
+
+.badge.warning {
+    --badge-bg: var(--color-warning);
+    --badge-text: var(--color-text);
+    /* noir sur jaune */
+}
+
+.badge.danger {
+    --badge-bg: var(--color-danger);
+    --badge-text: #fff;
+}
+
+.badge.info {
+    --badge-bg: var(--color-info);
+    --badge-text: #fff;
+}
+
+/* ── SOLID (défaut — aucune classe de style) ──────────────────────────── */
+.badge:not(.outline):not(.discreet):not(.flat) {
+    background-color: var(--_solid-bg);
+    color: var(--_solid-text);
+    border-color: var(--_solid-bg);
+}
+
+/* ── OUTLINE ───────────────────────────────────────────────────────────── */
+.badge.outline {
+    background-color: transparent;
+    color: var(--_accent);
+    border-color: var(--_accent);
+}
+
+/* ── DISCREET ──────────────────────────────────────────────────────────── */
+.badge.discreet {
+    background-color: color-mix(in srgb, var(--_accent) 14%, transparent);
+    color: var(--_accent);
+}
+
+/* ── FLAT ──────────────────────────────────────────────────────────────── */
+.badge.flat {
+    background-color: transparent;
+    color: var(--_accent);
+}
+
+/* ── Warning : texte sombre pour outline/discreet/flat ────────────────── */
+.badge.warning.outline,
+.badge.warning.discreet,
+.badge.warning.flat {
+    color: color-mix(in srgb, var(--color-warning) 75%, #000);
+}
+
+/* ── Pill ────────────────────────────────────────────────────────────── */
+.badge:not(.badge-pill)::before {
+    content: "";
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    flex-shrink: 0;
+    background-color: currentColor;
 }
 
 /* ==========================================================================

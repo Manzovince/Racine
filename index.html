@@ -26,7 +26,7 @@
     <header>
         <a href="#" style="text-decoration: none;">
             <h1 class="font-serif" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold);">
-                Racine.css</h1>
+                Racine Design System</h1>
         </a>
         <button popovertarget="theme-dropdown" style="anchor-name: --theme-dropdown;" class="sm">Thèmes</button>
         <div popover id="theme-dropdown"
@@ -62,9 +62,9 @@
         <a href="#text">Texte</a>
         <a href="#tableau">Tableau</a>
         <a href="#formulaires">Formulaires</a>
-        <a href="#media">Media</a>
         <a href="#composants">Composants</a>
         <a href="#icons">Icons</a>
+        <a href="#media">Media</a>
         <a href="#other">Autre</a>
     </nav>
 
@@ -363,6 +363,27 @@
                 <li>v0.0.1</li>
             </ul>
 
+            <h5>Onglets <i style="text-transform: none;">(avec <code>.tabs</code>)</i></h5>
+            <div class="tabs">
+                <input type="radio" name="tabs-demo" id="tab-apercu" checked>
+                <label for="tab-apercu">Aperçu</label>
+                <div class="tabs-panel">
+                    <p>Contenu de l'onglet Aperçu.</p>
+                </div>
+
+                <input type="radio" name="tabs-demo" id="tab-details">
+                <label for="tab-details">Détails</label>
+                <div class="tabs-panel">
+                    <p>Contenu de l'onglet Détails.</p>
+                </div>
+
+                <input type="radio" name="tabs-demo" id="tab-historique">
+                <label for="tab-historique">Historique</label>
+                <div class="tabs-panel">
+                    <p>Contenu de l'onglet Historique.</p>
+                </div>
+            </div>
+
         </section>
 
         <!-- ================================================================
@@ -372,49 +393,51 @@
             <h2>Tableau</h2>
 
             <table>
-                <caption>Comparatif de frameworks CSS classless populaires</caption>
+                <caption>Factures émises au cours du dernier trimestre — statuts mis à jour quotidiennement.</caption>
                 <thead>
                     <tr>
-                        <th>Framework</th>
-                        <th>Taille (minifié)</th>
-                        <th>Variables CSS</th>
-                        <th>Thème sombre</th>
-                        <th>Formulaires</th>
+                        <th scope="col">Facture</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Date d'émission</th>
+                        <th scope="col" style="text-align: right;">Montant</th>
+                        <th scope="col">Statut</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Classless</strong></td>
-                        <td><code>~14 Ko</code></td>
-                        <td>✓ Oui</td>
-                        <td>Prêt</td>
-                        <td>Complets</td>
+                        <th scope="row"><code>INV-2041</code></th>
+                        <td>Atelier Nordique</td>
+                        <td><time datetime="2026-07-12">12 juillet 2026</time></td>
+                        <td style="text-align: right;">1 240,00 €</td>
+                        <td><span class="badge badge-pill discreet success">Payée</span></td>
                     </tr>
                     <tr>
-                        <td>Water.css</td>
-                        <td><code>~2 Ko</code></td>
-                        <td>Partiel</td>
-                        <td>Auto</td>
-                        <td>Basiques</td>
+                        <th scope="row"><code>INV-2042</code></th>
+                        <td>Studio Lumen</td>
+                        <td><time datetime="2026-07-18">18 juillet 2026</time></td>
+                        <td style="text-align: right;">860,50 €</td>
+                        <td><span class="badge badge-pill discreet warning">En attente</span></td>
                     </tr>
                     <tr>
-                        <td>Pico.css</td>
-                        <td><code>~10 Ko</code></td>
-                        <td>✓ Oui</td>
-                        <td>Auto</td>
-                        <td>Étendus</td>
+                        <th scope="row"><code>INV-2043</code></th>
+                        <td>Maison Verdier</td>
+                        <td><time datetime="2026-07-25">25 juillet 2026</time></td>
+                        <td style="text-align: right;">430,00 €</td>
+                        <td><span class="badge badge-pill discreet danger">En retard</span></td>
                     </tr>
                     <tr>
-                        <td>MVP.css</td>
-                        <td><code>~7 Ko</code></td>
-                        <td>Partiel</td>
-                        <td>Non</td>
-                        <td>Basiques</td>
+                        <th scope="row"><code>INV-2044</code></th>
+                        <td>Cabinet Delacroix</td>
+                        <td><time datetime="2026-08-01">1er août 2026</time></td>
+                        <td style="text-align: right;">2 175,00 €</td>
+                        <td><span class="badge badge-pill discreet success">Payée</span></td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="5">Données indicatives — Tailles compressées en production.</td>
+                        <td colspan="3">Total facturé</td>
+                        <td style="text-align: right;">4 705,50 €</td>
+                        <td></td>
                     </tr>
                 </tfoot>
             </table>
@@ -563,7 +586,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>Variations</legend>
+                <legend>Tailles</legend>
 
                 <label for="small">Small</label>
                 <input type="text" id="small" name="small" class="sm" value="Data">
@@ -576,8 +599,10 @@
 
                 <label for="xlarge">X Large</label>
                 <input type="text" id="xlarge" name="xlarge" class="xl" value="Data">
+            </fieldset>
 
-                <hr style="border-color: var(--color-border-subtle)">
+            <fieldset>
+                <legend>États</legend>
 
                 <label for="valid">Champ valide</label>
                 <input type="text" id="valid" name="valid" value="Bonjour" aria-invalid="false">
@@ -587,7 +612,6 @@
 
                 <label for="disabled">Champ désactivé</label>
                 <input type="text" id="disabled" name="disabled" value="Non modifiable" disabled>
-
             </fieldset>
 
             <p>
@@ -604,6 +628,319 @@
             <label>Niveau de batterie</label>
             <meter value="0.8" min="0" max="1" low="0.25" high="0.75" optimum="1"></meter>
 
+        </section>
+
+        <!-- ================================================================
+            COMPOSANTS INTERACTIF
+         ================================================================== -->
+        <section id="composants">
+            <h2>Composants interactifs</h2>
+
+            <h3>Boutons</h3>
+
+            <!-- ── SOLID ──────────────────────────────────────────────────── -->
+            <h5>Solid</h5>
+            <div>
+                <button>Primary</button>
+                <button class="accent">Accent</button>
+                <button class="success">Success</button>
+                <button class="warning">Warning</button>
+                <button class="danger">Danger</button>
+                <button class="info">Info</button>
+            </div>
+
+            <!-- ── OUTLINE ────────────────────────────────────────────────── -->
+            <h5>Outline</h5>
+            <div>
+                <button class="outline">Primary</button>
+                <button class="outline accent">Accent</button>
+                <button class="outline success">Success</button>
+                <button class="outline warning">Warning</button>
+                <button class="outline danger">Danger</button>
+                <button class="outline info">Info</button>
+            </div>
+
+
+            <!-- ── DISCREET ───────────────────────────────────────────────── -->
+            <h5>Discreet</h5>
+            <div>
+                <button class="discreet">Primary</button>
+                <button class="discreet accent">Accent</button>
+                <button class="discreet success">Success</button>
+                <button class="discreet warning">Warning</button>
+                <button class="discreet danger">Danger</button>
+                <button class="discreet info">Info</button>
+            </div>
+
+
+            <h5>Flat</h5>
+            <div>
+                <button class="flat">Primary</button>
+                <button class="flat accent">Accent</button>
+                <button class="flat success">Success</button>
+                <button class="flat warning">Warning</button>
+                <button class="flat danger">Danger</button>
+                <button class="flat info">Info</button>
+            </div>
+
+            <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
+            <h5>Balise &lt;a&gt; <i style="text-transform: none;">(en ajoutant <code>.btn</code>)</i> </h5>
+            <div>
+                <a class="btn">primary</a>
+                <a class="btn outline">outline</a>
+                <a class="btn discreet">discreet</a>
+                <a class="btn flat">flat</a>
+            </div>
+
+
+            <!-- ── TAILLES ────────────────────────────────────────────────── -->
+            <h5>Tailles</h5>
+            <div>
+                <button class="sm">SM</button>
+                <button class="outline">MD</button>
+                <button class="lg discreet">LG</button>
+                <button class="xl">XL</button>
+            </div>
+
+            <!-- ── DISABLED ───────────────────────────────────────────────── -->
+            <h5>Désactivé <i style="text-transform: none;">(<code>disabled</code> ou <code>aria-disabled="true"</code>)</i>
+            </h5>
+            <div>
+                <button disabled>Primary</button>
+                <button class="outline" disabled>Outline</button>
+                <a class="btn discreet" aria-disabled="true">Discreet (a)</a>
+            </div>
+
+            <!-- ── WITH ICONS ────────────────────────────────────────────── -->
+            <h5>Icons <i style="text-transform: none;">(avec <code>.icon</code>, <code>.icon-start</code> ou
+                    <code>.icon-end</code>)</i></h5>
+            <div>
+                <button class="discreet icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
+                <button class="danger outline sm icon-start"><iconify-icon
+                        icon="mdi:delete"></iconify-icon>Supprimer</button>
+                <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
+            </div>
+
+            <hr style="border-color: var(--color-border-subtle);">
+
+            <!-- ── BADGES ────────────────────────────────────────────────── -->
+            <h3>Badges <i style="text-transform: none;">(avec <code>.badge</code> et <code>.badge-pill</code>)</i></h3>
+
+            <h6>Solid <i style="text-transform: none;">(défaut)</i></h6>
+            <div>
+                <span class="badge">Neutre</span>
+                <span class="badge primary">Primary</span>
+                <span class="badge accent">Accent</span>
+                <span class="badge success">Payée</span>
+                <span class="badge warning">En attente</span>
+                <span class="badge danger">En retard</span>
+                <span class="badge info">Info</span>
+            </div>
+
+            <h6>Outline <i style="text-transform: none;">(<code>.outline</code>)</i></h6>
+            <div>
+                <span class="badge outline">Neutre</span>
+                <span class="badge outline primary">Primary</span>
+                <span class="badge outline success">Payée</span>
+                <span class="badge outline warning">En attente</span>
+                <span class="badge outline danger">En retard</span>
+                <span class="badge outline info">Info</span>
+            </div>
+
+            <h6>Discreet <i style="text-transform: none;">(<code>.discreet</code>)</i></h6>
+            <div>
+                <span class="badge discreet">Neutre</span>
+                <span class="badge discreet primary">Primary</span>
+                <span class="badge discreet success">Payée</span>
+                <span class="badge discreet warning">En attente</span>
+                <span class="badge discreet danger">En retard</span>
+                <span class="badge discreet info">Info</span>
+            </div>
+
+            <h6>Flat <i style="text-transform: none;">(<code>.flat</code>)</i></h6>
+            <div>
+                <span class="badge flat">Neutre</span>
+                <span class="badge flat primary">Primary</span>
+                <span class="badge flat success">Payée</span>
+                <span class="badge flat warning">En attente</span>
+                <span class="badge flat danger">En retard</span>
+                <span class="badge flat info">Info</span>
+            </div>
+
+            <h6>Pill <i style="text-transform: none;">(<code>.badge-pill</code>)</i></h6>
+            <div>
+                <span class="badge badge-pill">Neutre</span>
+                <span class="badge badge-pill primary">Primary</span>
+                <span class="badge badge-pill discreet success">Payée</span>
+                <span class="badge badge-pill discreet warning">En attente</span>
+                <span class="badge badge-pill discreet danger">En retard</span>
+            </div>
+
+            <hr>
+
+            <h5>Encart <i>(aside)</i></h5>
+            <aside>
+                <strong>Note :</strong> Ce framework est conçu comme une fondation.
+                Les variables CSS permettent de surcharger l'ensemble du design en quelques lignes.
+                Commencez par modifier <code>--color-primary</code> et <code>--font-sans</code>.
+            </aside>
+
+            <h5>Accordéons <i>(details/summary)</i></h5>
+            <details>
+                <summary>Comment personnaliser les couleurs ?</summary>
+                <p>
+                    Surchargez simplement les variables CSS dans votre propre feuille de style.
+                    Par exemple : <code>[data-theme="your-theme"] { --color-primary: #your-color; }</code>
+                    Toutes les couleurs se mettront à jour automatiquement.
+                </p>
+            </details>
+            <details open>
+                <summary>Y a-t-il des dépendances JavaScript ?</summary>
+                <p>
+                    Aucune. Ce framework est 100% CSS. Aucun JS n'est nécessaire pour le style de base.
+                    Les interactions natives du navigateur (<code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>)
+                    fonctionnent sans script.
+                </p>
+            </details>
+
+            <h5>Modale <i>(dialog)</i></h5>
+            <button onclick="document.getElementById('dialog1').showModal();">Ouvrir la modale</button>
+            <dialog id="dialog1">
+                <div class="header">
+                    <h3>Titre du dialog</h3>
+                    <form method="dialog">
+                        <button type="submit" class="flat icon"><iconify-icon icon="mdi:close"></iconify-icon></button>
+                    </form>
+                </div>
+                <p>Voici un élément natif de "dialog".</p>
+                <div class="footer">
+                    <button>Action</button>
+                    <form method="dialog">
+                        <button type="submit" class="flat">Fermer</button>
+                    </form>
+                </div>
+            </dialog>
+
+            <h5>Popover</h5>
+            <button popovertarget="pop1" style="anchor-name: --pop1;">Popover au clic</button>
+            <div popover id="pop1" style="position-anchor: --pop1; top: anchor(top);left: calc(anchor(right) + 8px);">
+                <p>Bonjour le monde !</p>
+            </div>
+
+            <br><br>
+
+            <button popovertarget="pop2" style="anchor-name: --pop2;">Dropdown popover</button>
+            <div popover id="pop2" style="position-anchor: --pop2; top: anchor(bottom);left: anchor(left); padding: 0;">
+                <div class="toggle" style="flex-direction: column;">
+                    <input type="radio" name="dropdown-demo" id="dropdown1" value="dropdown1" checked>
+                    <label for="dropdown1">Option One</label>
+
+                    <input type="radio" name="dropdown-demo" id="dropdown2" value="dropdown2">
+                    <label for="dropdown2">Option Two</label>
+
+                    <input type="radio" name="dropdown-demo" id="dropdown3" value="dropdown3">
+                    <label for="dropdown3">Option Three</label>
+                </div>
+            </div>
+
+            <h5>Tooltip</h5>
+            <a href="" data-tooltip="Bonjour le monde !">Tooltip au survol</a>
+            <br><br>
+            <button data-tooltip="Bonjour le monde !">Tooltip au survol</button>
+
+            <h5>Adresse</h5>
+            <address>
+                <strong>Anthropic</strong><br>
+                548 Market St, PMB 90375<br>
+                San Francisco, CA 94104<br>
+                <a href="mailto:hello@anthropic.com">hello@anthropic.com</a>
+            </address>
+
+            <h5>Horodatage</h5>
+            <p>
+                Dernière mise à jour :
+                <time datetime="2026-01-01">1er Janvier 2026</time>.
+            </p>
+
+        </section>
+
+        <!-- ================================================================
+            ICONS
+        ================================================================== -->
+        <section id="icons">
+            <h1>Icons</h1>
+
+            <!-- ── MATERIAL ───────────────────────────────────────────────── -->
+            <h5>Material icons</h5>
+            <iconify-icon icon="mdi:home"></iconify-icon>
+            <iconify-icon icon="mdi:heart"></iconify-icon>
+            <iconify-icon icon="mdi:star"></iconify-icon>
+            <iconify-icon icon="mdi:bell"></iconify-icon>
+            <iconify-icon icon="mdi:delete"></iconify-icon>
+            <iconify-icon icon="mdi:cloud-upload"></iconify-icon>
+
+            <!-- ── LUCIDE ─────────────────────────────────────────────────── -->
+            <h5>Lucide icons</h5>
+            <iconify-icon icon="lucide:home"></iconify-icon>
+            <iconify-icon icon="lucide:settings"></iconify-icon>
+            <iconify-icon icon="lucide:user"></iconify-icon>
+            <iconify-icon icon="lucide:search"></iconify-icon>
+            <iconify-icon icon="lucide:shopping-cart"></iconify-icon>
+            <iconify-icon icon="lucide:mail"></iconify-icon>
+            <iconify-icon icon="lucide:calendar"></iconify-icon>
+            <iconify-icon icon="lucide:chart-bar"></iconify-icon>
+
+            <!-- ── REMIX ──────────────────────────────────────────────────── -->
+            <h5>Remix icons</h5>
+            <iconify-icon icon="ri:home-3-line"></iconify-icon>
+            <iconify-icon icon="ri:settings-3-line"></iconify-icon>
+            <iconify-icon icon="ri:user-line"></iconify-icon>
+            <iconify-icon icon="ri:search-line"></iconify-icon>
+            <iconify-icon icon="ri:shopping-cart-2-line"></iconify-icon>
+            <iconify-icon icon="ri:mail-line"></iconify-icon>
+            <iconify-icon icon="ri:calendar-line"></iconify-icon>
+            <iconify-icon icon="ri:bar-chart-fill"></iconify-icon>
+
+            <!-- ── SOCIAL MEDIA ───────────────────────────────────────────── -->
+            <h5>Social media</h5>
+            <iconify-icon icon="logos:github-icon"></iconify-icon>
+            <iconify-icon icon="logos:discord-icon"></iconify-icon>
+            <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
+            <iconify-icon icon="skill-icons:instagram"></iconify-icon>
+            <iconify-icon icon="logos:youtube-icon"></iconify-icon>
+            <iconify-icon icon="logos:linkedin-icon"></iconify-icon>
+            <iconify-icon icon="logos:twitch"></iconify-icon>
+            <iconify-icon icon="logos:reddit-icon"></iconify-icon>
+
+            <!-- ── TECH / DEV ─────────────────────────────────────────────── -->
+            <h5>Tech & Dev</h5>
+            <iconify-icon icon="logos:javascript"></iconify-icon>
+            <iconify-icon icon="logos:typescript-icon"></iconify-icon>
+            <iconify-icon icon="logos:react"></iconify-icon>
+            <iconify-icon icon="logos:vue"></iconify-icon>
+            <iconify-icon icon="logos:python"></iconify-icon>
+            <iconify-icon icon="logos:git-icon"></iconify-icon>
+            <iconify-icon icon="logos:figma"></iconify-icon>
+            <iconify-icon icon="logos:docker-icon"></iconify-icon>
+
+            <!-- ── FLAGS ──────────────────────────────────────────────────── -->
+            <h5>Flags</h5>
+            <iconify-icon icon="flag:fr-4x3"></iconify-icon>
+            <iconify-icon icon="flag:gb-4x3"></iconify-icon>
+            <iconify-icon icon="flag:us-4x3"></iconify-icon>
+            <iconify-icon icon="flag:de-4x3"></iconify-icon>
+            <iconify-icon icon="flag:jp-4x3"></iconify-icon>
+
+            <!-- ── ANIMATED ───────────────────────────────────────────────── -->
+            <h5>Animated</h5>
+            <iconify-icon icon="line-md:confirm-circle"></iconify-icon>
+            <iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon>
+            <iconify-icon icon="line-md:sun-rising-loop"></iconify-icon>
+            <iconify-icon icon="line-md:alert-circle-loop"></iconify-icon>
+            <iconify-icon icon="line-md:heart-filled"></iconify-icon>
+            <iconify-icon icon="line-md:downloading-loop"></iconify-icon>
+            <iconify-icon icon="svg-spinners:ring-resize"></iconify-icon>
+            <iconify-icon icon="svg-spinners:pulse-rings-3"></iconify-icon>
         </section>
 
         <!-- ================================================================
@@ -808,264 +1145,6 @@
             </object>
 
             <embed src="file.swf" type="application/x-shockwave-flash" width="200" height="100">
-        </section>
-
-        <!-- ================================================================
-            COMPOSANTS INTERACTIF
-         ================================================================== -->
-        <section id="composants">
-            <h2>Composants interactifs</h2>
-
-            <h3>Boutons</h3>
-
-            <!-- ── SOLID ──────────────────────────────────────────────────── -->
-            <h5>Solid</h5>
-            <div>
-                <button>Primary</button>
-                <button class="accent">Accent</button>
-                <button class="success">Success</button>
-                <button class="warning">Warning</button>
-                <button class="danger">Danger</button>
-                <button class="info">Info</button>
-            </div>
-
-            <!-- ── OUTLINE ────────────────────────────────────────────────── -->
-            <h5>Outline</h5>
-            <div>
-                <button class="outline">Primary</button>
-                <button class="outline accent">Accent</button>
-                <button class="outline success">Success</button>
-                <button class="outline warning">Warning</button>
-                <button class="outline danger">Danger</button>
-                <button class="outline info">Info</button>
-            </div>
-
-
-            <!-- ── DISCREET ───────────────────────────────────────────────── -->
-            <h5>Discreet</h5>
-            <div>
-                <button class="discreet">Primary</button>
-                <button class="discreet accent">Accent</button>
-                <button class="discreet success">Success</button>
-                <button class="discreet warning">Warning</button>
-                <button class="discreet danger">Danger</button>
-                <button class="discreet info">Info</button>
-            </div>
-
-
-            <h5>Flat</h5>
-            <div>
-                <button class="flat">Primary</button>
-                <button class="flat accent">Accent</button>
-                <button class="flat success">Success</button>
-                <button class="flat warning">Warning</button>
-                <button class="flat danger">Danger</button>
-                <button class="flat info">Info</button>
-            </div>
-
-            <!-- ── BALISE <a> ─────────────────────────────────────────────── -->
-            <h5>Balise &lt;a&gt; <i style="text-transform: none;">(en ajoutant <code>.btn</code>)</i> </h5>
-            <div>
-                <a class="btn">primary</a>
-                <a class="btn outline">outline</a>
-                <a class="btn discreet">discreet</a>
-                <a class="btn flat">flat</a>
-            </div>
-
-
-            <!-- ── TAILLES ────────────────────────────────────────────────── -->
-            <h5>Tailles</h5>
-            <div>
-                <button class="sm">SM</button>
-                <button class="outline">MD</button>
-                <button class="lg discreet">LG</button>
-                <button class="xl">XL</button>
-            </div>
-
-            <!-- ── DISABLED ───────────────────────────────────────────────── -->
-            <h5>Désactivé <i style="text-transform: none;">(<code>disabled</code> ou <code>aria-disabled="true"</code>)</i>
-            </h5>
-            <div>
-                <button disabled>Primary</button>
-                <button class="outline" disabled>Outline</button>
-                <a class="btn discreet" aria-disabled="true">Discreet (a)</a>
-            </div>
-
-            <!-- ── WITH ICONS ────────────────────────────────────────────── -->
-            <h5>Icons <i style="text-transform: none;">(avec <code>.icon</code>, <code>.icon-start</code> ou
-                    <code>.icon-end</code>)</i></h5>
-            <div>
-                <button class="discreet icon"><iconify-icon icon="mdi:home"></iconify-icon></button>
-                <button class="danger outline sm icon-start"><iconify-icon
-                        icon="mdi:delete"></iconify-icon>Supprimer</button>
-                <button class="discreet icon-end">Télécharger <iconify-icon icon="mdi:download"></iconify-icon></button>
-            </div>
-
-            <hr>
-
-            <h5>Encart <i>(aside)</i></h5>
-            <aside>
-                <strong>Note :</strong> Ce framework est conçu comme une fondation.
-                Les variables CSS permettent de surcharger l'ensemble du design en quelques lignes.
-                Commencez par modifier <code>--color-primary</code> et <code>--font-sans</code>.
-            </aside>
-
-            <h5>Accordéons <i>(details/summary)</i></h5>
-            <details>
-                <summary>Comment personnaliser les couleurs ?</summary>
-                <p>
-                    Surchargez simplement les variables CSS dans votre propre feuille de style.
-                    Par exemple : <code>[data-theme="your-theme"] { --color-primary: #your-color; }</code>
-                    Toutes les couleurs se mettront à jour automatiquement.
-                </p>
-            </details>
-            <details open>
-                <summary>Y a-t-il des dépendances JavaScript ?</summary>
-                <p>
-                    Aucune. Ce framework est 100% CSS. Aucun JS n'est nécessaire pour le style de base.
-                    Les interactions natives du navigateur (<code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>)
-                    fonctionnent sans script.
-                </p>
-            </details>
-
-            <h5>Modale <i>(dialog)</i></h5>
-            <button onclick="document.getElementById('dialog1').showModal();">Ouvrir la modale</button>
-            <dialog id="dialog1">
-                <div class="header">
-                    <h3>Titre du dialog</h3>
-                    <form method="dialog">
-                        <button type="submit" class="flat icon"><iconify-icon icon="mdi:close"></iconify-icon></button>
-                    </form>
-                </div>
-                <p>Voici un élément natif de "dialog".</p>
-                <div class="footer">
-                    <button>Action</button>
-                    <form method="dialog">
-                        <button type="submit" class="flat">Fermer</button>
-                    </form>
-                </div>
-            </dialog>
-
-            <h5>Popover</h5>
-            <button popovertarget="pop1" style="anchor-name: --pop1;">Popover au clic</button>
-            <div popover id="pop1" style="position-anchor: --pop1; top: anchor(top);left: calc(anchor(right) + 8px);">
-                <p>Bonjour le monde !</p>
-            </div>
-
-            <br><br>
-
-            <button popovertarget="pop2" style="anchor-name: --pop2;">Dropdown popover</button>
-            <div popover id="pop2" style="position-anchor: --pop2; top: anchor(bottom);left: anchor(left); padding: 0;">
-                <div class="toggle" style="flex-direction: column;">
-                    <input type="radio" name="dropdown-demo" id="dropdown1" value="dropdown1" checked>
-                    <label for="dropdown1">Option One</label>
-
-                    <input type="radio" name="dropdown-demo" id="dropdown2" value="dropdown2">
-                    <label for="dropdown2">Option Two</label>
-
-                    <input type="radio" name="dropdown-demo" id="dropdown3" value="dropdown3">
-                    <label for="dropdown3">Option Three</label>
-                </div>
-            </div>
-
-            <h5>Tooltip</h5>
-            <a href="" data-tooltip="Bonjour le monde !">Tooltip au survol</a>
-            <br><br>
-            <button data-tooltip="Bonjour le monde !">Tooltip au survol</button>
-
-            <h5>Adresse</h5>
-            <address>
-                <strong>Anthropic</strong><br>
-                548 Market St, PMB 90375<br>
-                San Francisco, CA 94104<br>
-                <a href="mailto:hello@anthropic.com">hello@anthropic.com</a>
-            </address>
-
-            <h5>Horodatage</h5>
-            <p>
-                Dernière mise à jour :
-                <time datetime="2026-01-01">1er Janvier 2026</time>.
-            </p>
-
-        </section>
-
-        <!-- ================================================================
-            ICONS
-        ================================================================== -->
-        <section id="icons">
-            <h1>Icons</h1>
-
-            <!-- ── MATERIAL ───────────────────────────────────────────────── -->
-            <h5>Material icons</h5>
-            <iconify-icon icon="mdi:home"></iconify-icon>
-            <iconify-icon icon="mdi:heart"></iconify-icon>
-            <iconify-icon icon="mdi:star"></iconify-icon>
-            <iconify-icon icon="mdi:bell"></iconify-icon>
-            <iconify-icon icon="mdi:delete"></iconify-icon>
-            <iconify-icon icon="mdi:cloud-upload"></iconify-icon>
-
-            <!-- ── LUCIDE ─────────────────────────────────────────────────── -->
-            <h5>Lucide icons</h5>
-            <iconify-icon icon="lucide:home"></iconify-icon>
-            <iconify-icon icon="lucide:settings"></iconify-icon>
-            <iconify-icon icon="lucide:user"></iconify-icon>
-            <iconify-icon icon="lucide:search"></iconify-icon>
-            <iconify-icon icon="lucide:shopping-cart"></iconify-icon>
-            <iconify-icon icon="lucide:mail"></iconify-icon>
-            <iconify-icon icon="lucide:calendar"></iconify-icon>
-            <iconify-icon icon="lucide:chart-bar"></iconify-icon>
-
-            <!-- ── REMIX ──────────────────────────────────────────────────── -->
-            <h5>Remix icons</h5>
-            <iconify-icon icon="ri:home-3-line"></iconify-icon>
-            <iconify-icon icon="ri:settings-3-line"></iconify-icon>
-            <iconify-icon icon="ri:user-line"></iconify-icon>
-            <iconify-icon icon="ri:search-line"></iconify-icon>
-            <iconify-icon icon="ri:shopping-cart-2-line"></iconify-icon>
-            <iconify-icon icon="ri:mail-line"></iconify-icon>
-            <iconify-icon icon="ri:calendar-line"></iconify-icon>
-            <iconify-icon icon="ri:bar-chart-fill"></iconify-icon>
-
-            <!-- ── SOCIAL MEDIA ───────────────────────────────────────────── -->
-            <h5>Social media</h5>
-            <iconify-icon icon="logos:github-icon"></iconify-icon>
-            <iconify-icon icon="logos:discord-icon"></iconify-icon>
-            <iconify-icon icon="ri:twitter-x-fill"></iconify-icon>
-            <iconify-icon icon="skill-icons:instagram"></iconify-icon>
-            <iconify-icon icon="logos:youtube-icon"></iconify-icon>
-            <iconify-icon icon="logos:linkedin-icon"></iconify-icon>
-            <iconify-icon icon="logos:twitch"></iconify-icon>
-            <iconify-icon icon="logos:reddit-icon"></iconify-icon>
-
-            <!-- ── TECH / DEV ─────────────────────────────────────────────── -->
-            <h5>Tech & Dev</h5>
-            <iconify-icon icon="logos:javascript"></iconify-icon>
-            <iconify-icon icon="logos:typescript-icon"></iconify-icon>
-            <iconify-icon icon="logos:react"></iconify-icon>
-            <iconify-icon icon="logos:vue"></iconify-icon>
-            <iconify-icon icon="logos:python"></iconify-icon>
-            <iconify-icon icon="logos:git-icon"></iconify-icon>
-            <iconify-icon icon="logos:figma"></iconify-icon>
-            <iconify-icon icon="logos:docker-icon"></iconify-icon>
-
-            <!-- ── FLAGS ──────────────────────────────────────────────────── -->
-            <h5>Flags</h5>
-            <iconify-icon icon="flag:fr-4x3"></iconify-icon>
-            <iconify-icon icon="flag:gb-4x3"></iconify-icon>
-            <iconify-icon icon="flag:us-4x3"></iconify-icon>
-            <iconify-icon icon="flag:de-4x3"></iconify-icon>
-            <iconify-icon icon="flag:jp-4x3"></iconify-icon>
-
-            <!-- ── ANIMATED ───────────────────────────────────────────────── -->
-            <h5>Animated</h5>
-            <iconify-icon icon="line-md:confirm-circle"></iconify-icon>
-            <iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon>
-            <iconify-icon icon="line-md:sun-rising-loop"></iconify-icon>
-            <iconify-icon icon="line-md:alert-circle-loop"></iconify-icon>
-            <iconify-icon icon="line-md:heart-filled"></iconify-icon>
-            <iconify-icon icon="line-md:downloading-loop"></iconify-icon>
-            <iconify-icon icon="svg-spinners:ring-resize"></iconify-icon>
-            <iconify-icon icon="svg-spinners:pulse-rings-3"></iconify-icon>
         </section>
 
         <!-- ================================================================
